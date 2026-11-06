@@ -1,0 +1,436 @@
+
+/* =====================================
+   VIELFALIA – GRUNDGESTALTUNG
+   ===================================== */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    overflow-x: hidden;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    overflow-x: hidden;
+}
+
+/* Hintergrund der Startseite */
+.startseite {
+    background-color: #E8F2E5;
+}
+
+
+/* =====================================
+   KOPFZEILE UND NAVIGATION
+   ===================================== */
+
+header,
+.kopfzeile {
+    background-color: #24543D;
+    color: white;
+}
+
+.kopfzeile {
+    padding: 10px 15px;
+}
+
+.kopfzeile nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.kopfzeile nav a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+    padding: 5px;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    text-decoration: none;
+    text-align: center;
+}
+
+.nav-symbol {
+    font-size: 25px;
+}
+
+.kopfzeile nav a:hover {
+    text-decoration: underline;
+}
+
+.kopfzeile nav a:focus-visible {
+    outline: 3px solid white;
+    outline-offset: 4px;
+}
+
+
+/* =====================================
+   SUCHFELD
+   ===================================== */
+
+.suchfeld {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    margin: 0 10px;
+}
+
+.suchfeld label {
+    font-size: 40px;
+}
+
+.suchfeld input,
+nav input[type="search"] {
+    width: 400px;
+    max-width: 100%;
+    height: 60px;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 15px;
+    font-size: 22px;
+}
+
+.suchfeld input:focus-visible {
+    outline: 3px solid #FFE69A;
+    outline-offset: 3px;
+}
+
+
+/* =====================================
+   LANDSCHAFTSBILD
+   ===================================== */
+
+.willkommen {
+    position: relative;
+    width: 100%;
+}
+
+.willkommen .titelbild {
+    display: block;
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    object-position: center;
+}
+
+
+/* =====================================
+   WILLKOMMENSSPRUCH UNTER DEM BILD
+   ===================================== */
+
+.willkommensspruch {
+    text-align: center;
+    padding: 20px 15px;
+    color: #244C3A;
+}
+
+.willkommensspruch h2 {
+    font-size: clamp(22px, 3vw, 32px);
+    margin: 0 0 10px;
+}
+
+.willkommensspruch p {
+    font-size: clamp(17px, 2vw, 22px);
+    margin: 0;
+}
+
+
+/* =====================================
+   KACHELN – GRUNDGESTALTUNG
+   ===================================== */
+
+.kacheln {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 10px;
+    width: 95%;
+    max-width: 1100px;
+    margin: 12px auto;
+}
+
+.kachel {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 8px;
+
+    min-height: 150px;
+    height: auto;
+    padding: 24px;
+
+    border-radius: 20px;
+    color: #222222;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+
+    transition: transform 0.2s ease;
+}
+
+.kachel:hover {
+    transform: translateY(-4px);
+}
+
+.kachel:focus-visible {
+    outline: 3px solid #173F2E;
+    outline-offset: 4px;
+}
+
+.kachel-symbol {
+    display: block;
+    font-size: 32px;
+    text-align: center;
+    margin-bottom: 5px;
+}
+
+
+/* =====================================
+   RUNDE PFEILE
+   ===================================== */
+
+.kachel-pfeil {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 40px;
+    height: 40px;
+
+    margin: 15px auto 0;
+    margin-top: auto;
+
+    border-radius: 50%;
+    background-color: #244C3A;
+    color: white;
+    font-size: 24px;
+}
+
+
+/* =====================================
+   FARBEN DER SECHS KACHELN
+   ===================================== */
+
+/* 1. Entdecken – Lila */
+.kacheln > .kachel:nth-child(1) {
+    background-color: #D8C4F0;
+}
+
+/* 2. Stärken – Gelb */
+.kacheln > .kachel:nth-child(2) {
+    background-color: #FFE69A;
+}
+
+/* 3. Spielen – Grün */
+.kacheln > .kachel:nth-child(3) {
+    background-color: #B8DEA8;
+}
+
+/* 4. Über mich – Braun */
+.kacheln > .kachel:nth-child(4) {
+    background-color: #D6AE91;
+}
+
+/* 5. Alltag – Grau */
+.kacheln > .kachel:nth-child(5) {
+    background-color: #D5D9DE;
+}
+
+/* 6. Hilfe – Blau */
+.kacheln > .kachel:nth-child(6) {
+    background-color: #A9D5F5;
+}
+
+
+/* =====================================
+   FARBEN DER RUNDEN PFEILE
+   ===================================== */
+
+/* Entdecken */
+.kacheln > .kachel:nth-child(1) .kachel-pfeil {
+    background-color: #684399;
+}
+
+/* Stärken */
+.kacheln > .kachel:nth-child(2) .kachel-pfeil {
+    background-color: #8A6000;
+}
+
+/* Spielen */
+.kacheln > .kachel:nth-child(3) .kachel-pfeil {
+    background-color: #326B3B;
+}
+
+/* Über mich */
+.kacheln > .kachel:nth-child(4) .kachel-pfeil {
+    background-color: #795038;
+}
+
+/* Alltag */
+.kacheln > .kachel:nth-child(5) .kachel-pfeil {
+    background-color: #46515E;
+}
+
+/* Hilfe */
+.kacheln > .kachel:nth-child(6) .kachel-pfeil {
+    background-color: #245D91;
+}
+
+
+/* =====================================
+   FUSSZEILE
+   ===================================== */
+
+footer {
+    background-color: #244C3A;
+    color: white;
+    text-align: center;
+    padding: 10px 20px;
+}
+
+footer a {
+    color: white;
+}
+
+footer a:hover {
+    text-decoration: none;
+}
+
+footer a:focus-visible {
+    outline: 3px solid white;
+    outline-offset: 4px;
+}
+
+.footer-links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.footer-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.footer-links a:hover,
+.footer-links a:focus-visible {
+    text-decoration: underline;
+}
+
+
+/* =====================================
+   TABLET – ZWEI KACHELN
+   ===================================== */
+
+@media (max-width: 900px) {
+
+    .kacheln {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+        width: 96%;
+    }
+
+    .kachel {
+        min-height: 160px;
+        padding: 12px;
+    }
+
+    .kachel-symbol {
+        font-size: 36px;
+    }
+
+    .kopfzeile nav {
+        gap: 8px;
+    }
+
+    .suchfeld input,
+    nav input[type="search"] {
+        width: 200px;
+        max-width: 100%;
+    }
+}
+
+
+/* =====================================
+   SMARTPHONE – EINE KACHEL
+   ===================================== */
+
+@media (max-width: 600px) {
+
+    .kacheln {
+        grid-template-columns: 1fr;
+        gap: 12px;
+        width: 94%;
+    }
+
+    .kachel {
+        min-height: 140px;
+        padding: 12px;
+    }
+
+    .kachel-symbol {
+        font-size: 32px;
+    }
+
+    .kopfzeile nav {
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 6px;
+    }
+
+    .kopfzeile nav a {
+        font-size: 14px;
+        padding: 6px;
+    }
+
+    .nav-symbol {
+        font-size: 24px;
+    }
+
+    .suchfeld input,
+    nav input[type="search"] {
+        width: 160px;
+        max-width: 100%;
+        height: 44px;
+        font-size: 16px;
+    }
+
+    .willkommen .titelbild {
+        height: 180px;
+    }
+
+    h1 {
+        font-size: 24px;
+    }
+
+    footer {
+        padding: 10px;
+        font-size: 14px;
+    }
+}
+
+
+/* Weniger Bewegung bei Bedarf */
+@media (prefers-reduced-motion: reduce) {
+    .kachel {
+        transition: none;
+    }
+
+    .kachel:hover {
+        transform: none;
+    }
+}
