@@ -1,0 +1,151 @@
+!doctype html>
+<html lang ="de"
+  
+<head> 
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Universum der Spiele - START </title>
+ <link rel="stylesheet" href ="css/style.css">
+</head>
+  
+<body class="startseite"> 
+  
+<header class="kopfzeile"> 
+  <h1>Universum der Spiele</h1>
+  <nav aria-label="Hauptnavigation">
+    
+    <a href="index.html">
+    <span class="nav-symbol">🏠</span>
+    <span>Start</span></a>
+    
+    <a href="entdecken.html">
+      <span class="nav-symbol">🧭</span>
+    <span>Entdecken</span></a>
+      
+    <a href="spielen.html">
+  <span class="nav-symbol">🧩</span>
+    <span>Spielen</span></a>
+
+    <a href="spieleentwickeln.html">
+        <span class="nav-symbol">⭐</span>
+    <span>Spiele Entwicklung</span></a>
+
+     <a href="ueber-mich.html">
+  <span class="nav-symbol">📖</span>
+    <span>Über mich</span></a>
+    
+    <a href="geschichte.html">
+  <span class="nav-symbol">🎒</span>
+    <span>Geschichte</span></a>
+    
+    <a href="hilfe.html">
+  <span class="nav-symbol">💚</span>
+    <span>Hilfe</span></a>
+
+  <from class="suchfeld" role"search">
+      <label for="suche">🔍</label>
+      <input
+        type="search"
+        id="suche"
+        name="suche"
+        placeholder="Suche..."
+        >
+  </from>
+    
+  </nav>
+</header>
+  
+<div class="willkommen">
+    <img src="bilder/startbild1.png"
+         alt="Bunte Fantasielandschaft mit See, Bergen und Schloss"
+         class="titelbild">
+
+    <h2 class="willkommen-text">
+       Herzlich Willkommen im Universum der Spiele
+      hier kannst du die große Welt der Spiele entdecken, verstehen und erleben.
+    </h2>
+</div>
+
+<section>
+  <div class = "kacheln"> 
+    
+    <a href="entdecken.html" class="kachel">
+      <span class="kachel-symbol" aria-hidden="true">🧭</span>
+      <h2>Spielgeschichte</h2>
+      <p>Von den ersten Würfeln bis zur digitalen Werlten - 
+        entdecke, wie das Spielen unsere Welt verändert hat!</p>
+      <span class="kachel-pfeil" aria-hidden="true">➜</span>
+    </a>
+           
+    <a href="spielen.html" class="kachel">
+      <span class="kachel-symbol" aria-hidden="true">🧩</span>
+      <h2>Spiellexiokon</h2>
+      <p>Von A wie Abenteuer bis Z wie Zufall - 
+      entdecke die Geheimnisse hinter den Spielen!</p>
+      <span class="kachel-pfeil" aria-hidden="true">➜</span>
+    </a>
+     
+    <a href="staerken.html" class="kachel">
+      <span class="kachel-symbol" aria-hidden="true">⭐</span>
+      <h2>Spiele erleben</h2>
+      <p>Ob knobeln, tüftlen, oder neue Welt entdecken - 
+      hier wirst du selber zum Helden!</p>
+      <span class="kachel-pfeil" aria-hidden="true">➜</span>
+    </a>
+    
+    <a href="ueber-mich.html" class="kachel kachel-ueber-mich">
+      <span class="kachel-symbol" aria-hidden="true">👤</span>
+      <h2>Über mich</h2>
+      <p>Komm an Board und entdecke, wer hier die neue Spielewelt erschafft 
+      und warum Spielen und Etwickeln für mich mehr ist als nur ein Zeitvertreib.</p>
+      <span class="kachel-pfeil" aria-hidden="true">➜</span>
+    </a>
+    
+    <a href="alltag.html" class="kachel">
+      <span class="kachel-symbol" aria-hidden="true">🎒</span>
+      <h2>Spiele entwickeln</h2>
+      <p>Erfinde eigene Welten, erschaffe Spielfiguren und entdecke den Spielentwcikler in dir!</p>  
+      <span class="kachel-pfeil" aria-hidden="true">➜</span>
+    </a> 
+
+    <a href="hilfe.html" class="kachel hilfe">
+      <span class="kachel-symbol">❓</span>
+      <h2>Hier bekommst du Hilfe</h2>
+      <p>Fragezeichen im Kopf? 
+        Wenn du mal nicht weiter weißt, findest du hier 
+        Tipps, Tricks und Unterstützung für deine Mission </p>
+      <span class="kachel-pfeil">➜</span>
+    </a>
+      
+  </div>
+</section>
+  <footer>
+
+  <p>
+    Ein Studienprojekt im Modul Webprogrammierung
+    von Nadine Liesner
+  </p>
+
+  <div class="footer-links">
+
+    <a href="datenschutz.html">
+      Datenschutz
+    </a>
+
+    <a href="impressum.html">
+      Impressum
+    </a>
+
+    <a href="#seitenanfang">
+      ↑ Nach oben
+    </a>
+
+  </div>
+
+  <p>© 2026 Universum der Spiele</p>
+
+  </footer>
+  
+</body>
+ 
+</html>
