@@ -1,6 +1,6 @@
 
 /* =====================================
-   VIELFALIA – GRUNDGESTALTUNG
+   UNIVERSUM DER SPIELE – GRUNDGESTALTUNG
    ===================================== */
 
 * {
@@ -20,7 +20,7 @@ body {
 
 /* Hintergrund der Startseite */
 .startseite {
-    background-color: #E8F2E5;
+    background-color: #080B25;
 }
 
 
@@ -30,7 +30,7 @@ body {
 
 header,
 .kopfzeile {
-    background-color: #24543D;
+    background-color: #10133B;
     color: white;
 }
 
@@ -171,7 +171,7 @@ nav input[type="search"] {
     padding: 24px;
 
     border-radius: 20px;
-    color: #222222;
+    color: #6038B5;
     text-align: center;
     text-decoration: none;
     cursor: pointer;
@@ -184,7 +184,7 @@ nav input[type="search"] {
 }
 
 .kachel:focus-visible {
-    outline: 3px solid #173F2E;
+    outline: 3px solid #A66BFF;
     outline-offset: 4px;
 }
 
@@ -212,7 +212,7 @@ nav input[type="search"] {
     margin-top: auto;
 
     border-radius: 50%;
-    background-color: #244C3A;
+    background-color: #38C9FF;
     color: white;
     font-size: 24px;
 }
@@ -224,7 +224,7 @@ nav input[type="search"] {
 
 /* 1. Entdecken – Lila */
 .kacheln > .kachel:nth-child(1) {
-    background-color: #D8C4F0;
+    background-color: #493080;
 }
 
 /* 2. Stärken – Gelb */
@@ -249,7 +249,7 @@ nav input[type="search"] {
 
 /* 6. Hilfe – Blau */
 .kacheln > .kachel:nth-child(6) {
-    background-color: #A9D5F5;
+    background-color: #126578;
 }
 
 
