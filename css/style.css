@@ -224,17 +224,16 @@ nav input[type="search"] {
 
 /* 1. Entdecken – Lila */
 .kacheln > .kachel:nth-child(1) {
-    background-color: #493080;
+    background-color: #886D90;
 }
 
 /* 2. Stärken – Gelb */
 .kacheln > .kachel:nth-child(2) {
-    background-color: #FFE69A;
-}
+    background-color: #869F90
 
 /* 3. Spielen – Grün */
 .kacheln > .kachel:nth-child(3) {
-    background-color: #B8DEA8;
+    background-color: #002876;
 }
 
 /* 4. Über mich – Braun */
