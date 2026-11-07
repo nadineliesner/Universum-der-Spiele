@@ -197,17 +197,72 @@ footer {
   </p>
 </header>
 
-<nav aria-label="Hauptnavigation">
-  <a href="index.html">Start</a>
-  <a href="spielgeschichte.html" aria-current="page">
-    Spielgeschichte
-  </a>
-  <a href="spielgenres.html">Spielgenres</a>
-  <a href="spiele-erleben.html">Spiele erleben</a>
-  <a href="spieleentwickeln.html">Spiele entwickeln</a>
-  <a href="ueber-mich.html">Über mich</a>
-  <a href="hilfe.html">Hilfe</a>
-</nav>
+  <!-- KOPFZEILE -->
+  <header class="kopfzeile">
+
+    <h1>Universum der Spiele</h1>
+
+    <nav aria-label="Hauptnavigation">
+
+      <a href="index.html" aria-current="page">
+        <span class="nav-symbol" aria-hidden="true">🏠</span>
+        <span>Start</span>
+      </a>
+
+      <a href="geschichte.html">
+        <span class="nav-symbol" aria-hidden="true">🕰️</span>
+        <span>Geschichte</span>
+      </a>
+
+      <a href="lexikon.html">
+        <span class="nav-symbol" aria-hidden="true">📚</span>
+        <span>Lexikon</span>
+      </a>
+
+      <a href="erleben.html">
+        <span class="nav-symbol" aria-hidden="true">🎮</span>
+        <span>Spielen</span>
+      </a>
+
+      <a href="ueber-mich.html">
+        <span class="nav-symbol" aria-hidden="true">👤</span>
+        <span>Über mich</span>
+      </a>
+
+      <a href="entwicklung.html">
+        <span class="nav-symbol" aria-hidden="true">🛠️</span>
+        <span>Entwickeln</span>
+      </a>
+
+      <a href="hilfe.html">
+        <span class="nav-symbol" aria-hidden="true">❓</span>
+        <span>Hilfe</span>
+      </a>
+
+    </nav>
+
+    <!-- Suchfunktion wird später ergänzt -->
+    <div class="suchfeld">
+      <label for="suche">🔍 Suche</label>
+      <input
+        type="search"
+        id="suche"
+        name="suche"
+        placeholder="Suche im Spieleuniversum ..."
+        disabled
+        aria-describedby="suchhinweis">
+
+      <span id="suchhinweis">
+        Die Suchfunktion kommt bald.
+      </span>
+    </div>
+
+
+<img src="bilder/universum-der-spiele.png"
+     alt="Universum der Spiele">
+
+    
+  </header>
 
 <main>
 
