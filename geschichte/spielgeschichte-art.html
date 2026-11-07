@@ -1,0 +1,244 @@
+
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Spielgeschichte | Universum der Spiele</title>
+
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(135deg, #10132b, #251547);
+  color: #f5f2ff;
+  line-height: 1.7;
+}
+
+header {
+  background: #171a3b;
+  text-align: center;
+  padding: 45px 20px;
+}
+
+h1 { color: #d4baff; }
+h2 { color: #b69aff; }
+
+nav {
+  background: #25204a;
+  padding: 15px;
+  text-align: center;
+}
+
+nav a {
+  display: inline-block;
+  color: white;
+  margin: 8px;
+  text-decoration: none;
+}
+
+nav a:hover,
+nav a:focus-visible {
+  color: #e1c8ff;
+  text-decoration: underline;
+}
+
+main {
+  max-width: 1100px;
+  margin: auto;
+  padding: 30px 18px;
+}
+
+.einleitung {
+  text-align: center;
+  margin-bottom: 35px;
+}
+
+.kacheln {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 22px;
+}
+
+.kachel {
+  background: #222447;
+  border: 1px solid #504779;
+  border-radius: 18px;
+  padding: 25px;
+  text-align: center;
+  transition: transform 0.2s, background 0.2s;
+}
+
+.kachel:hover {
+  transform: translateY(-5px);
+  background: #35305f;
+}
+
+.symbol {
+  font-size: 3rem;
+}
+
+.kachel h2 {
+  font-size: 1.3rem;
+}
+
+.button {
+  display: inline-block;
+  background: #6551a5;
+  color: white;
+  padding: 12px 20px;
+  border-radius: 10px;
+  text-decoration: none;
+  margin-top: 12px;
+}
+
+.button:hover,
+.button:focus-visible {
+  background: #8169c6;
+}
+
+footer {
+  background: #111329;
+  text-align: center;
+  padding: 25px;
+  margin-top: 40px;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <h1>📜 Geschichte der Spiele</h1>
+  <p>Entdecke die Vergangenheit verschiedener Spielarten</p>
+</header>
+
+<nav aria-label="Hauptnavigation">
+  <a href="index.html">Start</a>
+  <a href="spielgeschichte.html" aria-current="page">Spielgeschichte</a>
+  <a href="spielgenres.html">Spielgenres</a>
+  <a href="spiele-erleben.html">Spiele erleben</a>
+  <a href="spieleentwickeln.html">Spiele entwickeln</a>
+  <a href="ueber-mich.html">Über mich</a>
+  <a href="hilfe.html">Hilfe</a>
+</nav>
+
+<main>
+
+<section class="einleitung">
+  <h2>🌌 Jedes Spiel hat eine Geschichte</h2>
+
+  <p>
+    Woher kommen Brettspiele?
+    Wann entstanden Computerspiele?
+    Und wie entwickelten sich Rollenspiele?
+  </p>
+
+  <p>
+    Wähle eine Spielart und
+    entdecke ihre Geschichte!
+  </p>
+</section>
+
+<div class="kacheln">
+
+  <article class="kachel">
+    <div class="symbol">🎲</div>
+    <h2>Brettspiele</h2>
+    <p>
+      Von antiken Spielbrettern
+      bis zu modernen Strategiespielen.
+    </p>
+    <a class="button" href="geschichte-brettspiele.html">
+      Geschichte entdecken
+    </a>
+  </article>
+
+  <article class="kachel">
+    <div class="symbol">🃏</div>
+    <h2>Kartenspiele</h2>
+    <p>
+      Von frühen Spielkarten
+      bis zu modernen Kartenspielen.
+    </p>
+    <a class="button" href="geschichte-kartenspiele.html">
+      Geschichte entdecken
+    </a>
+  </article>
+
+  <article class="kachel">
+    <div class="symbol">💻</div>
+    <h2>Computerspiele</h2>
+    <p>
+      Von frühen Experimenten
+      zu riesigen digitalen Spielwelten.
+    </p>
+    <a class="button" href="entstehung-computerspiele.html">
+      Geschichte entdecken
+    </a>
+  </article>
+
+  <article class="kachel">
+    <div class="symbol">🕹️</div>
+    <h2>Spielkonsolen</h2>
+    <p>
+      Von Atari über Nintendo
+      bis zu PlayStation und Xbox.
+    </p>
+    <a class="button" href="geschichte-spielkonsolen.html">
+      Geschichte entdecken
+    </a>
+  </article>
+
+  <article class="kachel">
+    <div class="symbol">🐉</div>
+    <h2>Rollenspiele</h2>
+    <p>
+      Von Fantasiespielen
+      zu Pen & Paper und digitalen RPGs.
+    </p>
+    <a class="button" href="geschichte-rollenspiele.html">
+      Geschichte entdecken
+    </a>
+  </article>
+
+  <article class="kachel">
+    <div class="symbol">🧠</div>
+    <h2>Lernspiele</h2>
+    <p>
+      Von pädagogischen Spielmaterialien
+      bis zu digitalen Lernspielen.
+    </p>
+    <a class="button" href="geschichte-lernspiele.html">
+      Geschichte entdecken
+    </a>
+  </article>
+
+  <article class="kachel">
+    <div class="symbol">🧸</div>
+    <h2>Kinderspiele</h2>
+    <p>
+      Von traditionellen
+      Bewegungsspielen bis heute.
+    </p>
+    <a class="button" href="geschichte-kinderspiele.html">
+      Geschichte entdecken
+    </a>
+  </article>
+
+</div>
+
+</main>
+
+<footer>
+  <p>🌌 Universum der Spiele</p>
+  <p>Entdecken · Spielen · Verstehen · Gestalten</p>
+</footer>
+
+</body>
+</html>
