@@ -1,0 +1,736 @@
+
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+  <meta charset="UTF-8">
+
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+  <meta name="description"
+        content="Entdecke Spiele zum Mitmachen:
+        digitale Minispiele, Rätsel, Quizze,
+        Lernspiele, Abenteuer und
+        barrierearme Spielerlebnisse.">
+
+  <title>Spiele erleben | Universum der Spiele</title>
+
+  <link rel="stylesheet" href="css/style.css">
+
+  <style>
+
+    /* =====================================
+       SPIELE ERLEBEN – GESTALTUNG
+       ===================================== */
+
+    .erleben-einleitung {
+      max-width: 950px;
+      margin: 0 auto;
+      padding: 45px 20px 25px;
+      text-align: center;
+    }
+
+    .erleben-einleitung h2 {
+      color: #E3C8FF;
+      font-size: clamp(26px, 4vw, 40px);
+      margin: 0 0 15px;
+    }
+
+    .erleben-einleitung p {
+      font-size: 18px;
+      line-height: 1.7;
+    }
+
+    /* THEMENKACHELN */
+
+    .erleben-themen {
+      max-width: 1150px;
+      margin: 0 auto;
+      padding: 20px 20px 50px;
+    }
+
+    .erleben-themen > h2 {
+      text-align: center;
+      color: white;
+      margin-bottom: 25px;
+    }
+
+    .erleben-raster {
+      display: grid;
+      grid-template-columns:
+        repeat(4, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .erleben-kachel {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+
+      min-height: 190px;
+      padding: 22px 15px;
+
+      border-radius: 20px;
+      border: 1px solid #82A7D8;
+
+      background: linear-gradient(
+        145deg,
+        #176B83,
+        #354A91
+      );
+
+      color: white;
+      text-align: center;
+      text-decoration: none;
+
+      transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+    }
+
+    .erleben-kachel:hover {
+      transform: translateY(-5px);
+      box-shadow:
+        0 10px 25px rgba(105,201,255,0.3);
+    }
+
+    .erleben-kachel:focus-visible {
+      outline: 3px solid #FFE69A;
+      outline-offset: 4px;
+    }
+
+    .erleben-symbol {
+      font-size: 42px;
+      line-height: 1.3;
+    }
+
+    .erleben-kachel h3 {
+      margin: 0;
+      font-size: 19px;
+      line-height: 1.4;
+    }
+
+    /* SPIELEBEREICHE */
+
+    .erleben-inhalte {
+      max-width: 950px;
+      margin: 0 auto;
+      padding: 0 20px 60px;
+    }
+
+    .erleben-abschnitt {
+      margin-bottom: 25px;
+      padding: 28px;
+
+      background: rgba(30, 30, 75, 0.85);
+      border: 1px solid #594A98;
+      border-radius: 20px;
+    }
+
+    .erleben-abschnitt h2 {
+      margin-top: 0;
+      color: #DCC4FF;
+      font-size: 25px;
+    }
+
+    .erleben-abschnitt h3 {
+      color: #A8DEFF;
+      font-size: 20px;
+    }
+
+    .erleben-abschnitt p,
+    .erleben-abschnitt li {
+      font-size: 17px;
+      line-height: 1.7;
+    }
+
+    .erleben-abschnitt ul {
+      padding-left: 25px;
+    }
+
+    .erleben-abschnitt a {
+      color: #A8DEFF;
+    }
+
+    /* HINWEIS AUF GEPLANTE SPIELE */
+
+    .spiel-hinweis {
+      margin-top: 20px;
+      padding: 16px;
+
+      background: #253A69;
+      border-left: 4px solid #69C9FF;
+      border-radius: 10px;
+    }
+
+    .spiel-hinweis p {
+      margin: 0;
+    }
+
+    .zurueck-link {
+      display: inline-block;
+      margin-top: 15px;
+      font-weight: bold;
+    }
+
+    /* TABLET */
+
+    @media (max-width: 900px) {
+      .erleben-raster {
+        grid-template-columns:
+          repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    /* SMARTPHONE */
+
+    @media (max-width: 600px) {
+      .erleben-raster {
+        grid-template-columns: 1fr;
+      }
+
+      .erleben-kachel {
+        min-height: 145px;
+      }
+
+      .erleben-abschnitt {
+        padding: 20px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .erleben-kachel {
+        transition: none;
+      }
+
+      .erleben-kachel:hover {
+        transform: none;
+      }
+    }
+
+  </style>
+
+</head>
+
+<body id="seitenanfang" class="startseite">
+
+  <a class="skip-link" href="#hauptinhalt">
+    Direkt zum Inhalt
+  </a>
+
+  <!-- KOPFZEILE -->
+
+  <header class="kopfzeile">
+
+    <h1>Universum der Spiele</h1>
+
+    <nav aria-label="Hauptnavigation">
+
+      <a href="index.html">
+        <span class="nav-symbol"
+              aria-hidden="true">🏠</span>
+        <span>Start</span>
+      </a>
+
+      <a href="geschichte.html">
+        <span class="nav-symbol"
+              aria-hidden="true">🕰️</span>
+        <span>Spielgeschichte</span>
+      </a>
+
+      <a href="spiellexikon.html">
+        <span class="nav-symbol"
+              aria-hidden="true">📚</span>
+        <span>Spiellexikon</span>
+      </a>
+
+      <a href="spiele-erleben.html"
+         aria-current="page">
+        <span class="nav-symbol"
+              aria-hidden="true">🎮</span>
+        <span>Spiele erleben</span>
+      </a>
+
+      <a href="spieleentwickeln.html">
+        <span class="nav-symbol"
+              aria-hidden="true">🛠️</span>
+        <span>Spiele entwickeln</span>
+      </a>
+
+      <a href="ueber-mich.html">
+        <span class="nav-symbol"
+              aria-hidden="true">👤</span>
+        <span>Über mich</span>
+      </a>
+
+      <a href="hilfe.html">
+        <span class="nav-symbol"
+              aria-hidden="true">❓</span>
+        <span>Hilfe</span>
+      </a>
+
+    </nav>
+
+  </header>
+
+  <main id="hauptinhalt">
+
+    <!-- EINLEITUNG -->
+
+    <section class="erleben-einleitung">
+
+      <h2>🎮 Dein Abenteuer beginnt hier!</h2>
+
+      <p>
+        Willkommen im interaktiven
+        Spieleuniversum!
+      </p>
+
+      <p>
+        Hier kannst du künftig
+        spannende Rätsel lösen,
+        dein Wissen testen,
+        eigene Abenteuer erleben
+        und neue Spiele entdecken.
+      </p>
+
+      <p>
+        Wähle deine nächste Spielmission!
+      </p>
+
+    </section>
+
+    <!-- ACHT THEMENKACHELN -->
+
+    <section class="erleben-themen"
+             aria-labelledby="themen-titel">
+
+      <h2 id="themen-titel">
+        Entdecke die acht Spielwelten
+      </h2>
+
+      <div class="erleben-raster">
+
+        <a href="#minispiele"
+           class="erleben-kachel">
+          <span class="erleben-symbol"
+                aria-hidden="true">🕹️</span>
+          <h3>Digitale Minispiele</h3>
+        </a>
+
+        <a href="#raetsel"
+           class="erleben-kachel">
+          <span class="erleben-symbol"
+                aria-hidden="true">🧩</span>
+          <h3>Rätsel und Knobelaufgaben</h3>
+        </a>
+
+        <a href="#quiz"
+           class="erleben-kachel">
+          <span class="erleben-symbol"
+                aria-hidden="true">❓</span>
+          <h3>Quiz und Wissensspiele</h3>
+        </a>
+
+        <a href="#lernspiele"
+           class="erleben-kachel">
+          <span class="erleben-symbol"
+                aria-hidden="true">🧠</span>
+          <h3>Lernspiele</h3>
+        </a>
+
+        <a href="#abenteuer"
+           class="erleben-kachel">
+          <span class="erleben-symbol"
+                aria-hidden="true">🚀</span>
+          <h3>Interaktive Abenteuer</h3>
+        </a>
+
+        <a href="#ausdrucken"
+           class="erleben-kachel">
+          <span class="erleben-symbol"
+                aria-hidden="true">🖨️</span>
+          <h3>Spiele zum Ausdrucken</h3>
+        </a>
+
+        <a href="#mehrspieler"
+           class="erleben-kachel">
+          <span class="erleben-symbol"
+                aria-hidden="true">👥</span>
+          <h3>Spiele für mehrere Personen</h3>
+        </a>
+
+        <a href="#barrierearm"
+           class="erleben-kachel">
+          <span class="erleben-symbol"
+                aria-hidden="true">♿</span>
+          <h3>Barrierearme Spielerlebnisse</h3>
+        </a>
+
+      </div>
+
+    </section>
+
+    <!-- SPIELEINHALTE -->
+
+    <div class="erleben-inhalte">
+
+      <!-- MINISPIELE -->
+
+      <section id="minispiele"
+               class="erleben-abschnitt">
+
+        <h2>🕹️ Digitale Minispiele</h2>
+
+        <p>
+          Kleine digitale Spiele
+          bieten schnellen Spielspaß.
+          Sie können direkt im Browser
+          gespielt werden.
+        </p>
+
+        <h3>Mögliche Spiele</h3>
+
+        <ul>
+          <li>Reaktionsspiele</li>
+          <li>Memory</li>
+          <li>Geschicklichkeitsspiele</li>
+          <li>Suchspiele</li>
+          <li>Kleine Strategiespiele</li>
+        </ul>
+
+        <div class="spiel-hinweis">
+          <p>
+            🚧 Hier entstehen nach und nach
+            eigene digitale Minispiele.
+          </p>
+        </div>
+
+        <a href="#themen-titel"
+           class="zurueck-link">
+          ↑ Zurück zur Themenauswahl
+        </a>
+
+      </section>
+
+      <!-- RÄTSEL -->
+
+      <section id="raetsel"
+               class="erleben-abschnitt">
+
+        <h2>🧩 Rätsel und Knobelaufgaben</h2>
+
+        <p>
+          Hier ist dein Köpfchen gefragt!
+          Entdecke Aufgaben, bei denen
+          du logisch denken, kombinieren
+          und Lösungen finden kannst.
+        </p>
+
+        <h3>Mögliche Rätselarten</h3>
+
+        <ul>
+          <li>Logikrätsel</li>
+          <li>Zahlenrätsel</li>
+          <li>Bilderrätsel</li>
+          <li>Worträtsel</li>
+          <li>Geheimcodes entschlüsseln</li>
+        </ul>
+
+        <div class="spiel-hinweis">
+          <p>
+            🚧 Neue Rätselmissionen
+            werden hier ergänzt.
+          </p>
+        </div>
+
+        <a href="#themen-titel"
+           class="zurueck-link">
+          ↑ Zurück zur Themenauswahl
+        </a>
+
+      </section>
+
+      <!-- QUIZ -->
+
+      <section id="quiz"
+               class="erleben-abschnitt">
+
+        <h2>❓ Quiz und Wissensspiele</h2>
+
+        <p>
+          Teste dein Wissen
+          und entdecke spannende Fakten.
+        </p>
+
+        <h3>Mögliche Quizthemen</h3>
+
+        <ul>
+          <li>Spielgeschichte</li>
+          <li>Spielgenres</li>
+          <li>Bekannte Brettspiele</li>
+          <li>Computerspiele</li>
+          <li>Wissen über unsere Welt</li>
+        </ul>
+
+        <div class="spiel-hinweis">
+          <p>
+            🚧 Interaktive Quizze
+            sind für diesen Bereich geplant.
+          </p>
+        </div>
+
+        <a href="#themen-titel"
+           class="zurueck-link">
+          ↑ Zurück zur Themenauswahl
+        </a>
+
+      </section>
+
+      <!-- LERNSPIELE -->
+
+      <section id="lernspiele"
+               class="erleben-abschnitt">
+
+        <h2>🧠 Lernspiele</h2>
+
+        <p>
+          Lernen und Spielen
+          lassen sich miteinander verbinden.
+          Hier sollen Spiele entstehen,
+          die Wissen und Fähigkeiten
+          auf spielerische Weise fördern.
+        </p>
+
+        <h3>Mögliche Lernbereiche</h3>
+
+        <ul>
+          <li>Sprache und Lesen</li>
+          <li>Mathematik</li>
+          <li>Natur und Umwelt</li>
+          <li>Gedächtnis</li>
+          <li>Logisches Denken</li>
+          <li>Soziale Fähigkeiten</li>
+        </ul>
+
+        <div class="spiel-hinweis">
+          <p>
+            🚧 Die ersten Lernspiele
+            werden hier später vorgestellt.
+          </p>
+        </div>
+
+        <a href="#themen-titel"
+           class="zurueck-link">
+          ↑ Zurück zur Themenauswahl
+        </a>
+
+      </section>
+
+      <!-- ABENTEUER -->
+
+      <section id="abenteuer"
+               class="erleben-abschnitt">
+
+        <h2>🚀 Interaktive Abenteuer</h2>
+
+        <p>
+          Reise durch geheimnisvolle
+          Welten, entdecke verborgene Orte
+          und entscheide selbst,
+          wie deine Geschichte weitergeht.
+        </p>
+
+        <h3>Mögliche Abenteuer</h3>
+
+        <ul>
+          <li>Weltraummissionen</li>
+          <li>Fantasy-Abenteuer</li>
+          <li>Detektivgeschichten</li>
+          <li>Entdeckungsreisen</li>
+          <li>Entscheidungsgeschichten</li>
+        </ul>
+
+        <div class="spiel-hinweis">
+          <p>
+            🚧 Hier entstehen
+            interaktive Spielgeschichten.
+          </p>
+        </div>
+
+        <a href="#themen-titel"
+           class="zurueck-link">
+          ↑ Zurück zur Themenauswahl
+        </a>
+
+      </section>
+
+      <!-- AUSDRUCKEN -->
+
+      <section id="ausdrucken"
+               class="erleben-abschnitt">
+
+        <h2>🖨️ Spiele zum Ausdrucken</h2>
+
+        <p>
+          Nicht jedes Spiel braucht
+          einen Bildschirm.
+          Hier sollen Spielmaterialien
+          zum Herunterladen und
+          Ausdrucken angeboten werden.
+        </p>
+
+        <h3>Geplante Materialien</h3>
+
+        <ul>
+          <li>Spielkarten</li>
+          <li>Spielpläne</li>
+          <li>Rätselblätter</li>
+          <li>Suchbilder</li>
+          <li>Spielanleitungen</li>
+          <li>Bastelvorlagen</li>
+        </ul>
+
+        <div class="spiel-hinweis">
+          <p>
+            🚧 Druckvorlagen werden
+            nach und nach ergänzt.
+          </p>
+        </div>
+
+        <a href="#themen-titel"
+           class="zurueck-link">
+          ↑ Zurück zur Themenauswahl
+        </a>
+
+      </section>
+
+      <!-- MEHRSPIELER -->
+
+      <section id="mehrspieler"
+               class="erleben-abschnitt">
+
+        <h2>👥 Spiele für mehrere Personen</h2>
+
+        <p>
+          Gemeinsam spielen macht
+          oft besonders viel Freude.
+          Hier findest du künftig
+          Spiele für Familien,
+          Freunde und Gruppen.
+        </p>
+
+        <h3>Mögliche Spielarten</h3>
+
+        <ul>
+          <li>Kooperative Spiele</li>
+          <li>Teamspiele</li>
+          <li>Partyspiele</li>
+          <li>Gruppenrätsel</li>
+          <li>Gemeinsame Abenteuer</li>
+        </ul>
+
+        <div class="spiel-hinweis">
+          <p>
+            🚧 Neue Gruppenspiele
+            werden hier vorgestellt.
+          </p>
+        </div>
+
+        <a href="#themen-titel"
+           class="zurueck-link">
+          ↑ Zurück zur Themenauswahl
+        </a>
+
+      </section>
+
+      <!-- BARRIEREARME SPIELE -->
+
+      <section id="barrierearm"
+               class="erleben-abschnitt">
+
+        <h2>♿ Barrierearme Spielerlebnisse</h2>
+
+        <p>
+          Spielen soll möglichst
+          vielen Menschen offenstehen.
+          Deshalb sollen hier
+          Spiele mit unterschiedlichen
+          Zugangs- und Bedienmöglichkeiten
+          entstehen.
+        </p>
+
+        <h3>Mögliche Eigenschaften</h3>
+
+        <ul>
+          <li>Große und gut lesbare Schrift</li>
+          <li>Deutliche Farbkontraste</li>
+          <li>Symbole zusätzlich zu Farben</li>
+          <li>Bedienung mit der Tastatur</li>
+          <li>Verständliche Anleitungen</li>
+          <li>Anpassbare Schwierigkeitsgrade</li>
+          <li>Spielen ohne Zeitdruck</li>
+        </ul>
+
+        <p>
+          Nicht jede Anpassung ist
+          für jedes Spiel geeignet.
+          Deshalb sollen verschiedene
+          Bedürfnisse bei der Entwicklung
+          berücksichtigt und die Spiele
+          entsprechend getestet werden.
+        </p>
+
+        <div class="spiel-hinweis">
+          <p>
+            🚧 Barrierearme Spielangebote
+            werden schrittweise entwickelt.
+          </p>
+        </div>
+
+        <a href="#themen-titel"
+           class="zurueck-link">
+          ↑ Zurück zur Themenauswahl
+        </a>
+
+      </section>
+
+    </div>
+
+  </main>
+
+  <!-- FUSSZEILE -->
+
+  <footer class="fusszeile">
+
+    <p>
+      Ein Studienprojekt im Modul Webprogrammierung
+      von Nadine Liesner.
+    </p>
+
+    <nav class="footer-links"
+         aria-label="Rechtliche Informationen">
+
+      <a href="datenschutz.html">
+        Datenschutz
+      </a>
+
+      <a href="impressum.html">
+        Impressum
+      </a>
+
+      <a href="#seitenanfang">
+        ↑ Nach oben
+      </a>
+
+    </nav>
+
+    <p>© 2026 Universum der Spiele</p>
+
+  </footer>
+
+</body>
+</html>
