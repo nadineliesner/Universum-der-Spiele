@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Kontakt | Universum der Spiele</title>
+
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(135deg, #10132b, #251547);
+  color: #f5f2ff;
+  line-height: 1.7;
+}
+
+header {
+  background: #171a3b;
+  text-align: center;
+  padding: 45px 20px;
+}
+
+h1 {
+  color: #d4baff;
+}
+
+h2 {
+  color: #b69aff;
+}
+
+nav {
+  background: #25204a;
+  padding: 15px;
+  text-align: center;
+}
+
+nav a {
+  display: inline-block;
+  color: white;
+  margin: 8px;
+  text-decoration: none;
+}
+
+nav a:hover,
+nav a:focus-visible {
+  color: #d4baff;
+  text-decoration: underline;
+}
+
+main {
+  max-width: 750px;
+  margin: 40px auto;
+  padding: 20px;
+}
+
+section {
+  background: #211d43;
+  padding: 30px;
+  border-radius: 18px;
+  border: 1px solid #65519a;
+}
+
+label {
+  display: block;
+  margin-top: 20px;
+  margin-bottom: 7px;
+  font-weight: bold;
+}
+
+input,
+select,
+textarea {
+  width: 100%;
+  padding: 13px;
+  border-radius: 10px;
+  border: 2px solid #7766aa;
+  background: #15142f;
+  color: white;
+  font: inherit;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  outline: 3px solid #d4baff;
+  outline-offset: 2px;
+}
+
+textarea {
+  min-height: 150px;
+  resize: vertical;
+}
+
+.datenschutz {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  margin-top: 25px;
+}
+
+.datenschutz input {
+  width: auto;
+  margin-top: 7px;
+}
+
+.datenschutz label {
+  margin: 0;
+  font-weight: normal;
+}
+
+a {
+  color: #d4baff;
+}
+
+button {
+  background: #9772e8;
+  color: #10132b;
+  padding: 15px 30px;
+  border: none;
+  border-radius: 12px;
+  font-size: 17px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 25px;
+}
+
+button:hover {
+  background: #c5a8ff;
+}
+
+button:focus-visible {
+  outline: 3px solid white;
+  outline-offset: 3px;
+}
+
+.hinweis {
+  font-size: 0.95rem;
+  color: #e2d7ff;
+}
+
+footer {
+  background: #171a3b;
+  text-align: center;
+  padding: 25px;
+  margin-top: 40px;
+}
+
+footer a {
+  margin: 10px;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <h1>📬 Kontakt</h1>
+  <p>Schicke eine Nachricht ins Spieleuniversum!</p>
+</header>
+
+<nav aria-label="Hauptnavigation">
+  <a href="index.html">Startseite</a>
+  <a href="ueber-mich.html">Über mich</a>
+  <a href="hilfe.html">Hilfe</a>
+</nav>
+
+<main>
+
+<section>
+  <h2>✨ Schreib mir!</h2>
+
+  <p>
+    Hast du eine Frage über Spiele?
+    Eine Idee oder einen Vorschlag?
+  </p>
+
+  <p>
+    Dann freue ich mich über deine Nachricht!
+  </p>
+
+  <!-- Nur Gestaltung: noch kein echter Versand -->
+  <form
+  action="https://formspree.io/f/mppperap"
+  method="POST"
+  id="kontaktformular"
+>
+    <label for="name">Wie heißt du?</label>
+    <input
+      type="text"
+      id="name"
+      name="name"
+      autocomplete="name"
+      required
+    >
+
+    <label for="email">Deine E-Mail-Adresse</label>
+    <input
+      type="email"
+      id="email"
+      name="email"
+      autocomplete="email"
+      required
+    >
+
+    <label for="betreff">Worum geht es?</label>
+    <select id="betreff" name="betreff" required>
+      <option value="">Bitte auswählen</option>
+      <option value="frage">Ich habe eine Frage</option>
+      <option value="spielidee">Ich habe eine Spielidee</option>
+      <option value="fehler">Ich habe einen Fehler gefunden</option>
+      <option value="zusammenarbeit">Zusammenarbeit</option>
+      <option value="sonstiges">Etwas anderes</option>
+    </select>
+
+    <label for="nachricht">Deine Nachricht</label>
+    <textarea
+      id="nachricht"
+      name="nachricht"
+      placeholder="Schreibe deine Nachricht hier ..."
+      required
+    ></textarea>
+
+    <div class="datenschutz">
+      <input
+        type="checkbox"
+        id="datenschutz"
+        name="datenschutz"
+        required
+      >
+
+      <label for="datenschutz">
+        Ich habe die
+        <a href="datenschutz.html">Datenschutzerklärung</a>
+        gelesen. Meine Angaben dürfen zur
+        Bearbeitung meiner Nachricht verwendet werden.
+      </label>
+    </div>
+
+    <button type="submit">
+      🚀 Nachricht senden
+    </button>
+
+    <p class="hinweis">
+      Das Formular ist noch im Aufbau.
+      Nachrichten werden derzeit nicht versendet.
+    </p>
+
+    <p id="status" role="status" aria-live="polite"></p>
+
+  </form>
+</section>
+
+</main>
+
+<footer>
+  <p>© 2026 Universum der Spiele</p>
+
+  <a href="index.html">Startseite</a>
+  <a href="impressum.html">Impressum</a>
+  <a href="datenschutz.html">Datenschutz</a>
+</footer>
+
+<script>
+document.getElementById("kontaktformular")
+  .addEventListener("submit", function(event) {
+    event.preventDefault();
+
+    document.getElementById("status").textContent =
+      "Das Formular ist noch nicht mit einem Versanddienst verbunden. Deine Nachricht wurde nicht verschickt.";
+  });
+</script>
+
+</body>
+</html>
