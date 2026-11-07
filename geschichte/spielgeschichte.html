@@ -1,0 +1,252 @@
+
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Spielgeschichte | Universum der Spiele</title>
+
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(135deg, #10132b, #251547);
+  color: #f5f2ff;
+  line-height: 1.7;
+}
+
+header {
+  background: #171a3b;
+  text-align: center;
+  padding: 45px 20px;
+}
+
+h1 { color: #d4baff; }
+h2 { color: #b69aff; }
+
+nav {
+  background: #25204a;
+  padding: 15px;
+  text-align: center;
+}
+
+nav a {
+  display: inline-block;
+  color: white;
+  margin: 8px;
+  text-decoration: none;
+}
+
+nav a:hover,
+nav a:focus-visible {
+  color: #e1c8ff;
+  text-decoration: underline;
+}
+
+main {
+  max-width: 1000px;
+  margin: auto;
+  padding: 25px 18px;
+}
+
+.einleitung {
+  text-align: center;
+  margin-bottom: 35px;
+}
+
+.zeitreise {
+  position: relative;
+  border-left: 4px solid #b69aff;
+  margin-left: 18px;
+  padding-left: 25px;
+}
+
+.epoche {
+  position: relative;
+  background: #222447;
+  border: 1px solid #504779;
+  border-radius: 18px;
+  padding: 25px;
+  margin-bottom: 25px;
+}
+
+.epoche::before {
+  content: "";
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  background: #d4baff;
+  border-radius: 50%;
+  left: -35px;
+  top: 30px;
+}
+
+.zeit {
+  color: #e1c8ff;
+  font-weight: bold;
+}
+
+.button {
+  display: inline-block;
+  background: #6551a5;
+  color: white;
+  padding: 12px 20px;
+  border-radius: 10px;
+  text-decoration: none;
+  margin-top: 12px;
+}
+
+.button:hover,
+.button:focus-visible {
+  background: #8169c6;
+}
+
+footer {
+  background: #111329;
+  text-align: center;
+  padding: 25px;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <h1>⏳ Die Geschichte der Spiele</h1>
+  <p>Eine Zeitreise durch das Universum der Spiele</p>
+</header>
+
+<nav aria-label="Hauptnavigation">
+  <a href="index.html">Start</a>
+  <a href="spielgeschichte.html" aria-current="page">Spielgeschichte</a>
+  <a href="spielgenres.html">Spielgenres</a>
+  <a href="spiele-erleben.html">Spiele erleben</a>
+  <a href="spieleentwickeln.html">Spiele entwickeln</a>
+  <a href="ueber-mich.html">Über mich</a>
+  <a href="hilfe.html">Hilfe</a>
+</nav>
+
+<main>
+
+<section class="einleitung">
+  <h2>🌌 Reise durch die Zeit</h2>
+  <p>
+    Seit Jahrtausenden spielen Menschen.
+    Doch wie haben sich Spiele verändert?
+  </p>
+  <p>
+    Entdecke sieben Zeitalter
+    und erfahre, wie unsere
+    heutigen Spiele entstanden sind.
+  </p>
+</section>
+
+<div class="zeitreise">
+
+  <section class="epoche">
+    <p class="zeit">Bis ca. 3000 v. Chr.</p>
+    <h2>🪨 1. Steinzeit</h2>
+    <p>
+      Spielen mit Naturmaterialien,
+      Bewegung, Nachahmung
+      und ersten Spielideen.
+    </p>
+    <a class="button" href="spiele-steinzeit.html">
+      Steinzeit entdecken
+    </a>
+  </section>
+
+  <section class="epoche">
+    <p class="zeit">Ca. 3000 v. Chr. – 500 n. Chr.</p>
+    <h2>🏺 2. Antike</h2>
+    <p>
+      Senet, das Königliche Spiel von Ur,
+      Würfelspiele und Spiele
+      im alten Griechenland und Rom.
+    </p>
+    <a class="button" href="spiele-antike.html">
+      Antike entdecken
+    </a>
+  </section>
+
+  <section class="epoche">
+    <p class="zeit">Ca. 500–1500</p>
+    <h2>🏰 3. Mittelalter</h2>
+    <p>
+      Schach, Mühle, Würfelspiele,
+      Kinderspiele und Ritterturniere.
+    </p>
+    <a class="button" href="spiele-mittelalter.html">
+      Mittelalter entdecken
+    </a>
+  </section>
+
+  <section class="epoche">
+    <p class="zeit">Ca. 1500–1800</p>
+    <h2>📜 4. Frühe Neuzeit</h2>
+    <p>
+      Gedruckte Spielkarten,
+      Gesellschaftsspiele und
+      neue Formen des Spielens.
+    </p>
+    <a class="button" href="spiele-neuzeit.html">
+      Neuzeit entdecken
+    </a>
+  </section>
+
+  <section class="epoche">
+    <p class="zeit">1800–1900</p>
+    <h2>🏭 5. Das 19. Jahrhundert</h2>
+    <p>
+      Industrielle Spielzeugherstellung,
+      Brettspiele, Baukästen
+      und pädagogische Spielmaterialien.
+    </p>
+    <a class="button" href="spiele-19-jahrhundert.html">
+      19. Jahrhundert entdecken
+    </a>
+  </section>
+
+  <section class="epoche">
+    <p class="zeit">1900–2000</p>
+    <h2>🕹️ 6. Das 20. Jahrhundert</h2>
+    <p>
+      Moderne Brettspiele,
+      erste Computerspiele,
+      Arcade-Automaten und
+      Spielkonsolen.
+    </p>
+    <a class="button" href="spiele-20-jahrhundert.html">
+      20. Jahrhundert entdecken
+    </a>
+  </section>
+
+  <section class="epoche">
+    <p class="zeit">Ab 2000</p>
+    <h2>🚀 7. Das 21. Jahrhundert</h2>
+    <p>
+      Online-Spiele, Smartphones,
+      Virtual Reality und
+      moderne digitale Spielwelten.
+    </p>
+    <a class="button" href="spiele-21-jahrhundert.html">
+      Zukunft entdecken
+    </a>
+  </section>
+
+</div>
+
+</main>
+
+<footer>
+  <p>🌌 Universum der Spiele</p>
+  <p>Entdecken · Spielen · Verstehen · Gestalten</p>
+</footer>
+
+</body>
+</html>
