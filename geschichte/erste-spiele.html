@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Die ersten Spiele | Universum der Spiele</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #10132b, #251547);
+      color: #f5f2ff;
+      line-height: 1.7;
+    }
+
+    header {
+      background: #171a3b;
+      text-align: center;
+      padding: 45px 20px;
+    }
+
+    h1 {
+      color: #d4baff;
+    }
+
+    h2 {
+      color: #b69aff;
+    }
+
+    nav {
+      background: #25204a;
+      padding: 15px;
+      text-align: center;
+    }
+
+    nav a {
+      display: inline-block;
+      color: white;
+      text-decoration: none;
+      margin: 8px;
+    }
+
+    nav a:hover,
+    nav a:focus-visible {
+      text-decoration: underline;
+      color: #e1c8ff;
+    }
+
+    main {
+      max-width: 1000px;
+      margin: auto;
+      padding: 25px 18px;
+    }
+
+    section {
+      background: #222447;
+      padding: 25px;
+      border-radius: 18px;
+      margin-bottom: 25px;
+      border: 1px solid #504779;
+    }
+
+    .spiele {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 20px;
+    }
+
+    .spielkarte {
+      background: #35305f;
+      padding: 22px;
+      border-radius: 15px;
+    }
+
+    .spielkarte h3 {
+      color: #e0caff;
+    }
+
+    .zeit {
+      color: #d6c1ff;
+      font-weight: bold;
+    }
+
+    .infobox {
+      background: #40346e;
+      border-left: 5px solid #b69aff;
+      padding: 18px;
+      border-radius: 10px;
+    }
+
+    .frage {
+      background: #35305f;
+      padding: 20px;
+      border-radius: 15px;
+    }
+
+    button {
+      background: #6551a5;
+      color: white;
+      border: none;
+      border-radius: 10px;
+      padding: 12px 20px;
+      cursor: pointer;
+      font-size: 1rem;
+    }
+
+    button:hover,
+    button:focus-visible {
+      background: #8169c6;
+    }
+
+    #antwort {
+      margin-top: 15px;
+      font-weight: bold;
+    }
+
+    .zurueck {
+      display: inline-block;
+      background: #6551a5;
+      color: white;
+      padding: 12px 20px;
+      border-radius: 10px;
+      text-decoration: none;
+    }
+
+    footer {
+      background: #111329;
+      text-align: center;
+      padding: 25px;
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <h1>🏺 Die ersten Spiele der Menschheit</h1>
+  <p>Entdecke die ältesten bekannten Spielwelten</p>
+</header>
+
+<nav aria-label="Hauptnavigation">
+  <a href="index.html">Start</a>
+  <a href="spielgeschichte.html">Spielgeschichte</a>
+  <a href="spielgenres.html">Spielgenres</a>
+  <a href="spiele-erleben.html">Spiele erleben</a>
+  <a href="spieleentwickeln.html">Spiele entwickeln</a>
+  <a href="ueber-mich.html">Über mich</a>
+  <a href="hilfe.html">Hilfe</a>
+</nav>
+
+<main>
+
+  <section>
+    <h2>🌍 Seit wann spielen Menschen?</h2>
+
+    <p>
+      Menschen spielen vermutlich schon seit
+      der Steinzeit. Doch die meisten frühen
+      Spiele hinterließen keine Spuren.
+    </p>
+
+    <p>
+      Die ältesten erhaltenen Spielbretter
+      zeigen uns, dass Menschen schon vor
+      Tausenden Jahren Regeln, Spielsteine
+      und Spielideen kannten.
+    </p>
+  </section>
+
+  <section>
+    <h2>🎲 Berühmte Spiele der Antike</h2>
+
+    <div class="spiele">
+
+      <article class="spielkarte">
+        <h3>🏺 Senet</h3>
+        <p class="zeit">Altes Ägypten – ab etwa 3100 v. Chr.</p>
+        <p>
+          Senet gehört zu den ältesten bekannten
+          Brettspielen. Zwei Personen bewegten
+          Spielsteine über ein Brett mit 30 Feldern.
+        </p>
+        <p>
+          Später erhielt das Spiel auch
+          eine religiöse Bedeutung.
+        </p>
+      </article>
+
+      <article class="spielkarte">
+        <h3>👑 Königliches Spiel von Ur</h3>
+        <p class="zeit">Mesopotamien – etwa 2600 v. Chr.</p>
+        <p>
+          Dieses Brettspiel wurde im Gebiet
+          des heutigen Irak gespielt.
+        </p>
+        <p>
+          Die Spielenden bewegten ihre Steine
+          mithilfe von Würfeln über das Brett.
+          Glück und Entscheidungen spielten
+          dabei eine Rolle.
+        </p>
+      </article>
+
+      <article class="spielkarte">
+        <h3>🦴 Knöchelchenspiele</h3>
+        <p class="zeit">Antike</p>
+        <p>
+          Menschen verwendeten kleine Tierknochen,
+          sogenannte Astragale, zum Spielen.
+        </p>
+        <p>
+          Sie dienten beispielsweise als
+          Geschicklichkeits- oder Zufallsspiel.
+        </p>
+      </article>
+
+      <article class="spielkarte">
+        <h3>⚪ Frühe Ballspiele</h3>
+        <p class="zeit">Verschiedene frühe Kulturen</p>
+        <p>
+          Ballspiele entwickelten sich in
+          unterschiedlichen Teilen der Welt.
+        </p>
+        <p>
+          Sie konnten Bewegung, Geschicklichkeit,
+          Gemeinschaft und Rituale verbinden.
+        </p>
+      </article>
+
+    </div>
+  </section>
+
+  <section>
+    <h2>🔍 Wie wurden Spiele entdeckt?</h2>
+
+    <p>
+      Archäologinnen und Archäologen finden
+      bei Ausgrabungen alte Spielbretter,
+      Würfel, Spielsteine und Abbildungen.
+    </p>
+
+    <div class="infobox">
+      <strong>Schon gewusst?</strong>
+      <p>
+        Nicht alle alten Spielregeln sind erhalten.
+        Forschende müssen deshalb manchmal
+        rekonstruieren, wie ein Spiel
+        funktioniert haben könnte.
+      </p>
+    </div>
+  </section>
+
+  <section>
+    <h2>🧠 Warum waren Spiele wichtig?</h2>
+
+    <p>
+      Schon früher konnten Spiele Menschen
+      zusammenbringen und ihnen helfen,
+      Fähigkeiten zu üben.
+    </p>
+
+    <ul>
+      <li>Geschicklichkeit trainieren</li>
+      <li>Gemeinschaft erleben</li>
+      <li>Strategien entwickeln</li>
+      <li>Freude und Spannung erleben</li>
+      <li>Traditionen weitergeben</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>🚀 Teste dein Wissen!</h2>
+
+    <div class="frage">
+      <h3>Welches Spiel stammt aus dem alten Ägypten?</h3>
+
+      <button type="button" onclick="pruefen('Ur')">
+        Spiel von Ur
+      </button>
+
+      <button type="button" onclick="pruefen('Senet')">
+        Senet
+      </button>
+
+      <button type="button" onclick="pruefen('Schach')">
+        Schach
+      </button>
+
+      <p id="antwort" role="status" aria-live="polite"></p>
+    </div>
+  </section>
+
+  <a class="zurueck" href="spielgeschichte.html">
+    ← Zurück zur Spielgeschichte
+  </a>
+
+</main>
+
+<footer>
+  <p>🌌 Universum der Spiele</p>
+  <p>Entdecken · Spielen · Verstehen · Gestalten</p>
+</footer>
+
+<script>
+  function pruefen(auswahl) {
+    const antwort = document.getElementById("antwort");
+
+    if (auswahl === "Senet") {
+      antwort.textContent =
+        "🌟 Richtig! Senet stammt aus dem alten Ägypten.";
+    } else {
+      antwort.textContent =
+        "🌙 Noch nicht ganz. Versuche es erneut!";
+    }
+  }
+</script>
+
+</body>
+</html>
