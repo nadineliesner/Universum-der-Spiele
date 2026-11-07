@@ -13,6 +13,160 @@
 
 body {
   margin: 0;
+  background: #10132b;
+  color: white;
+  font-family: Arial, sans-serif;
+  text-align: center;
+}
+
+header {
+  padding: 25px 15px;
+  background: #20143c;
+}
+
+h1 {
+  color: #d4baff;
+}
+
+.werkbank {
+  position: relative;
+  width: 100%;
+  max-width: 1536px;
+  margin: 20px auto;
+}
+
+.werkbank img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* Unsichtbare anklickbare Bereiche */
+.klick {
+  position: absolute;
+  display: block;
+  border: 2px solid transparent;
+  border-radius: 15px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.klick:hover,
+.klick:focus-visible {
+  border-color: #ffdb77;
+  background: rgba(255, 215, 100, 0.18);
+  box-shadow: 0 0 25px #ffdb77;
+  outline: none;
+}
+
+/* Positionen der Gegenstände */
+.wuerfel {
+  left: 19%;
+  top: 38%;
+  width: 17%;
+  height: 15%;
+}
+
+.sanduhr {
+  left: 35%;
+  top: 15%;
+  width: 14%;
+  height: 33%;
+}
+
+.figuren {
+  left: 49%;
+  top: 38%;
+  width: 34%;
+  height: 17%;
+}
+
+.karten {
+  left: 2%;
+  top: 51%;
+  width: 44%;
+  height: 22%;
+}
+
+.spielbrett {
+  left: 47%;
+  top: 52%;
+  width: 52%;
+  height: 23%;
+}
+
+.spielsteine {
+  left: 43%;
+  top: 69%;
+  width: 21%;
+  height: 15%;
+}
+
+footer {
+  padding: 20px;
+  color: #cbbbe9;
+}
+
+a {
+  color: #d4baff;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <h1>Die geheimnisvolle Werkbank</h1>
+  <p>Jeder Gegenstand verbirgt ein Abenteuer.</p>
+  <p>Berühre einen Gegenstand und entdecke seine Welt!</p>
+</header>
+
+<main>
+  <div class="werkbank">
+
+    <img src="werkbank.png"
+         alt="Magische Werkbank mit Würfeln, Karten, Spielfiguren, Sanduhr, Spielbrett und Spielsteinen">
+
+    <a class="klick wuerfel"
+       href="wuerfel.html"
+       aria-label="Würfel entdecken"
+       title="Würfel entdecken"></a>
+
+    <a class="klick sanduhr"
+       href="sanduhr.html"
+       aria-label="Zeit und Sanduhren entdecken"
+       title="Sanduhr"></a>
+
+    <a class="klick figuren"
+       href="spielfiguren.html"
+       aria-label="Spielfiguren entdecken"
+       title="Spielfiguren"></a>
+
+    <a class="klick karten"
+       href="karten.html"
+       aria-label="Spielkarten entdecken"
+       title="Spielkarten"></a>
+
+    <a class="klick spielbrett"
+       href="spielbretter.html"
+       aria-label="Spielbretter entdecken"
+       title="Spielbretter"></a>
+
+    <a class="klick spielsteine"
+       href="spielsteine.html"
+       aria-label="Spielsteine entdecken"
+       title="Spielsteine"></a>
+
+  </div>
+</main>
+
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
   font-family: Arial, sans-serif;
   background: linear-gradient(135deg, #10132b, #251547);
   color: #f5f2ff;
