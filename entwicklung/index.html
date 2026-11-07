@@ -1,0 +1,761 @@
+
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+  <meta name="description"
+        content="Lerne, wie Spiele entstehen:
+        von der ersten Idee über Charaktere,
+        Leveldesign und Programmierung
+        bis zum fertigen Spiel.">
+
+  <title>Spiele entwickeln | Universum der Spiele</title>
+
+  <link rel="stylesheet" href="css/style.css">
+
+  <style>
+    /* =====================================
+       SPIELE ENTWICKELN
+       ===================================== */
+
+    .entwicklung-einleitung {
+      max-width: 950px;
+      margin: 0 auto;
+      padding: 45px 20px 25px;
+      text-align: center;
+    }
+
+    .entwicklung-einleitung h2 {
+      color: #E3C8FF;
+      font-size: clamp(26px, 4vw, 40px);
+      margin: 0 0 15px;
+    }
+
+    .entwicklung-einleitung p {
+      font-size: 18px;
+      line-height: 1.7;
+    }
+
+    /* THEMENKACHELN */
+
+    .entwicklung-themen {
+      max-width: 1150px;
+      margin: 0 auto;
+      padding: 20px 20px 50px;
+    }
+
+    .entwicklung-themen > h2 {
+      text-align: center;
+      color: #FFFFFF;
+      margin-bottom: 25px;
+    }
+
+    .entwicklung-raster {
+      display: grid;
+      grid-template-columns:
+        repeat(3, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .entwicklung-kachel {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+
+      min-height: 190px;
+      padding: 22px;
+
+      border-radius: 20px;
+      border: 1px solid #9A84DB;
+
+      background: linear-gradient(
+        145deg,
+        #354A91,
+        #493487
+      );
+
+      color: white;
+      text-align: center;
+      text-decoration: none;
+
+      transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+    }
+
+    .entwicklung-kachel:hover {
+      transform: translateY(-5px);
+      box-shadow:
+        0 10px 25px rgba(185,140,242,0.3);
+    }
+
+    .entwicklung-kachel:focus-visible {
+      outline: 3px solid #FFE69A;
+      outline-offset: 4px;
+    }
+
+    .entwicklung-symbol {
+      font-size: 42px;
+      line-height: 1.3;
+    }
+
+    .entwicklung-kachel h3 {
+      margin: 0;
+      font-size: 19px;
+      line-height: 1.4;
+    }
+
+    /* WISSENSABSCHNITTE */
+
+    .entwicklung-inhalte {
+      max-width: 950px;
+      margin: 0 auto;
+      padding: 0 20px 60px;
+    }
+
+    .entwicklung-abschnitt {
+      margin-bottom: 25px;
+      padding: 28px;
+
+      background: rgba(30, 30, 75, 0.85);
+      border: 1px solid #594A98;
+      border-radius: 20px;
+    }
+
+    .entwicklung-abschnitt h2 {
+      margin-top: 0;
+      color: #DCC4FF;
+      font-size: 25px;
+    }
+
+    .entwicklung-abschnitt h3 {
+      color: #A8DEFF;
+      font-size: 20px;
+    }
+
+    .entwicklung-abschnitt p,
+    .entwicklung-abschnitt li {
+      font-size: 17px;
+      line-height: 1.7;
+    }
+
+    .entwicklung-abschnitt ul,
+    .entwicklung-abschnitt ol {
+      padding-left: 25px;
+    }
+
+    .entwicklung-abschnitt a {
+      color: #A8DEFF;
+    }
+
+    .zurueck-link {
+      display: inline-block;
+      margin-top: 15px;
+      font-weight: bold;
+    }
+
+    /* TABLET */
+
+    @media (max-width: 900px) {
+      .entwicklung-raster {
+        grid-template-columns:
+          repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    /* SMARTPHONE */
+
+    @media (max-width: 600px) {
+      .entwicklung-raster {
+        grid-template-columns: 1fr;
+      }
+
+      .entwicklung-kachel {
+        min-height: 145px;
+      }
+
+      .entwicklung-abschnitt {
+        padding: 20px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .entwicklung-kachel {
+        transition: none;
+      }
+
+      .entwicklung-kachel:hover {
+        transform: none;
+      }
+    }
+  </style>
+
+</head>
+
+<body id="seitenanfang" class="startseite">
+
+  <a class="skip-link" href="#hauptinhalt">
+    Direkt zum Inhalt
+  </a>
+
+  <!-- KOPFZEILE -->
+
+  <header class="kopfzeile">
+
+    <h1>Universum der Spiele</h1>
+
+    <nav aria-label="Hauptnavigation">
+
+      <a href="index.html">
+        <span class="nav-symbol"
+              aria-hidden="true">🏠</span>
+        <span>Start</span>
+      </a>
+
+      <a href="geschichte.html">
+        <span class="nav-symbol"
+              aria-hidden="true">🕰️</span>
+        <span>Spielgeschichte</span>
+      </a>
+
+      <a href="spiellexikon.html">
+        <span class="nav-symbol"
+              aria-hidden="true">📚</span>
+        <span>Spiellexikon</span>
+      </a>
+
+      <a href="spiele-erleben.html">
+        <span class="nav-symbol"
+              aria-hidden="true">🎮</span>
+        <span>Spiele erleben</span>
+      </a>
+
+      <a href="spieleentwickeln.html"
+         aria-current="page">
+        <span class="nav-symbol"
+              aria-hidden="true">🛠️</span>
+        <span>Spiele entwickeln</span>
+      </a>
+
+      <a href="ueber-mich.html">
+        <span class="nav-symbol"
+              aria-hidden="true">👤</span>
+        <span>Über mich</span>
+      </a>
+
+      <a href="hilfe.html">
+        <span class="nav-symbol"
+              aria-hidden="true">❓</span>
+        <span>Hilfe</span>
+      </a>
+
+    </nav>
+
+  </header>
+
+  <main id="hauptinhalt">
+
+    <!-- EINLEITUNG -->
+
+    <section class="entwicklung-einleitung">
+
+      <h2>🛠️ Werde zum Schöpfer eigener Spielwelten!</h2>
+
+      <p>
+        Jedes große Spiel beginnt
+        mit einer kleinen Idee.
+      </p>
+
+      <p>
+        Ob Brettspiel, Kartenspiel oder
+        digitales Abenteuer:
+        Hier entdeckst du Schritt für Schritt,
+        wie aus deiner Fantasie
+        ein eigenes Spiel entstehen kann.
+      </p>
+
+      <p>
+        Wähle deine nächste Entwicklungsmission!
+      </p>
+
+    </section>
+
+    <!-- NEUN THEMENKACHELN -->
+
+    <section class="entwicklung-themen"
+             aria-labelledby="themen-titel">
+
+      <h2 id="themen-titel">
+        Entdecke die neun Entwicklungsmissionen
+      </h2>
+
+      <div class="entwicklung-raster">
+
+        <a href="#spielidee"
+           class="entwicklung-kachel">
+          <span class="entwicklung-symbol"
+                aria-hidden="true">💡</span>
+          <h3>Von der Spielidee zum Konzept</h3>
+        </a>
+
+        <a href="#charaktere"
+           class="entwicklung-kachel">
+          <span class="entwicklung-symbol"
+                aria-hidden="true">🐉</span>
+          <h3>Spielgeschichten und Charaktere</h3>
+        </a>
+
+        <a href="#mechaniken"
+           class="entwicklung-kachel">
+          <span class="entwicklung-symbol"
+                aria-hidden="true">⚙️</span>
+          <h3>Spielregeln und Mechaniken</h3>
+        </a>
+
+        <a href="#leveldesign"
+           class="entwicklung-kachel">
+          <span class="entwicklung-symbol"
+                aria-hidden="true">🏰</span>
+          <h3>Leveldesign und Spielwelten</h3>
+        </a>
+
+        <a href="#gestaltung"
+           class="entwicklung-kachel">
+          <span class="entwicklung-symbol"
+                aria-hidden="true">🎨</span>
+          <h3>Grafik, Musik und Sound</h3>
+        </a>
+
+        <a href="#programmierung"
+           class="entwicklung-kachel">
+          <span class="entwicklung-symbol"
+                aria-hidden="true">💻</span>
+          <h3>Programmierung und Game Engines</h3>
+        </a>
+
+        <a href="#brettspiele"
+           class="entwicklung-kachel">
+          <span class="entwicklung-symbol"
+                aria-hidden="true">🎲</span>
+          <h3>Brettspiele selbst entwickeln</h3>
+        </a>
+
+        <a href="#prototypen"
+           class="entwicklung-kachel">
+          <span class="entwicklung-symbol"
+                aria-hidden="true">🧪</span>
+          <h3>Prototypen bauen und testen</h3>
+        </a>
+
+        <a href="#barrierefreiheit"
+           class="entwicklung-kachel">
+          <span class="entwicklung-symbol"
+                aria-hidden="true">♿</span>
+          <h3>Barrierefreiheit im Spieldesign</h3>
+        </a>
+
+      </div>
+
+    </section>
+
+    <!-- WISSENSINHALTE -->
+
+    <div class="entwicklung-inhalte">
+
+      <!-- SPIELIDEE -->
+
+      <section id="spielidee"
+               class="entwicklung-abschnitt">
+
+        <h2>💡 Von der Spielidee zum Konzept</h2>
+
+        <p>
+          Am Anfang eines Spiels steht
+          meistens eine Idee.
+          Vielleicht möchtest du eine
+          spannende Geschichte erzählen,
+          ein Rätsel entwickeln oder
+          Menschen zusammenbringen.
+        </p>
+
+        <h3>Die ersten Fragen</h3>
+
+        <ul>
+          <li>Für wen ist dein Spiel gedacht?</li>
+          <li>Was ist das Ziel des Spiels?</li>
+          <li>Was können die Spieler tun?</li>
+          <li>Was macht dein Spiel besonders?</li>
+          <li>Welche Materialien oder Geräte brauchst du?</li>
+        </ul>
+
+        <p>
+          Aus diesen Antworten entsteht
+          dein erstes Spielkonzept.
+        </p>
+
+        <a href="#themen-titel"
+           class="zurueck-link">
+          ↑ Zurück zur Themenauswahl
+        </a>
+
+      </section>
+
+      <!-- CHARAKTERE -->
+
+      <section id="charaktere"
+               class="entwicklung-abschnitt">
+
+        <h2>🐉 Spielgeschichten und Charaktere</h2>
+
+        <p>
+          Eine gute Spielgeschichte
+          kann Spieler neugierig machen
+          und ihnen einen Grund geben,
+          die Spielwelt zu erkunden.
+        </p>
+
+        <h3>Wichtige Bestandteile</h3>
+
+        <ul>
+          <li>Hauptfiguren und Nebenfiguren</li>
+          <li>Wünsche und Ziele der Figuren</li>
+          <li>Hindernisse und Konflikte</li>
+          <li>Die Umgebung der Geschichte</li>
+          <li>Entscheidungen und Konsequenzen</li>
+        </ul>
+
+        <p>
+          Nicht jedes Spiel braucht
+          eine ausführliche Geschichte.
+          Manchmal reicht eine einfache
+          Aufgabe als Ausgangspunkt.
+        </p>
+
+        <a href="#themen-titel"
+           class="zurueck-link">
+          ↑ Zurück zur Themenauswahl
+        </a>
+
+      </section>
+
+      <!-- MECHANIKEN -->
+
+      <section id="mechaniken"
+               class="entwicklung-abschnitt">
+
+        <h2>⚙️ Spielregeln und Mechaniken</h2>
+
+        <p>
+          Spielregeln erklären,
+          was erlaubt ist und
+          wann jemand gewinnt.
+        </p>
+
+        <p>
+          Spielmechaniken beschreiben,
+          wie Spieler mit dem Spiel
+          interagieren.
+        </p>
+
+        <h3>Beispiele</h3>
+
+        <ul>
+          <li>Würfeln und Figuren bewegen</li>
+          <li>Karten sammeln</li>
+          <li>Rätsel lösen</li>
+          <li>Ressourcen verwalten</li>
+          <li>Gegenstände kombinieren</li>
+          <li>Gemeinsam Missionen erfüllen</li>
+        </ul>
+
+        <a href="#themen-titel"
+           class="zurueck-link">
+          ↑ Zurück zur Themenauswahl
+        </a>
+
+      </section>
+
+      <!-- LEVELDESIGN -->
+
+      <section id="leveldesign"
+               class="entwicklung-abschnitt">
+
+        <h2>🏰 Leveldesign und Spielwelten</h2>
+
+        <p>
+          Beim Leveldesign gestaltest du
+          die Bereiche, durch die sich
+          Spieler bewegen oder in denen
+          sie Aufgaben lösen.
+        </p>
+
+        <h3>Worauf kommt es an?</h3>
+
+        <ul>
+          <li>Übersichtliche Wege und Orientierung</li>
+          <li>Spannende Herausforderungen</li>
+          <li>Passender Schwierigkeitsgrad</li>
+          <li>Geheimnisse und Entdeckungen</li>
+          <li>Gut erkennbare Ziele</li>
+          <li>Abwechslungsreiche Spielumgebungen</li>
+        </ul>
+
+        <p>
+          Ein Level kann beispielsweise
+          eine Burg, ein Wald,
+          eine Raumstation oder
+          eine Fantasiewelt sein.
+        </p>
+
+        <a href="#themen-titel"
+           class="zurueck-link">
+          ↑ Zurück zur Themenauswahl
+        </a>
+
+      </section>
+
+      <!-- GRAFIK UND SOUND -->
+
+      <section id="gestaltung"
+               class="entwicklung-abschnitt">
+
+        <h2>🎨 Grafik, Musik und Sound</h2>
+
+        <p>
+          Das Aussehen und die Klänge
+          eines Spiels beeinflussen,
+          wie sich die Spielwelt anfühlt.
+        </p>
+
+        <h3>Bereiche der Gestaltung</h3>
+
+        <ul>
+          <li>Figuren und Animationen</li>
+          <li>Hintergründe und Landschaften</li>
+          <li>Farben und Beleuchtung</li>
+          <li>Menüs und Symbole</li>
+          <li>Musik und Geräusche</li>
+          <li>Sprachausgabe und Untertitel</li>
+        </ul>
+
+        <p>
+          Musik kann Spannung erzeugen.
+          Geräusche können wichtige
+          Rückmeldungen geben.
+          Farben und Formen helfen
+          bei der Orientierung.
+        </p>
+
+        <a href="#themen-titel"
+           class="zurueck-link">
+          ↑ Zurück zur Themenauswahl
+        </a>
+
+      </section>
+
+      <!-- PROGRAMMIERUNG -->
+
+      <section id="programmierung"
+               class="entwicklung-abschnitt">
+
+        <h2>💻 Programmierung und Game Engines</h2>
+
+        <p>
+          Bei digitalen Spielen sorgt
+          die Programmierung dafür,
+          dass Figuren reagieren,
+          Regeln funktionieren
+          und Aktionen ausgeführt werden.
+        </p>
+
+        <h3>Bekannte Game Engines</h3>
+
+        <ul>
+          <li>Unity</li>
+          <li>Unreal Engine</li>
+          <li>Godot</li>
+          <li>GameMaker</li>
+        </ul>
+
+        <h3>Weitere Möglichkeiten</h3>
+
+        <ul>
+          <li>JavaScript für Browserspiele</li>
+          <li>HTML und CSS für die Oberfläche</li>
+          <li>Scratch für erste Programmierideen</li>
+          <li>Java für bestimmte Spieleprojekte</li>
+        </ul>
+
+        <p>
+          Eine Game Engine ist ein
+          Werkzeugkasten, der viele
+          Funktionen für die Spieleentwicklung
+          bereitstellt.
+        </p>
+
+        <a href="#themen-titel"
+           class="zurueck-link">
+          ↑ Zurück zur Themenauswahl
+        </a>
+
+      </section>
+
+      <!-- BRETTSPIELE -->
+
+      <section id="brettspiele"
+               class="entwicklung-abschnitt">
+
+        <h2>🎲 Brettspiele selbst entwickeln</h2>
+
+        <p>
+          Auch ohne Computer kannst du
+          eigene Spiele erschaffen.
+          Du brauchst zunächst nur
+          eine Idee und einfache Materialien.
+        </p>
+
+        <h3>Mögliche Materialien</h3>
+
+        <ul>
+          <li>Papier und Pappe</li>
+          <li>Würfel und Spielfiguren</li>
+          <li>Spielkarten</li>
+          <li>Stifte und Farben</li>
+          <li>Holz oder 3D-Druck</li>
+          <li>Magnete und andere Spielelemente</li>
+        </ul>
+
+        <p>
+          Starte mit einer einfachen
+          Version und verbessere sie
+          nach den ersten Spieltests.
+        </p>
+
+        <a href="#themen-titel"
+           class="zurueck-link">
+          ↑ Zurück zur Themenauswahl
+        </a>
+
+      </section>
+
+      <!-- PROTOTYPEN -->
+
+      <section id="prototypen"
+               class="entwicklung-abschnitt">
+
+        <h2>🧪 Prototypen bauen und testen</h2>
+
+        <p>
+          Ein Prototyp ist eine frühe,
+          vereinfachte Version deines Spiels.
+        </p>
+
+        <p>
+          Er muss noch nicht schön aussehen.
+          Wichtig ist zunächst,
+          ob die Spielidee funktioniert.
+        </p>
+
+        <h3>Ein einfacher Testablauf</h3>
+
+        <ol>
+          <li>Baue eine einfache Spielversion.</li>
+          <li>Probiere sie selbst aus.</li>
+          <li>Lass andere Menschen spielen.</li>
+          <li>Beobachte, was funktioniert.</li>
+          <li>Sammle Rückmeldungen.</li>
+          <li>Verbessere dein Spiel.</li>
+        </ol>
+
+        <a href="#themen-titel"
+           class="zurueck-link">
+          ↑ Zurück zur Themenauswahl
+        </a>
+
+      </section>
+
+      <!-- BARRIEREFREIHEIT -->
+
+      <section id="barrierefreiheit"
+               class="entwicklung-abschnitt">
+
+        <h2>♿ Barrierefreiheit im Spieldesign</h2>
+
+        <p>
+          Spiele sollen möglichst
+          vielen Menschen Freude machen.
+          Deshalb ist es wichtig,
+          unterschiedliche Bedürfnisse
+          bereits bei der Entwicklung
+          zu berücksichtigen.
+        </p>
+
+        <h3>Mögliche Lösungen</h3>
+
+        <ul>
+          <li>Gut lesbare Schriftgrößen</li>
+          <li>Deutliche Farbkontraste</li>
+          <li>Symbole zusätzlich zu Farben</li>
+          <li>Untertitel und Textalternativen</li>
+          <li>Anpassbare Steuerung</li>
+          <li>Unterschiedliche Schwierigkeitsgrade</li>
+          <li>Tastbare Spielmaterialien</li>
+          <li>Verständliche Spielanleitungen</li>
+        </ul>
+
+        <p>
+          Barrierefreiheit ist nicht nur
+          eine Ergänzung am Ende.
+          Sie sollte von Anfang an
+          Teil des Spieldesigns sein.
+        </p>
+
+        <a href="#themen-titel"
+           class="zurueck-link">
+          ↑ Zurück zur Themenauswahl
+        </a>
+
+      </section>
+
+    </div>
+
+  </main>
+
+  <!-- FUSSZEILE -->
+
+  <footer class="fusszeile">
+
+    <p>
+      Ein Studienprojekt im Modul Webprogrammierung
+      von Nadine Liesner.
+    </p>
+
+    <nav class="footer-links"
+         aria-label="Rechtliche Informationen">
+
+      <a href="datenschutz.html">
+        Datenschutz
+      </a>
+
+      <a href="impressum.html">
+        Impressum
+      </a>
+
+      <a href="#seitenanfang">
+        ↑ Nach oben
+      </a>
+
+    </nav>
+
+    <p>© 2026 Universum der Spiele</p>
+
+  </footer>
+
+</body>
+</html>
