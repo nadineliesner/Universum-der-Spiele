@@ -1,0 +1,562 @@
+
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Entdecke die Geschichte der Lernspiele von frühen Lernmaterialien bis zu digitalen Lernwelten.">
+
+<title>Geschichte der Lernspiele | Universum der Spiele</title>
+
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(135deg, #10132b, #251547);
+  color: #f5f2ff;
+  line-height: 1.7;
+}
+
+header {
+  background: #171a3b;
+  text-align: center;
+  padding: 45px 20px;
+}
+
+h1 { color: #d4baff; }
+h2 { color: #b69aff; }
+h3 { color: #decaff; }
+
+nav {
+  background: #25204a;
+  padding: 15px;
+  text-align: center;
+}
+
+nav a {
+  display: inline-block;
+  color: white;
+  margin: 8px;
+  text-decoration: none;
+}
+
+nav a:hover,
+nav a:focus-visible {
+  color: #e1c8ff;
+  text-decoration: underline;
+}
+
+main {
+  max-width: 1000px;
+  margin: auto;
+  padding: 25px 18px;
+}
+
+section {
+  background: #222447;
+  border: 1px solid #504779;
+  border-radius: 18px;
+  padding: 25px;
+  margin-bottom: 25px;
+}
+
+.einleitung {
+  text-align: center;
+}
+
+.zeitstrahl {
+  border-left: 4px solid #b69aff;
+  padding-left: 22px;
+}
+
+.epoche {
+  margin-bottom: 15px;
+}
+
+.epoche button {
+  width: 100%;
+  text-align: left;
+  background: #35305f;
+  color: white;
+  border: 1px solid #70639e;
+  border-radius: 12px;
+  padding: 16px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.epoche button:hover,
+.epoche button:focus-visible {
+  background: #51447f;
+}
+
+.details {
+  background: #29264e;
+  padding: 18px;
+  border-radius: 12px;
+  margin-top: 8px;
+}
+
+.details[hidden] {
+  display: none;
+}
+
+.kacheln {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: 18px;
+}
+
+.kachel {
+  background: #35305f;
+  padding: 20px;
+  border-radius: 14px;
+}
+
+.infobox {
+  background: #40346e;
+  border-left: 5px solid #b69aff;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.quiz {
+  background: #35305f;
+  padding: 20px;
+  border-radius: 14px;
+}
+
+.quiz button {
+  background: #6551a5;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  padding: 12px 18px;
+  margin: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.quiz button:hover,
+.quiz button:focus-visible {
+  background: #8169c6;
+}
+
+#antwort {
+  font-weight: bold;
+  margin-top: 15px;
+}
+
+.zurueck {
+  display: inline-block;
+  background: #6551a5;
+  color: white;
+  padding: 12px 20px;
+  border-radius: 10px;
+  text-decoration: none;
+}
+
+.zurueck:hover,
+.zurueck:focus-visible {
+  background: #8169c6;
+}
+
+footer {
+  background: #111329;
+  text-align: center;
+  padding: 25px;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <h1>🧠 Geschichte der Lernspiele</h1>
+  <p>Spielend lernen – von früher bis heute</p>
+</header>
+
+<nav aria-label="Hauptnavigation">
+  <a href="index.html">Start</a>
+  <a href="spielgeschichte.html">Spielgeschichte</a>
+  <a href="spielgenres.html">Spielgenres</a>
+  <a href="spiele-erleben.html">Spiele erleben</a>
+  <a href="spieleentwickeln.html">Spiele entwickeln</a>
+  <a href="ueber-mich.html">Über mich</a>
+  <a href="hilfe.html">Hilfe</a>
+</nav>
+
+<main>
+
+<section class="einleitung">
+  <h2>🌍 Lernen und Spielen gehören zusammen</h2>
+
+  <p>
+    Menschen lernen seit langer Zeit
+    durch Ausprobieren, Nachahmen
+    und gemeinsames Spielen.
+  </p>
+
+  <p>
+    Lernspiele verbinden
+    Wissen, Fähigkeiten und
+    spielerische Erfahrungen.
+  </p>
+
+  <p>
+    Entdecke, wie sich
+    diese Idee entwickelt hat!
+  </p>
+</section>
+
+<section>
+  <h2>⏳ Interaktiver Zeitstrahl</h2>
+  <p>Klicke auf eine Epoche, um mehr zu erfahren.</p>
+
+  <div class="zeitstrahl">
+
+    <article class="epoche">
+      <button type="button" aria-expanded="false"
+        aria-controls="antike"
+        onclick="anzeigen(this,'antike')">
+        🏺 Antike – Lernen durch Spielen
+      </button>
+
+      <div class="details" id="antike" hidden>
+        <h3>Spielerisches Lernen</h3>
+        <p>
+          Schon in der Antike
+          wurde über die Bedeutung
+          des Spielens für
+          die Erziehung nachgedacht.
+        </p>
+        <p>
+          Kinder übten Fähigkeiten
+          durch Bewegung, Nachahmung
+          und einfache Spiele.
+        </p>
+      </div>
+    </article>
+
+    <article class="epoche">
+      <button type="button" aria-expanded="false"
+        aria-controls="comenius"
+        onclick="anzeigen(this,'comenius')">
+        📖 1658 – Lernen mit Bildern
+      </button>
+
+      <div class="details" id="comenius" hidden>
+        <h3>Johann Amos Comenius</h3>
+        <p>
+          Comenius veröffentlichte
+          das bebilderte Lehrbuch
+          Orbis Sensualium Pictus.
+        </p>
+        <p>
+          Es war kein Lernspiel,
+          aber ein wichtiger Schritt
+          für anschauliches Lernen.
+        </p>
+      </div>
+    </article>
+
+    <article class="epoche">
+      <button type="button" aria-expanded="false"
+        aria-controls="froebel"
+        onclick="anzeigen(this,'froebel')">
+        🧱 19. Jahrhundert – Fröbels Spielgaben
+      </button>
+
+      <div class="details" id="froebel" hidden>
+        <h3>Friedrich Fröbel</h3>
+        <p>
+          Fröbel entwickelte
+          pädagogische Spielmaterialien
+          wie Kugeln, Würfel
+          und Bausteine.
+        </p>
+        <p>
+          Er sah das Spielen
+          als wichtigen Bestandteil
+          kindlicher Entwicklung.
+        </p>
+      </div>
+    </article>
+
+    <article class="epoche">
+      <button type="button" aria-expanded="false"
+        aria-controls="montessori"
+        onclick="anzeigen(this,'montessori')">
+        🌱 Ab 1907 – Montessori-Materialien
+      </button>
+
+      <div class="details" id="montessori" hidden>
+        <h3>Maria Montessori</h3>
+        <p>
+          Montessori entwickelte
+          und verwendete Materialien,
+          mit denen Kinder selbstständig
+          lernen und üben können.
+        </p>
+        <p>
+          Nicht jedes Montessori-Material
+          ist ein Spiel im engeren Sinne.
+        </p>
+      </div>
+    </article>
+
+    <article class="epoche">
+      <button type="button" aria-expanded="false"
+        aria-controls="brettspiele"
+        onclick="anzeigen(this,'brettspiele')">
+        🎲 20. Jahrhundert – Pädagogische Spiele
+      </button>
+
+      <div class="details" id="brettspiele" hidden>
+        <h3>Lernen mit Spielregeln</h3>
+        <p>
+          Lernspiele wurden für
+          verschiedene Bildungsbereiche
+          entwickelt.
+        </p>
+        <p>
+          Dazu gehören Spiele
+          zum Lesen, Rechnen,
+          zur Sprache und
+          zum logischen Denken.
+        </p>
+      </div>
+    </article>
+
+    <article class="epoche">
+      <button type="button" aria-expanded="false"
+        aria-controls="computer"
+        onclick="anzeigen(this,'computer')">
+        💻 1960er–1980er – Computerlernen
+      </button>
+
+      <div class="details" id="computer" hidden>
+        <h3>Digitale Lernprogramme</h3>
+        <p>
+          Computer wurden zunehmend
+          für Lernprogramme
+          und Lernspiele genutzt.
+        </p>
+        <p>
+          Beispiele sind
+          The Oregon Trail
+          und später Number Munchers.
+        </p>
+      </div>
+    </article>
+
+    <article class="epoche">
+      <button type="button" aria-expanded="false"
+        aria-controls="internet"
+        onclick="anzeigen(this,'internet')">
+        🌐 1990er–2000er – Lernen im Internet
+      </button>
+
+      <div class="details" id="internet" hidden>
+        <h3>Neue Lernmöglichkeiten</h3>
+        <p>
+          Lernspiele konnten
+          zunehmend über Webseiten
+          und Online-Plattformen
+          genutzt werden.
+        </p>
+        <p>
+          Interaktive Übungen
+          und digitale Lernwelten
+          wurden verbreiteter.
+        </p>
+      </div>
+    </article>
+
+    <article class="epoche">
+      <button type="button" aria-expanded="false"
+        aria-controls="heute"
+        onclick="anzeigen(this,'heute')">
+        🚀 Heute – Moderne Lernwelten
+      </button>
+
+      <div class="details" id="heute" hidden>
+        <h3>Individuelles Lernen</h3>
+        <p>
+          Heute gibt es Lernspiele
+          für Computer, Tablets,
+          Smartphones und Konsolen.
+        </p>
+        <p>
+          Manche passen Aufgaben
+          an den Lernfortschritt an
+          oder nutzen virtuelle
+          und erweiterte Realität.
+        </p>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+<section>
+  <h2>🎯 Welche Lernspielarten gibt es?</h2>
+
+  <div class="kacheln">
+
+    <article class="kachel">
+      <h3>🔢 Mathematikspiele</h3>
+      <p>
+        Zahlen, Mengen und
+        Rechenaufgaben spielerisch üben.
+      </p>
+    </article>
+
+    <article class="kachel">
+      <h3>📚 Sprachspiele</h3>
+      <p>
+        Wörter, Lesen und
+        Sprachverständnis entdecken.
+      </p>
+    </article>
+
+    <article class="kachel">
+      <h3>🧩 Logikspiele</h3>
+      <p>
+        Muster erkennen
+        und Probleme lösen.
+      </p>
+    </article>
+
+    <article class="kachel">
+      <h3>🌍 Wissensspiele</h3>
+      <p>
+        Neues über Natur,
+        Geschichte und Technik lernen.
+      </p>
+    </article>
+
+    <article class="kachel">
+      <h3>🤝 Sozial-emotionale Spiele</h3>
+      <p>
+        Gefühle, Zusammenarbeit
+        und Perspektivwechsel erkunden.
+      </p>
+    </article>
+
+    <article class="kachel">
+      <h3>💻 Digitale Lernspiele</h3>
+      <p>
+        Wissen durch interaktive
+        Aufgaben und digitale
+        Spielwelten erwerben.
+      </p>
+    </article>
+
+  </div>
+</section>
+
+<section>
+  <h2>🌈 Gute Lernspiele für alle</h2>
+
+  <p>
+    Ein gutes Lernspiel
+    berücksichtigt unterschiedliche
+    Fähigkeiten und Lernwege.
+  </p>
+
+  <div class="infobox">
+    <h3>Wichtige Eigenschaften</h3>
+    <ul>
+      <li>Klare und verständliche Regeln</li>
+      <li>Gut erkennbare Symbole</li>
+      <li>Verschiedene Schwierigkeitsstufen</li>
+      <li>Rückmeldungen ohne Beschämung</li>
+      <li>Alternative Bedienmöglichkeiten</li>
+      <li>Freude am Entdecken</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <h2>🎲 Entwickle eine Lernspielidee!</h2>
+
+  <div class="infobox">
+    <p>Überlege dir:</p>
+    <ol>
+      <li>Was sollen die Spielenden lernen?</li>
+      <li>Welche Aufgabe macht ihnen Spaß?</li>
+      <li>Wie erkennen sie ihren Fortschritt?</li>
+    </ol>
+
+    <p>
+      Beispiel: Ein Weltraumabenteuer,
+      bei dem Planeten durch
+      gelöste Zahlenrätsel
+      entdeckt werden.
+    </p>
+  </div>
+</section>
+
+<section>
+  <h2>🚀 Teste dein Wissen!</h2>
+
+  <div class="quiz">
+    <h3>Wer entwickelte die sogenannten Spielgaben?</h3>
+
+    <button type="button" onclick="pruefen(1)">
+      Friedrich Fröbel
+    </button>
+
+    <button type="button" onclick="pruefen(2)">
+      Albert Einstein
+    </button>
+
+    <button type="button" onclick="pruefen(3)">
+      Leonardo da Vinci
+    </button>
+
+    <p id="antwort" role="status" aria-live="polite"></p>
+  </div>
+</section>
+
+<a class="zurueck" href="geschichte-spiele.html">
+  ← Zurück zur Geschichte der Spiele
+</a>
+
+</main>
+
+<footer>
+  <p>🌌 Universum der Spiele</p>
+  <p>Entdecken · Spielen · Verstehen · Gestalten</p>
+</footer>
+
+<script>
+function anzeigen(button, id) {
+  const details = document.getElementById(id);
+  const offen =
+    button.getAttribute("aria-expanded") === "true";
+
+  details.hidden = offen;
+  button.setAttribute("aria-expanded", String(!offen));
+}
+
+function pruefen(auswahl) {
+  const antwort = document.getElementById("antwort");
+
+  if (auswahl === 1) {
+    antwort.textContent =
+      "🌟 Richtig! Friedrich Fröbel entwickelte die Spielgaben.";
+  } else {
+    antwort.textContent =
+      "🌙 Noch nicht ganz. Versuche es erneut!";
+  }
+}
+</script>
+
+</body>
+</html>
