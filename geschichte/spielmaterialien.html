@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Spielewerkbank | Universum der Spiele</title>
+
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(135deg, #10132b, #251547);
+  color: #f5f2ff;
+  line-height: 1.7;
+}
+
+header {
+  background: #171a3b;
+  text-align: center;
+  padding: 30px 20px;
+}
+
+h1 {
+  color: #d4baff;
+  margin: 0;
+}
+
+h2 {
+  color: #b69aff;
+}
+
+nav {
+  background: #25204a;
+  text-align: center;
+  padding: 15px;
+}
+
+nav a {
+  display: inline-block;
+  color: white;
+  text-decoration: none;
+  margin: 8px;
+}
+
+nav a:hover,
+nav a:focus-visible {
+  color: #d4baff;
+  text-decoration: underline;
+}
+
+main {
+  max-width: 1250px;
+  margin: auto;
+  padding: 25px 20px;
+}
+
+.einleitung {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 30px;
+}
+
+.werkbank {
+  position: relative;
+  width: 100%;
+  border: 2px solid #9772e8;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 0 35px #6b42bb55;
+}
+
+.werkbank img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* Anklickbare Bereiche auf dem Bild */
+.hotspot {
+  position: absolute;
+  display: block;
+  border: 2px solid transparent;
+  border-radius: 14px;
+  cursor: pointer;
+}
+
+.hotspot:hover,
+.hotspot:focus-visible {
+  border-color: #ffffff;
+  background: #d4baff33;
+  outline: 3px solid #d4baff;
+  outline-offset: -3px;
+}
+
+/*
+  Positionen in Prozent.
+  Sie beziehen sich auf das gesamte Bild.
+*/
+.wuerfel {
+  left: 5%;
+  top: 30%;
+  width: 18%;
+  height: 20%;
+}
+
+.figuren {
+  left: 23%;
+  top: 20%;
+  width: 18%;
+  height: 20%;
+}
+
+.karten {
+  left: 38%;
+  top: 32%;
+  width: 20%;
+  height: 20%;
+}
+
+.bretter {
+  left: 49%;
+  top: 17%;
+  width: 29%;
+  height: 19%;
+}
+
+.zeit {
+  left: 79%;
+  top: 20%;
+  width: 18%;
+  height: 19%;
+}
+
+.zubehoer {
+  left: 62%;
+  top: 39%;
+  width: 27%;
+  height: 18%;
+}
+
+.materialien {
+  margin-top: 50px;
+}
+
+.materialien h2 {
+  text-align: center;
+}
+
+.kacheln {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin-top: 25px;
+}
+
+.kachel {
+  display: block;
+  background: #211d43;
+  border: 2px solid #65519a;
+  border-radius: 18px;
+  padding: 25px;
+  text-align: center;
+  text-decoration: none;
+  color: white;
+  transition: transform 0.2s, border-color 0.2s;
+}
+
+.kachel:hover,
+.kachel:focus-visible {
+  transform: translateY(-5px);
+  border-color: #d4baff;
+  outline: 2px solid #d4baff;
+}
+
+.symbol {
+  font-size: 55px;
+}
+
+.kachel h3 {
+  color: #d4baff;
+  margin-bottom: 8px;
+}
+
+.kachel p {
+  margin: 0;
+}
+
+footer {
+  background: #171a3b;
+  text-align: center;
+  padding: 25px;
+  margin-top: 50px;
+}
+
+footer a {
+  color: #d4baff;
+  margin: 10px;
+}
+
+@media (max-width: 800px) {
+  .kacheln {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 500px) {
+  main {
+    padding: 15px;
+  }
+
+  .kacheln {
+    grid-template-columns: 1fr;
+  }
+
+  .kachel {
+    padding: 20px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <h1>🛠️ Die Spielewerkbank</h1>
+  <p>Universum der Spiele</p>
+</header>
+
+<nav aria-label="Hauptnavigation">
+  <a href="index.html">Startseite</a>
+  <a href="spielgeschichte.html">Spielgeschichte</a>
+  <a href="spielgenres.html">Spielgenres</a>
+  <a href="spiele-erleben.html">Spiele erleben</a>
+  <a href="spielmaterialien.html" aria-current="page">
+    Spielmaterialien
+  </a>
+</nav>
+
+<main>
+
+<section class="einleitung">
+  <h2>Willkommen in der Spielewerkstatt!</h2>
+
+  <p>
+    Was braucht man eigentlich für ein Spiel?
+    Würfel, Karten, Figuren oder ein Spielbrett?
+  </p>
+
+  <p>
+    Entdecke verschiedene Spielmaterialien.
+    Klicke auf einen Gegenstand der Werkbank
+    und erfahre mehr darüber!
+  </p>
+</section>
+
+<!-- INTERAKTIVE WERKBANK -->
+
+<section aria-label="Interaktive Spielewerkbank">
+
+  <div class="werkbank">
+
+    <img
+      src="spielewerkbank.png"
+      alt="Eine geheimnisvolle Werkbank mit Würfeln,
+      Spielfiguren, Karten, Spielbrettern,
+      Sanduhr und Spielsteinen."
+    >
+
+    <a class="hotspot wuerfel"
+       href="wuerfel.html"
+       aria-label="Würfel entdecken"></a>
+
+    <a class="hotspot figuren"
+       href="spielfiguren.html"
+       aria-label="Spielfiguren entdecken"></a>
+
+    <a class="hotspot karten"
+       href="spielkarten.html"
+       aria-label="Spielkarten entdecken"></a>
+
+    <a class="hotspot bretter"
+       href="spielbretter.html"
+       aria-label="Spielbretter entdecken"></a>
+
+    <a class="hotspot zeit"
+       href="zeitmesser.html"
+       aria-label="Zeitmesser entdecken"></a>
+
+    <a class="hotspot zubehoer"
+       href="spielsteine.html"
+       aria-label="Spielsteine und Zubehör entdecken"></a>
+
+  </div>
+
+</section>
+
+<!-- MATERIALIEN ALS KACHELN -->
+
+<section class="materialien">
+
+  <h2>🎲 Entdecke die Spielmaterialien</h2>
+
+  <div class="kacheln">
+
+    <a href="wuerfel.html" class="kachel">
+      <div class="symbol">🎲</div>
+      <h3>Würfel</h3>
+      <p>
+        Zahlen, Farben, Symbole
+        und besondere Würfel.
+      </p>
+    </a>
+
+    <a href="spielfiguren.html" class="kachel">
+      <div class="symbol">♟️</div>
+      <h3>Spielfiguren</h3>
+      <p>
+        Figuren, Charaktere
+        und Spielsteine.
+      </p>
+    </a>
+
+    <a href="spielkarten.html" class="kachel">
+      <div class="symbol">🃏</div>
+      <h3>Spielkarten</h3>
+      <p>
+        Aktionskarten, Wissenskarten
+        und Sammelkarten.
+      </p>
+    </a>
+
+    <a href="spielbretter.html" class="kachel">
+      <div class="symbol">🗺️</div>
+      <h3>Spielbretter</h3>
+      <p>
+        Wege, Felder, Labyrinthe
+        und Spielpläne.
+      </p>
+    </a>
+
+    <a href="zeitmesser.html" class="kachel">
+      <div class="symbol">⏳</div>
+      <h3>Zeitmesser</h3>
+      <p>
+        Sanduhren, Stoppuhren
+        und Zeitbegrenzungen.
+      </p>
+    </a>
+
+    <a href="spielsteine.html" class="kachel">
+      <div class="symbol">💎</div>
+      <h3>Spielsteine und Zubehör</h3>
+      <p>
+        Münzen, Marker, Plättchen
+        und andere Materialien.
+      </p>
+    </a>
+
+  </div>
+
+</section>
+
+</main>
+
+<footer>
+  <p>© 2026 Universum der Spiele</p>
+
+  <a href="index.html">Startseite</a>
+  <a href="impressum.html">Impressum</a>
+  <a href="datenschutz.html">Datenschutz</a>
+</footer>
+
+</body>
+</html>
