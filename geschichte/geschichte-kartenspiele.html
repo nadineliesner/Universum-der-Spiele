@@ -1,0 +1,555 @@
+
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Entdecke die Geschichte der Kartenspiele von China bis zu modernen Sammelkartenspielen.">
+
+<title>Geschichte der Kartenspiele | Universum der Spiele</title>
+
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(135deg, #10132b, #251547);
+  color: #f5f2ff;
+  line-height: 1.7;
+}
+
+header {
+  background: #171a3b;
+  text-align: center;
+  padding: 45px 20px;
+}
+
+h1 { color: #d4baff; }
+h2 { color: #b69aff; }
+h3 { color: #decaff; }
+
+nav {
+  background: #25204a;
+  padding: 15px;
+  text-align: center;
+}
+
+nav a {
+  display: inline-block;
+  color: white;
+  margin: 8px;
+  text-decoration: none;
+}
+
+nav a:hover,
+nav a:focus-visible {
+  color: #e1c8ff;
+  text-decoration: underline;
+}
+
+main {
+  max-width: 1000px;
+  margin: auto;
+  padding: 25px 18px;
+}
+
+section {
+  background: #222447;
+  border: 1px solid #504779;
+  border-radius: 18px;
+  padding: 25px;
+  margin-bottom: 25px;
+}
+
+.einleitung {
+  text-align: center;
+}
+
+.zeitstrahl {
+  border-left: 4px solid #b69aff;
+  padding-left: 22px;
+}
+
+.epoche {
+  margin-bottom: 15px;
+}
+
+.epoche button {
+  width: 100%;
+  text-align: left;
+  background: #35305f;
+  color: white;
+  border: 1px solid #70639e;
+  border-radius: 12px;
+  padding: 16px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.epoche button:hover,
+.epoche button:focus-visible {
+  background: #51447f;
+}
+
+.details {
+  background: #29264e;
+  padding: 18px;
+  border-radius: 12px;
+  margin-top: 8px;
+}
+
+.details[hidden] {
+  display: none;
+}
+
+.kacheln {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: 18px;
+}
+
+.kachel {
+  background: #35305f;
+  padding: 20px;
+  border-radius: 14px;
+}
+
+.quiz {
+  background: #35305f;
+  padding: 20px;
+  border-radius: 14px;
+}
+
+.quiz button {
+  background: #6551a5;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  padding: 12px 18px;
+  margin: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.quiz button:hover,
+.quiz button:focus-visible {
+  background: #8169c6;
+}
+
+#antwort {
+  font-weight: bold;
+  margin-top: 15px;
+}
+
+.zurueck {
+  display: inline-block;
+  background: #6551a5;
+  color: white;
+  padding: 12px 20px;
+  border-radius: 10px;
+  text-decoration: none;
+}
+
+.zurueck:hover,
+.zurueck:focus-visible {
+  background: #8169c6;
+}
+
+footer {
+  background: #111329;
+  text-align: center;
+  padding: 25px;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <h1>🃏 Geschichte der Kartenspiele</h1>
+  <p>Von frühen Spielkarten zu modernen Kartenwelten</p>
+</header>
+
+<nav aria-label="Hauptnavigation">
+  <a href="index.html">Start</a>
+  <a href="spielgeschichte.html">Spielgeschichte</a>
+  <a href="spielgenres.html">Spielgenres</a>
+  <a href="spiele-erleben.html">Spiele erleben</a>
+  <a href="spieleentwickeln.html">Spiele entwickeln</a>
+  <a href="ueber-mich.html">Über mich</a>
+  <a href="hilfe.html">Hilfe</a>
+</nav>
+
+<main>
+
+<section class="einleitung">
+  <h2>🌍 Woher kommen Spielkarten?</h2>
+
+  <p>
+    Kartenspiele haben eine lange Geschichte.
+    Ihre frühen Ursprünge werden
+    meist in China vermutet.
+  </p>
+
+  <p>
+    Über viele Jahrhunderte entwickelten
+    verschiedene Kulturen eigene Karten,
+    Symbole und Spielregeln.
+  </p>
+
+  <p>
+    Entdecke die Geschichte der Kartenspiele!
+  </p>
+</section>
+
+<section>
+  <h2>⏳ Interaktiver Zeitstrahl</h2>
+  <p>Klicke auf eine Epoche, um mehr zu erfahren.</p>
+
+  <div class="zeitstrahl">
+
+    <article class="epoche">
+      <button type="button" aria-expanded="false"
+        aria-controls="china"
+        onclick="anzeigen(this,'china')">
+        🏮 China – Frühe Spielkarten
+      </button>
+
+      <div class="details" id="china" hidden>
+        <h3>Die Anfänge</h3>
+        <p>
+          Frühe Formen von Kartenspielen
+          entwickelten sich wahrscheinlich
+          im mittelalterlichen China.
+        </p>
+        <p>
+          Wann genau die ersten Spielkarten
+          entstanden, ist umstritten.
+        </p>
+      </div>
+    </article>
+
+    <article class="epoche">
+      <button type="button" aria-expanded="false"
+        aria-controls="mamluken"
+        onclick="anzeigen(this,'mamluken')">
+        🌙 Mittelalter – Karten im Nahen Osten
+      </button>
+
+      <div class="details" id="mamluken" hidden>
+        <h3>Mamlukische Spielkarten</h3>
+        <p>
+          Aus dem mamlukischen Ägypten
+          sind historische Spielkarten bekannt.
+        </p>
+        <p>
+          Sie zeigen unter anderem
+          Kelche, Münzen, Schwerter
+          und Poloschläger als Kartenfarben.
+        </p>
+      </div>
+    </article>
+
+    <article class="epoche">
+      <button type="button" aria-expanded="false"
+        aria-controls="europa"
+        onclick="anzeigen(this,'europa')">
+        🏰 14. Jahrhundert – Spielkarten in Europa
+      </button>
+
+      <div class="details" id="europa" hidden>
+        <h3>Eine neue Spielkultur</h3>
+        <p>
+          In der zweiten Hälfte
+          des 14. Jahrhunderts
+          sind Spielkarten in Europa belegt.
+        </p>
+        <p>
+          Verschiedene Regionen
+          entwickelten eigene Kartenbilder
+          und Spieltraditionen.
+        </p>
+      </div>
+    </article>
+
+    <article class="epoche">
+      <button type="button" aria-expanded="false"
+        aria-controls="druck"
+        onclick="anzeigen(this,'druck')">
+        🖨️ 15. Jahrhundert – Gedruckte Spielkarten
+      </button>
+
+      <div class="details" id="druck" hidden>
+        <h3>Karten für mehr Menschen</h3>
+        <p>
+          Holzschnitt und andere
+          Druckverfahren erleichterten
+          die Herstellung von Spielkarten.
+        </p>
+        <p>
+          Karten konnten dadurch
+          in größeren Mengen
+          hergestellt werden.
+        </p>
+      </div>
+    </article>
+
+    <article class="epoche">
+      <button type="button" aria-expanded="false"
+        aria-controls="farben"
+        onclick="anzeigen(this,'farben')">
+        ♥️ Frühe Neuzeit – Kartenfarben
+      </button>
+
+      <div class="details" id="farben" hidden>
+        <h3>Herz, Karo, Pik und Kreuz</h3>
+        <p>
+          Die heute international
+          verbreiteten französischen
+          Kartenfarben entstanden
+          im 15. Jahrhundert.
+        </p>
+        <p>
+          Daneben blieben regionale
+          Kartenbilder wie Eichel,
+          Grün, Herz und Schellen erhalten.
+        </p>
+      </div>
+    </article>
+
+    <article class="epoche">
+      <button type="button" aria-expanded="false"
+        aria-controls="klassiker"
+        onclick="anzeigen(this,'klassiker')">
+        🎲 18.–20. Jahrhundert – Kartenspielklassiker
+      </button>
+
+      <div class="details" id="klassiker" hidden>
+        <h3>Neue Spielregeln und Traditionen</h3>
+        <p>
+          Kartenspiele wie Skat,
+          Poker und Rommé
+          entwickelten sich
+          in unterschiedlichen Zeiten
+          und Regionen.
+        </p>
+        <p>
+          Sie wurden Teil des
+          gesellschaftlichen Alltags.
+        </p>
+      </div>
+    </article>
+
+    <article class="epoche">
+      <button type="button" aria-expanded="false"
+        aria-controls="uno"
+        onclick="anzeigen(this,'uno')">
+        🌈 1971 – UNO
+      </button>
+
+      <div class="details" id="uno" hidden>
+        <h3>Farben und Zahlen</h3>
+        <p>
+          Merle Robbins entwickelte
+          UNO im Jahr 1971.
+        </p>
+        <p>
+          Das Spiel wurde später
+          international bekannt.
+        </p>
+      </div>
+    </article>
+
+    <article class="epoche">
+      <button type="button" aria-expanded="false"
+        aria-controls="sammelkarten"
+        onclick="anzeigen(this,'sammelkarten')">
+        ✨ 1993 – Moderne Sammelkartenspiele
+      </button>
+
+      <div class="details" id="sammelkarten" hidden>
+        <h3>Magic: The Gathering</h3>
+        <p>
+          1993 erschien Magic:
+          The Gathering.
+        </p>
+        <p>
+          Es prägte das moderne
+          Sammelkartenspiel, bei dem
+          Spielende eigene Kartendecks
+          zusammenstellen.
+        </p>
+      </div>
+    </article>
+
+    <article class="epoche">
+      <button type="button" aria-expanded="false"
+        aria-controls="heute"
+        onclick="anzeigen(this,'heute')">
+        🚀 Heute – Analoge und digitale Kartenspiele
+      </button>
+
+      <div class="details" id="heute" hidden>
+        <h3>Neue Möglichkeiten</h3>
+        <p>
+          Heute gibt es klassische
+          Kartenspiele, Deckbauspiele,
+          Sammelkartenspiele und
+          digitale Kartenspiele.
+        </p>
+        <p>
+          Manche Spiele verbinden
+          gedruckte Karten
+          mit digitalen Anwendungen.
+        </p>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+<section>
+  <h2>🃏 Welche Kartenspielarten gibt es?</h2>
+
+  <div class="kacheln">
+
+    <article class="kachel">
+      <h3>♠️ Stichspiele</h3>
+      <p>
+        Die Spielenden versuchen,
+        durch passende Karten
+        bestimmte Stiche zu gewinnen.
+      </p>
+    </article>
+
+    <article class="kachel">
+      <h3>🌈 Ablegespiele</h3>
+      <p>
+        Ziel ist häufig,
+        eigene Karten nach
+        bestimmten Regeln abzulegen.
+      </p>
+    </article>
+
+    <article class="kachel">
+      <h3>✨ Sammelkartenspiele</h3>
+      <p>
+        Karten werden gesammelt
+        und zu individuellen
+        Spieldecks zusammengestellt.
+      </p>
+    </article>
+
+    <article class="kachel">
+      <h3>🧠 Deckbauspiele</h3>
+      <p>
+        Während des Spiels
+        wird ein eigenes Kartendeck
+        aufgebaut und verbessert.
+      </p>
+    </article>
+
+    <article class="kachel">
+      <h3>🤝 Kooperative Kartenspiele</h3>
+      <p>
+        Die Spielenden versuchen,
+        gemeinsam eine Aufgabe
+        zu bewältigen.
+      </p>
+    </article>
+
+    <article class="kachel">
+      <h3>🎭 Erzählkartenspiele</h3>
+      <p>
+        Karten dienen als Anregung
+        für Geschichten,
+        Fantasie und Kommunikation.
+      </p>
+    </article>
+
+  </div>
+</section>
+
+<section>
+  <h2>🔍 Schon gewusst?</h2>
+
+  <p>
+    Nicht überall auf der Welt
+    sehen Spielkarten gleich aus.
+  </p>
+
+  <p>
+    In Deutschland gibt es
+    beispielsweise sowohl
+    französische als auch
+    deutsche Kartenbilder.
+  </p>
+
+  <p>
+    Auch die Anzahl der Karten
+    und die Spielregeln
+    können unterschiedlich sein.
+  </p>
+</section>
+
+<section>
+  <h2>🚀 Teste dein Wissen!</h2>
+
+  <div class="quiz">
+    <h3>In welchem Land werden frühe Ursprünge der Spielkarten vermutet?</h3>
+
+    <button type="button" onclick="pruefen(1)">
+      Brasilien
+    </button>
+
+    <button type="button" onclick="pruefen(2)">
+      China
+    </button>
+
+    <button type="button" onclick="pruefen(3)">
+      Kanada
+    </button>
+
+    <p id="antwort" role="status" aria-live="polite"></p>
+  </div>
+</section>
+
+<a class="zurueck" href="geschichte-spiele.html">
+  ← Zurück zur Geschichte der Spiele
+</a>
+
+</main>
+
+<footer>
+  <p>🌌 Universum der Spiele</p>
+  <p>Entdecken · Spielen · Verstehen · Gestalten</p>
+</footer>
+
+<script>
+function anzeigen(button, id) {
+  const details = document.getElementById(id);
+  const offen =
+    button.getAttribute("aria-expanded") === "true";
+
+  details.hidden = offen;
+  button.setAttribute("aria-expanded", String(!offen));
+}
+
+function pruefen(auswahl) {
+  const antwort = document.getElementById("antwort");
+
+  if (auswahl === 2) {
+    antwort.textContent =
+      "🌟 Richtig! Frühe Ursprünge der Spielkarten werden in China vermutet.";
+  } else {
+    antwort.textContent =
+      "🌙 Noch nicht ganz. Versuche es erneut!";
+  }
+}
+</script>
+
+</body>
+</html>
