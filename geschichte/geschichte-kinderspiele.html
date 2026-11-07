@@ -1,0 +1,578 @@
+
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Entdecke die Geschichte der Kinderspiele von früher bis heute.">
+
+<title>Geschichte der Kinderspiele | Universum der Spiele</title>
+
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(135deg, #10132b, #251547);
+  color: #f5f2ff;
+  line-height: 1.7;
+}
+
+header {
+  background: #171a3b;
+  text-align: center;
+  padding: 45px 20px;
+}
+
+h1 { color: #d4baff; }
+h2 { color: #b69aff; }
+h3 { color: #decaff; }
+
+nav {
+  background: #25204a;
+  padding: 15px;
+  text-align: center;
+}
+
+nav a {
+  display: inline-block;
+  color: white;
+  margin: 8px;
+  text-decoration: none;
+}
+
+nav a:hover,
+nav a:focus-visible {
+  color: #e1c8ff;
+  text-decoration: underline;
+}
+
+main {
+  max-width: 1000px;
+  margin: auto;
+  padding: 25px 18px;
+}
+
+section {
+  background: #222447;
+  border: 1px solid #504779;
+  border-radius: 18px;
+  padding: 25px;
+  margin-bottom: 25px;
+}
+
+.einleitung {
+  text-align: center;
+}
+
+.zeitstrahl {
+  border-left: 4px solid #b69aff;
+  padding-left: 22px;
+}
+
+.epoche {
+  margin-bottom: 15px;
+}
+
+.epoche button {
+  width: 100%;
+  text-align: left;
+  background: #35305f;
+  color: white;
+  border: 1px solid #70639e;
+  border-radius: 12px;
+  padding: 16px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.epoche button:hover,
+.epoche button:focus-visible {
+  background: #51447f;
+}
+
+.details {
+  background: #29264e;
+  padding: 18px;
+  border-radius: 12px;
+  margin-top: 8px;
+}
+
+.details[hidden] {
+  display: none;
+}
+
+.kacheln {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: 18px;
+}
+
+.kachel {
+  background: #35305f;
+  padding: 20px;
+  border-radius: 14px;
+}
+
+.infobox {
+  background: #40346e;
+  border-left: 5px solid #b69aff;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.quiz {
+  background: #35305f;
+  padding: 20px;
+  border-radius: 14px;
+}
+
+.quiz button {
+  background: #6551a5;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  padding: 12px 18px;
+  margin: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.quiz button:hover,
+.quiz button:focus-visible {
+  background: #8169c6;
+}
+
+#antwort {
+  font-weight: bold;
+  margin-top: 15px;
+}
+
+.zurueck {
+  display: inline-block;
+  background: #6551a5;
+  color: white;
+  padding: 12px 20px;
+  border-radius: 10px;
+  text-decoration: none;
+}
+
+.zurueck:hover,
+.zurueck:focus-visible {
+  background: #8169c6;
+}
+
+footer {
+  background: #111329;
+  text-align: center;
+  padding: 25px;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <h1>🧸 Geschichte der Kinderspiele</h1>
+  <p>Wie Kinder früher und heute spielen</p>
+</header>
+
+<nav aria-label="Hauptnavigation">
+  <a href="index.html">Start</a>
+  <a href="spielgeschichte.html">Spielgeschichte</a>
+  <a href="spielgenres.html">Spielgenres</a>
+  <a href="spiele-erleben.html">Spiele erleben</a>
+  <a href="spieleentwickeln.html">Spiele entwickeln</a>
+  <a href="ueber-mich.html">Über mich</a>
+  <a href="hilfe.html">Hilfe</a>
+</nav>
+
+<main>
+
+<section class="einleitung">
+  <h2>🌍 Kinder spielen seit Jahrtausenden</h2>
+
+  <p>
+    Schon vor vielen Tausend Jahren
+    haben Kinder vermutlich gespielt.
+  </p>
+
+  <p>
+    Sie nutzten Naturmaterialien,
+    erfanden Geschichten und
+    ahmten Erwachsene nach.
+  </p>
+
+  <p>
+    Viele Spielideen wurden
+    über Generationen weitergegeben.
+  </p>
+</section>
+
+<section>
+  <h2>⏳ Interaktiver Zeitstrahl</h2>
+  <p>Klicke auf eine Epoche, um mehr zu erfahren.</p>
+
+  <div class="zeitstrahl">
+
+    <article class="epoche">
+      <button type="button" aria-expanded="false"
+        aria-controls="steinzeit"
+        onclick="anzeigen(this,'steinzeit')">
+        🪨 Steinzeit – Spielen mit Naturmaterialien
+      </button>
+
+      <div class="details" id="steinzeit" hidden>
+        <h3>Die ersten Spielideen</h3>
+        <p>
+          Kinder spielten vermutlich
+          mit Steinen, Stöcken,
+          Blättern und anderen
+          Materialien ihrer Umgebung.
+        </p>
+        <p>
+          Wie ihre Spiele genau
+          aussahen, wissen wir nicht.
+        </p>
+      </div>
+    </article>
+
+    <article class="epoche">
+      <button type="button" aria-expanded="false"
+        aria-controls="antike"
+        onclick="anzeigen(this,'antike')">
+        🏺 Antike – Puppen, Kreisel und Bälle
+      </button>
+
+      <div class="details" id="antike" hidden>
+        <h3>Kinderspiele in frühen Kulturen</h3>
+        <p>
+          Aus der Antike sind
+          Spielzeuge wie Puppen,
+          Kreisel und kleine
+          Spielfiguren bekannt.
+        </p>
+        <p>
+          Kinder spielten auch
+          mit Bällen und
+          Geschicklichkeitsspielen.
+        </p>
+      </div>
+    </article>
+
+    <article class="epoche">
+      <button type="button" aria-expanded="false"
+        aria-controls="mittelalter"
+        onclick="anzeigen(this,'mittelalter')">
+        🏰 Mittelalter – Spielen auf Straßen und Plätzen
+      </button>
+
+      <div class="details" id="mittelalter" hidden>
+        <h3>Spielen im Alltag</h3>
+        <p>
+          Kinder spielten beispielsweise
+          mit Kreiseln, Bällen,
+          Murmeln und einfachen
+          selbst hergestellten Gegenständen.
+        </p>
+        <p>
+          Auch Lauf- und Fangspiele
+          gehörten zum Alltag.
+        </p>
+      </div>
+    </article>
+
+    <article class="epoche">
+      <button type="button" aria-expanded="false"
+        aria-controls="neuzeit"
+        onclick="anzeigen(this,'neuzeit')">
+        🪀 18.–19. Jahrhundert – Spielzeug verändert sich
+      </button>
+
+      <div class="details" id="neuzeit" hidden>
+        <h3>Mehr Spielzeug wird hergestellt</h3>
+        <p>
+          Durch neue Herstellungsverfahren
+          konnten Spielzeuge in größeren
+          Mengen produziert werden.
+        </p>
+        <p>
+          Puppen, Baukästen,
+          Holzspielzeug und
+          Gesellschaftsspiele
+          wurden verbreiteter.
+        </p>
+      </div>
+    </article>
+
+    <article class="epoche">
+      <button type="button" aria-expanded="false"
+        aria-controls="jahrhundert"
+        onclick="anzeigen(this,'jahrhundert')">
+        🚂 20. Jahrhundert – Neue Spielwelten
+      </button>
+
+      <div class="details" id="jahrhundert" hidden>
+        <h3>Spielzeug und Technik</h3>
+        <p>
+          Neue Materialien wie
+          Kunststoffe ermöglichten
+          weitere Spielzeugformen.
+        </p>
+        <p>
+          Baukästen, Modellfahrzeuge,
+          Puppen und später
+          elektronische Spiele
+          wurden beliebt.
+        </p>
+      </div>
+    </article>
+
+    <article class="epoche">
+      <button type="button" aria-expanded="false"
+        aria-controls="heute"
+        onclick="anzeigen(this,'heute')">
+        🚀 Heute – Analoge und digitale Spiele
+      </button>
+
+      <div class="details" id="heute" hidden>
+        <h3>Spielen auf viele Arten</h3>
+        <p>
+          Kinder spielen heute
+          mit Bauklötzen, Brettspielen,
+          Bewegungsspielen und
+          digitalen Spielen.
+        </p>
+        <p>
+          Auch Lernspiele und
+          barrierearme Spielangebote
+          werden weiterentwickelt.
+        </p>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+<section>
+  <h2>🎯 Traditionelle Kinderspiele</h2>
+
+  <div class="kacheln">
+
+    <article class="kachel">
+      <h3>🏃 Fangen</h3>
+      <p>
+        Ein Kind versucht,
+        ein anderes zu berühren.
+        Danach wechseln häufig
+        die Rollen.
+      </p>
+    </article>
+
+    <article class="kachel">
+      <h3>🙈 Verstecken</h3>
+      <p>
+        Eine Person sucht,
+        während andere sich
+        verstecken.
+      </p>
+    </article>
+
+    <article class="kachel">
+      <h3>⚪ Murmeln</h3>
+      <p>
+        Kleine Kugeln werden
+        möglichst geschickt
+        zu einem Ziel bewegt.
+      </p>
+    </article>
+
+    <article class="kachel">
+      <h3>🌀 Kreisel</h3>
+      <p>
+        Ein Kreisel wird gedreht.
+        Ziel kann sein, ihn möglichst
+        lange in Bewegung zu halten.
+      </p>
+    </article>
+
+    <article class="kachel">
+      <h3>🪢 Seilspringen</h3>
+      <p>
+        Mit einem Seil werden
+        Sprünge und Bewegungsfolgen
+        ausprobiert.
+      </p>
+    </article>
+
+    <article class="kachel">
+      <h3>🎭 Rollenspiele</h3>
+      <p>
+        Kinder schlüpfen in
+        unterschiedliche Rollen
+        und erfinden Geschichten.
+      </p>
+    </article>
+
+  </div>
+</section>
+
+<section>
+  <h2>🧠 Was lernen Kinder beim Spielen?</h2>
+
+  <div class="kacheln">
+
+    <article class="kachel">
+      <h3>🤝 Gemeinschaft</h3>
+      <p>
+        Zusammenarbeit und
+        Kommunikation erleben.
+      </p>
+    </article>
+
+    <article class="kachel">
+      <h3>🏃 Bewegung</h3>
+      <p>
+        Gleichgewicht und
+        Koordination üben.
+      </p>
+    </article>
+
+    <article class="kachel">
+      <h3>✨ Fantasie</h3>
+      <p>
+        Geschichten erfinden
+        und kreativ werden.
+      </p>
+    </article>
+
+    <article class="kachel">
+      <h3>🧩 Denken</h3>
+      <p>
+        Probleme lösen
+        und neue Ideen entwickeln.
+      </p>
+    </article>
+
+  </div>
+</section>
+
+<section>
+  <h2>🌈 Spielen für alle Kinder</h2>
+
+  <p>
+    Kinder haben unterschiedliche
+    Fähigkeiten und Bedürfnisse.
+  </p>
+
+  <p>
+    Spiele können angepasst werden,
+    damit möglichst viele Kinder
+    gemeinsam spielen können.
+  </p>
+
+  <div class="infobox">
+    <strong>Beispiel:</strong>
+    <p>
+      Ein Fangspiel kann auch
+      mit Rollen, Gehen oder
+      anderen Bewegungsformen
+      gestaltet werden.
+    </p>
+    <p>
+      Wichtig ist, dass alle
+      mitmachen können und
+      Freude am Spiel haben.
+    </p>
+  </div>
+</section>
+
+<section>
+  <h2>🎲 Probiere ein altes Spiel aus!</h2>
+
+  <div class="infobox">
+    <h3>🪨 Zielwerfen</h3>
+
+    <p><strong>Du brauchst:</strong></p>
+    <p>
+      Drei weiche Bälle
+      und einen Eimer.
+    </p>
+
+    <p><strong>So geht es:</strong></p>
+    <ol>
+      <li>Stelle den Eimer auf.</li>
+      <li>Gehe ein paar Schritte zurück.</li>
+      <li>Versuche, die Bälle hineinzuwerfen.</li>
+      <li>Verändere den Abstand.</li>
+    </ol>
+
+    <p>
+      Diese moderne Spielidee
+      orientiert sich an einfachen
+      traditionellen Zielspielen.
+    </p>
+  </div>
+</section>
+
+<section>
+  <h2>🚀 Teste dein Wissen!</h2>
+
+  <div class="quiz">
+    <h3>Welches Spiel braucht normalerweise kaum Material?</h3>
+
+    <button type="button" onclick="pruefen(1)">
+      Computerspiel
+    </button>
+
+    <button type="button" onclick="pruefen(2)">
+      Verstecken
+    </button>
+
+    <button type="button" onclick="pruefen(3)">
+      Elektronisches Lernspiel
+    </button>
+
+    <p id="antwort" role="status" aria-live="polite"></p>
+  </div>
+</section>
+
+<a class="zurueck" href="geschichte-spiele.html">
+  ← Zurück zur Geschichte der Spiele
+</a>
+
+</main>
+
+<footer>
+  <p>🌌 Universum der Spiele</p>
+  <p>Entdecken · Spielen · Verstehen · Gestalten</p>
+</footer>
+
+<script>
+function anzeigen(button, id) {
+  const details = document.getElementById(id);
+  const offen =
+    button.getAttribute("aria-expanded") === "true";
+
+  details.hidden = offen;
+  button.setAttribute("aria-expanded", String(!offen));
+}
+
+function pruefen(auswahl) {
+  const antwort = document.getElementById("antwort");
+
+  if (auswahl === 2) {
+    antwort.textContent =
+      "🌟 Richtig! Verstecken braucht normalerweise kaum Material.";
+  } else {
+    antwort.textContent =
+      "🌙 Noch nicht ganz. Versuche es erneut!";
+  }
+}
+</script>
+
+</body>
+</html>
