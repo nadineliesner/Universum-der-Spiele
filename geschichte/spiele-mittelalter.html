@@ -1,0 +1,396 @@
+
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Entdecke Spiele im Mittelalter: Schach, Würfel, Ritterturniere und Kinderspiele.">
+
+<title>Spiele im Mittelalter | Universum der Spiele</title>
+
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(135deg, #10132b, #251547);
+  color: #f5f2ff;
+  line-height: 1.7;
+}
+
+header {
+  background: #171a3b;
+  text-align: center;
+  padding: 45px 20px;
+}
+
+h1 {
+  color: #d4baff;
+}
+
+h2 {
+  color: #b69aff;
+}
+
+h3 {
+  color: #decaff;
+}
+
+nav {
+  background: #25204a;
+  text-align: center;
+  padding: 15px;
+}
+
+nav a {
+  display: inline-block;
+  color: white;
+  margin: 8px;
+  text-decoration: none;
+}
+
+nav a:hover,
+nav a:focus-visible {
+  color: #e1c8ff;
+  text-decoration: underline;
+}
+
+main {
+  max-width: 1000px;
+  margin: auto;
+  padding: 25px 18px;
+}
+
+section {
+  background: #222447;
+  border: 1px solid #504779;
+  border-radius: 18px;
+  padding: 25px;
+  margin-bottom: 25px;
+}
+
+.einleitung {
+  text-align: center;
+  font-size: 1.15rem;
+}
+
+.kacheln {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 18px;
+}
+
+.kachel {
+  background: #35305f;
+  padding: 22px;
+  border-radius: 15px;
+}
+
+.infobox {
+  background: #40346e;
+  border-left: 5px solid #b69aff;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.quiz {
+  background: #35305f;
+  padding: 20px;
+  border-radius: 15px;
+}
+
+button {
+  background: #6551a5;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  padding: 12px 18px;
+  margin: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+button:hover,
+button:focus-visible {
+  background: #8169c6;
+}
+
+#antwort {
+  font-weight: bold;
+  margin-top: 15px;
+}
+
+.spruch {
+  text-align: center;
+  font-size: 1.3rem;
+  color: #e4ceff;
+  font-style: italic;
+}
+
+.zurueck {
+  display: inline-block;
+  padding: 12px 20px;
+  background: #6551a5;
+  color: white;
+  text-decoration: none;
+  border-radius: 10px;
+}
+
+.zurueck:hover,
+.zurueck:focus-visible {
+  background: #8169c6;
+}
+
+footer {
+  text-align: center;
+  background: #111329;
+  padding: 25px;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <h1>🏰 Spiele im Mittelalter</h1>
+  <p>Eine Reise in die Welt der Burgen und Ritter</p>
+</header>
+
+<nav aria-label="Hauptnavigation">
+  <a href="index.html">Start</a>
+  <a href="spielgeschichte.html">Spielgeschichte</a>
+  <a href="spielgenres.html">Spielgenres</a>
+  <a href="spiele-erleben.html">Spiele erleben</a>
+  <a href="spieleentwickeln.html">Spiele entwickeln</a>
+  <a href="ueber-mich.html">Über mich</a>
+  <a href="hilfe.html">Hilfe</a>
+</nav>
+
+<main>
+
+<section class="einleitung">
+  <h2>🎲 Wie spielten Menschen im Mittelalter?</h2>
+  <p>
+    Auch im Mittelalter liebten Menschen
+    Spiele, Wettbewerbe und Unterhaltung.
+  </p>
+  <p>
+    Kinder spielten auf Straßen und Plätzen.
+    Erwachsene spielten beispielsweise
+    Würfel- und Brettspiele.
+  </p>
+</section>
+
+<section>
+  <h2>♟️ Beliebte Spiele im Mittelalter</h2>
+
+  <div class="kacheln">
+
+    <article class="kachel">
+      <h3>♟️ Schach</h3>
+      <p>
+        Schach verbreitete sich im
+        Mittelalter in Europa.
+      </p>
+      <p>
+        Es war besonders an
+        Fürstenhöfen beliebt.
+      </p>
+    </article>
+
+    <article class="kachel">
+      <h3>🎲 Würfelspiele</h3>
+      <p>
+        Würfelspiele waren in vielen
+        gesellschaftlichen Gruppen verbreitet.
+      </p>
+      <p>
+        Sie wurden zur Unterhaltung,
+        aber auch um Geld gespielt.
+      </p>
+    </article>
+
+    <article class="kachel">
+      <h3>🪵 Mühle</h3>
+      <p>
+        Mühle ist ein altes Strategiespiel,
+        das auch im Mittelalter
+        gespielt wurde.
+      </p>
+      <p>
+        Ziel ist es, drei eigene
+        Spielsteine in eine Reihe zu bringen.
+      </p>
+    </article>
+
+    <article class="kachel">
+      <h3>🎯 Geschicklichkeitsspiele</h3>
+      <p>
+        Werfen, Zielen und andere
+        Geschicklichkeitsübungen
+        waren beliebte Beschäftigungen.
+      </p>
+    </article>
+
+  </div>
+</section>
+
+<section>
+  <h2>⚔️ Ritterturniere</h2>
+
+  <p>
+    Ritterturniere waren öffentliche
+    Wettbewerbe und gesellschaftliche
+    Veranstaltungen.
+  </p>
+
+  <p>
+    Ritter konnten dort ihre
+    Kampffähigkeiten zeigen.
+    Zu den Turnierformen gehörte
+    beispielsweise das Lanzenstechen.
+  </p>
+
+  <div class="infobox">
+    <strong>Schon gewusst?</strong>
+    <p>
+      Ritterturniere waren nicht
+      ungefährlich. Trotz Regeln
+      konnten schwere Verletzungen
+      entstehen.
+    </p>
+  </div>
+</section>
+
+<section>
+  <h2>🧒 Kinderspiele im Mittelalter</h2>
+
+  <p>
+    Auch Kinder spielten mit
+    einfachen Materialien und
+    erfanden eigene Spiele.
+  </p>
+
+  <div class="kacheln">
+
+    <article class="kachel">
+      <h3>⚪ Murmelspiele</h3>
+      <p>
+        Kleine Kugeln konnten für
+        Ziel- und Geschicklichkeitsspiele
+        verwendet werden.
+      </p>
+    </article>
+
+    <article class="kachel">
+      <h3>🌀 Kreisel</h3>
+      <p>
+        Kreisel aus Holz wurden
+        gedreht und in Bewegung gehalten.
+      </p>
+    </article>
+
+    <article class="kachel">
+      <h3>🏃 Bewegungsspiele</h3>
+      <p>
+        Lauf-, Fang- und andere
+        Bewegungsspiele brauchten
+        kaum Spielmaterial.
+      </p>
+    </article>
+
+    <article class="kachel">
+      <h3>🎭 Rollenspiele</h3>
+      <p>
+        Kinder konnten Erwachsene
+        nachahmen und Alltagssituationen
+        spielerisch darstellen.
+      </p>
+    </article>
+
+  </div>
+</section>
+
+<section>
+  <h2>🌍 Wer durfte spielen?</h2>
+
+  <p>
+    Menschen unterschiedlicher
+    gesellschaftlicher Gruppen spielten.
+    Die Möglichkeiten unterschieden sich
+    jedoch je nach Lebensumständen.
+  </p>
+
+  <p>
+    An Adelshöfen waren beispielsweise
+    aufwendig gestaltete Spielbretter
+    und Turniere verbreitet.
+  </p>
+
+  <p>
+    Andere Menschen nutzten
+    häufig einfache Gegenstände
+    für ihre Spiele.
+  </p>
+</section>
+
+<section>
+  <h2>🚀 Teste dein Wissen!</h2>
+
+  <div class="quiz">
+    <h3>Welches Brettspiel verbreitete sich im Mittelalter in Europa?</h3>
+
+    <button type="button" onclick="pruefen(1)">
+      Computerspiele
+    </button>
+
+    <button type="button" onclick="pruefen(2)">
+      Schach
+    </button>
+
+    <button type="button" onclick="pruefen(3)">
+      Videospiele
+    </button>
+
+    <p id="antwort" role="status" aria-live="polite"></p>
+  </div>
+</section>
+
+<section class="spruch">
+  <p>
+    „Ob Burg, Dorf oder Marktplatz –
+    die Freude am Spielen
+    verbindet Menschen seit Jahrhunderten.“
+  </p>
+</section>
+
+<a class="zurueck" href="geschichte-spiele.html">
+  ← Zurück zur Geschichte der Spiele
+</a>
+
+</main>
+
+<footer>
+  <p>🌌 Universum der Spiele</p>
+  <p>Entdecken · Spielen · Verstehen · Gestalten</p>
+</footer>
+
+<script>
+function pruefen(auswahl) {
+  const antwort = document.getElementById("antwort");
+
+  if (auswahl === 2) {
+    antwort.textContent =
+      "🌟 Richtig! Schach verbreitete sich im Mittelalter in Europa.";
+  } else {
+    antwort.textContent =
+      "🌙 Noch nicht ganz. Versuche es erneut!";
+  }
+}
+</script>
+
+</body>
+</html>
