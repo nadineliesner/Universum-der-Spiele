@@ -1,0 +1,471 @@
+
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Entdecke die Geschichte der Brettspiele von der Antike bis heute.">
+  <title>Geschichte der Brettspiele | Universum der Spiele</title>
+
+  <style>
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #10132b, #251547);
+      color: #f5f2ff;
+      line-height: 1.7;
+    }
+
+    header {
+      background: #171a3b;
+      text-align: center;
+      padding: 45px 20px;
+    }
+
+    h1 { color: #d4baff; }
+    h2 { color: #b69aff; }
+    h3 { color: #decaff; }
+
+    nav {
+      background: #25204a;
+      padding: 15px;
+      text-align: center;
+    }
+
+    nav a {
+      display: inline-block;
+      color: white;
+      margin: 8px;
+      text-decoration: none;
+    }
+
+    nav a:hover,
+    nav a:focus-visible {
+      color: #e1c8ff;
+      text-decoration: underline;
+    }
+
+    main {
+      max-width: 1000px;
+      margin: auto;
+      padding: 25px 18px;
+    }
+
+    section {
+      background: #222447;
+      border: 1px solid #504779;
+      border-radius: 18px;
+      padding: 25px;
+      margin-bottom: 25px;
+    }
+
+    .einleitung { text-align: center; }
+
+    .zeitstrahl {
+      border-left: 4px solid #b69aff;
+      padding-left: 22px;
+    }
+
+    .epoche {
+      margin-bottom: 15px;
+    }
+
+    .epoche button {
+      width: 100%;
+      text-align: left;
+      background: #35305f;
+      color: white;
+      border: 1px solid #70639e;
+      border-radius: 12px;
+      padding: 16px;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+
+    .epoche button:hover,
+    .epoche button:focus-visible {
+      background: #51447f;
+    }
+
+    .details {
+      background: #29264e;
+      padding: 18px;
+      margin-top: 8px;
+      border-radius: 12px;
+    }
+
+    .details[hidden] { display: none; }
+
+    .kacheln {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+      gap: 18px;
+    }
+
+    .kachel {
+      background: #35305f;
+      padding: 20px;
+      border-radius: 14px;
+    }
+
+    .quiz {
+      background: #35305f;
+      padding: 20px;
+      border-radius: 14px;
+    }
+
+    .quiz button {
+      background: #6551a5;
+      color: white;
+      border: none;
+      border-radius: 10px;
+      padding: 12px 18px;
+      margin: 5px;
+      cursor: pointer;
+      font-size: 1rem;
+    }
+
+    .quiz button:hover,
+    .quiz button:focus-visible {
+      background: #8169c6;
+    }
+
+    #antwort {
+      font-weight: bold;
+      margin-top: 15px;
+    }
+
+    .zurueck {
+      display: inline-block;
+      background: #6551a5;
+      color: white;
+      padding: 12px 20px;
+      border-radius: 10px;
+      text-decoration: none;
+    }
+
+    .zurueck:hover,
+    .zurueck:focus-visible {
+      background: #8169c6;
+    }
+
+    footer {
+      background: #111329;
+      padding: 25px;
+      text-align: center;
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <h1>🎲 Geschichte der Brettspiele</h1>
+  <p>Von antiken Spielbrettern zu modernen Spielewelten</p>
+</header>
+
+<nav aria-label="Hauptnavigation">
+  <a href="index.html">Start</a>
+  <a href="spielgeschichte.html">Spielgeschichte</a>
+  <a href="spielgenres.html">Spielgenres</a>
+  <a href="spiele-erleben.html">Spiele erleben</a>
+  <a href="spieleentwickeln.html">Spiele entwickeln</a>
+  <a href="ueber-mich.html">Über mich</a>
+  <a href="hilfe.html">Hilfe</a>
+</nav>
+
+<main>
+
+  <section class="einleitung">
+    <h2>🌍 Brettspiele begleiten die Menschheit</h2>
+    <p>
+      Schon vor Tausenden Jahren bewegten
+      Menschen Spielsteine über Spielbretter.
+    </p>
+    <p>
+      Brettspiele dienten der Unterhaltung,
+      dem Wettbewerb, der Gemeinschaft
+      und manchmal auch religiösen Vorstellungen.
+    </p>
+    <p>
+      Entdecke ihre spannende Geschichte!
+    </p>
+  </section>
+
+  <section>
+    <h2>⏳ Interaktiver Zeitstrahl</h2>
+    <p>Klicke auf eine Epoche, um mehr zu erfahren.</p>
+
+    <div class="zeitstrahl">
+
+      <article class="epoche">
+        <button type="button" aria-expanded="false"
+          aria-controls="senet"
+          onclick="anzeigen(this,'senet')">
+          🏺 Um 3100 v. Chr. – Senet
+        </button>
+        <div class="details" id="senet" hidden>
+          <h3>Altes Ägypten</h3>
+          <p>
+            Senet gehört zu den ältesten
+            nachweisbaren Brettspielen.
+            Das Spielbrett hatte 30 Felder.
+          </p>
+          <p>
+            Später wurde Senet auch
+            mit religiösen Vorstellungen
+            über das Jenseits verbunden.
+          </p>
+        </div>
+      </article>
+
+      <article class="epoche">
+        <button type="button" aria-expanded="false"
+          aria-controls="ur"
+          onclick="anzeigen(this,'ur')">
+          👑 Um 2600 v. Chr. – Spiel von Ur
+        </button>
+        <div class="details" id="ur" hidden>
+          <h3>Mesopotamien</h3>
+          <p>
+            Das Königliche Spiel von Ur
+            wurde im Gebiet des heutigen
+            Irak gespielt.
+          </p>
+          <p>
+            Archäologen entdeckten
+            kunstvoll verzierte Spielbretter.
+          </p>
+        </div>
+      </article>
+
+      <article class="epoche">
+        <button type="button" aria-expanded="false"
+          aria-controls="go"
+          onclick="anzeigen(this,'go')">
+          ⚫ Antikes China – Go
+        </button>
+        <div class="details" id="go" hidden>
+          <h3>Strategie mit schwarzen und weißen Steinen</h3>
+          <p>
+            Go entstand vor über
+            2000 Jahren in China.
+            Sein genauer Ursprung ist unklar.
+          </p>
+          <p>
+            Zwei Personen versuchen,
+            Gebiete auf einem
+            Spielbrett zu kontrollieren.
+          </p>
+        </div>
+      </article>
+
+      <article class="epoche">
+        <button type="button" aria-expanded="false"
+          aria-controls="schach"
+          onclick="anzeigen(this,'schach')">
+          ♟️ Etwa 6. Jahrhundert – Schach
+        </button>
+        <div class="details" id="schach" hidden>
+          <h3>Von Indien nach Europa</h3>
+          <p>
+            Schach entwickelte sich
+            aus älteren Spielformen,
+            darunter dem indischen Chaturanga.
+          </p>
+          <p>
+            Über Persien und die
+            arabische Welt gelangte
+            es nach Europa.
+          </p>
+        </div>
+      </article>
+
+      <article class="epoche">
+        <button type="button" aria-expanded="false"
+          aria-controls="industrie"
+          onclick="anzeigen(this,'industrie')">
+          🏭 19. Jahrhundert – Brettspiele in Serie
+        </button>
+        <div class="details" id="industrie" hidden>
+          <h3>Spiele werden verbreiteter</h3>
+          <p>
+            Verbesserte Druckverfahren
+            und industrielle Herstellung
+            machten die Produktion
+            von Brettspielen einfacher.
+          </p>
+          <p>
+            Viele neue Familien- und
+            Lernspiele entstanden.
+          </p>
+        </div>
+      </article>
+
+      <article class="epoche">
+        <button type="button" aria-expanded="false"
+          aria-controls="monopoly"
+          onclick="anzeigen(this,'monopoly')">
+          💰 1935 – Monopoly
+        </button>
+        <div class="details" id="monopoly" hidden>
+          <h3>Ein weltbekanntes Brettspiel</h3>
+          <p>
+            Parker Brothers vermarktete
+            Monopoly ab 1935.
+          </p>
+          <p>
+            Seine Vorgeschichte reicht
+            bis zu The Landlord's Game
+            von Elizabeth Magie zurück.
+          </p>
+        </div>
+      </article>
+
+      <article class="epoche">
+        <button type="button" aria-expanded="false"
+          aria-controls="siedler"
+          onclick="anzeigen(this,'siedler')">
+          🏝️ 1995 – Die Siedler von Catan
+        </button>
+        <div class="details" id="siedler" hidden>
+          <h3>Ein modernes Strategiespiel</h3>
+          <p>
+            Klaus Teuber entwickelte
+            Die Siedler von Catan.
+          </p>
+          <p>
+            Handeln, Bauen und
+            Ressourcenmanagement
+            prägen das Spiel.
+          </p>
+        </div>
+      </article>
+
+      <article class="epoche">
+        <button type="button" aria-expanded="false"
+          aria-controls="heute"
+          onclick="anzeigen(this,'heute')">
+          🚀 Heute – Moderne Brettspielwelten
+        </button>
+        <div class="details" id="heute" hidden>
+          <h3>Eine große Vielfalt</h3>
+          <p>
+            Heute gibt es kooperative
+            Spiele, Strategiespiele,
+            Escape-Spiele und viele
+            weitere Brettspielarten.
+          </p>
+          <p>
+            Manche Brettspiele verbinden
+            analoge Materialien mit
+            digitalen Anwendungen.
+          </p>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <section>
+    <h2>🎯 Welche Arten von Brettspielen gibt es?</h2>
+
+    <div class="kacheln">
+
+      <article class="kachel">
+        <h3>♟️ Strategiespiele</h3>
+        <p>
+          Vorausdenken und Entscheidungen
+          stehen im Mittelpunkt.
+        </p>
+      </article>
+
+      <article class="kachel">
+        <h3>🎲 Glücksspiele</h3>
+        <p>
+          Zufall, Würfel oder
+          gezogene Karten beeinflussen
+          den Spielverlauf.
+        </p>
+      </article>
+
+      <article class="kachel">
+        <h3>🤝 Kooperative Spiele</h3>
+        <p>
+          Die Spielenden arbeiten
+          gemeinsam auf ein Ziel hin.
+        </p>
+      </article>
+
+      <article class="kachel">
+        <h3>🧩 Rätselspiele</h3>
+        <p>
+          Logik, Hinweise und
+          Problemlösen stehen
+          im Mittelpunkt.
+        </p>
+      </article>
+
+    </div>
+  </section>
+
+  <section>
+    <h2>🚀 Teste dein Wissen!</h2>
+
+    <div class="quiz">
+      <h3>Welches Brettspiel stammt aus dem alten Ägypten?</h3>
+
+      <button type="button" onclick="pruefen(1)">
+        Monopoly
+      </button>
+
+      <button type="button" onclick="pruefen(2)">
+        Senet
+      </button>
+
+      <button type="button" onclick="pruefen(3)">
+        Catan
+      </button>
+
+      <p id="antwort" role="status" aria-live="polite"></p>
+    </div>
+  </section>
+
+  <a class="zurueck" href="geschichte-spiele.html">
+    ← Zurück zur Geschichte der Spiele
+  </a>
+
+</main>
+
+<footer>
+  <p>🌌 Universum der Spiele</p>
+  <p>Entdecken · Spielen · Verstehen · Gestalten</p>
+</footer>
+
+<script>
+  function anzeigen(button, id) {
+    const details = document.getElementById(id);
+    const offen =
+      button.getAttribute("aria-expanded") === "true";
+
+    details.hidden = offen;
+    button.setAttribute("aria-expanded", String(!offen));
+  }
+
+  function pruefen(auswahl) {
+    const antwort = document.getElementById("antwort");
+
+    if (auswahl === 2) {
+      antwort.textContent =
+        "🌟 Richtig! Senet wurde im alten Ägypten gespielt.";
+    } else {
+      antwort.textContent =
+        "🌙 Noch nicht ganz. Versuche es erneut!";
+    }
+  }
+</script>
+
+</body>
+</html>
