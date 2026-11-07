@@ -1,0 +1,739 @@
+
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+  <meta charset="UTF-8">
+
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+  <meta name="description"
+        content="Entdecke das Spiellexikon:
+        Spielarten, Spielgenres, Brettspiele,
+        Videospiele, Lernspiele und Spielregeln.">
+
+  <title>Spiellexikon | Universum der Spiele</title>
+
+  <link rel="stylesheet" href="css/style.css">
+
+  <style>
+
+    /* =====================================
+       SPIELLEXIKON – GESTALTUNG
+       ===================================== */
+
+    .lexikon-einleitung {
+      max-width: 950px;
+      margin: 0 auto;
+      padding: 45px 20px 25px;
+      text-align: center;
+    }
+
+    .lexikon-einleitung h2 {
+      color: #D9C4FF;
+      font-size: clamp(27px, 4vw, 40px);
+    }
+
+    .lexikon-einleitung p {
+      font-size: 18px;
+      line-height: 1.7;
+    }
+
+    /* THEMENKACHELN */
+
+    .lexikon-themen {
+      max-width: 1150px;
+      margin: 0 auto;
+      padding: 20px 20px 50px;
+    }
+
+    .lexikon-themen > h2 {
+      text-align: center;
+      color: #FFFFFF;
+      margin-bottom: 25px;
+    }
+
+    .lexikon-raster {
+      display: grid;
+      grid-template-columns:
+        repeat(4, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .lexikon-kachel {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+
+      min-height: 190px;
+      padding: 20px;
+
+      border-radius: 20px;
+      border: 1px solid #9A84DB;
+
+      background: linear-gradient(
+        145deg,
+        #245A9B,
+        #493487
+      );
+
+      color: white;
+      text-align: center;
+      text-decoration: none;
+
+      transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+    }
+
+    .lexikon-kachel:hover {
+      transform: translateY(-5px);
+      box-shadow:
+        0 10px 25px rgba(105,201,255,0.3);
+    }
+
+    .lexikon-kachel:focus-visible {
+      outline: 3px solid #FFE69A;
+      outline-offset: 4px;
+    }
+
+    .lexikon-symbol {
+      font-size: 42px;
+      line-height: 1.3;
+    }
+
+    .lexikon-kachel h3 {
+      margin: 0;
+      font-size: 19px;
+      line-height: 1.4;
+    }
+
+    /* WISSENSABSCHNITTE */
+
+    .lexikon-inhalte {
+      max-width: 950px;
+      margin: 0 auto;
+      padding: 0 20px 60px;
+    }
+
+    .lexikon-abschnitt {
+      margin-bottom: 25px;
+      padding: 28px;
+
+      background: rgba(30, 30, 75, 0.85);
+      border: 1px solid #594A98;
+      border-radius: 20px;
+    }
+
+    .lexikon-abschnitt h2 {
+      margin-top: 0;
+      color: #DCC4FF;
+      font-size: 25px;
+    }
+
+    .lexikon-abschnitt h3 {
+      color: #A8DEFF;
+      font-size: 20px;
+    }
+
+    .lexikon-abschnitt p,
+    .lexikon-abschnitt li {
+      font-size: 17px;
+      line-height: 1.7;
+    }
+
+    .lexikon-abschnitt ul {
+      padding-left: 25px;
+    }
+
+    .lexikon-abschnitt a {
+      color: #A8DEFF;
+    }
+
+    .zurueck-link {
+      display: inline-block;
+      margin-top: 15px;
+      font-weight: bold;
+    }
+
+    /* ALPHABET */
+
+    .alphabet {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 8px;
+      margin: 20px 0;
+    }
+
+    .alphabet span {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+
+      width: 38px;
+      height: 38px;
+
+      background-color: #354A91;
+      border-radius: 10px;
+      font-weight: bold;
+    }
+
+    /* TABLET */
+
+    @media (max-width: 900px) {
+      .lexikon-raster {
+        grid-template-columns:
+          repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    /* SMARTPHONE */
+
+    @media (max-width: 600px) {
+      .lexikon-raster {
+        grid-template-columns: 1fr;
+      }
+
+      .lexikon-kachel {
+        min-height: 145px;
+      }
+
+      .lexikon-abschnitt {
+        padding: 20px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .lexikon-kachel {
+        transition: none;
+      }
+
+      .lexikon-kachel:hover {
+        transform: none;
+      }
+    }
+
+  </style>
+
+</head>
+
+<body id="seitenanfang" class="startseite">
+
+  <a class="skip-link" href="#hauptinhalt">
+    Direkt zum Inhalt
+  </a>
+
+  <!-- KOPFZEILE -->
+
+  <header class="kopfzeile">
+
+    <h1>Universum der Spiele</h1>
+
+    <nav aria-label="Hauptnavigation">
+
+      <a href="index.html">
+        <span class="nav-symbol"
+              aria-hidden="true">🏠</span>
+        <span>Start</span>
+      </a>
+
+      <a href="geschichte.html">
+        <span class="nav-symbol"
+              aria-hidden="true">🕰️</span>
+        <span>Spielgeschichte</span>
+      </a>
+
+      <a href="spiellexikon.html"
+         aria-current="page">
+        <span class="nav-symbol"
+              aria-hidden="true">📚</span>
+        <span>Spiellexikon</span>
+      </a>
+
+      <a href="spiele-erleben.html">
+        <span class="nav-symbol"
+              aria-hidden="true">🎮</span>
+        <span>Spiele erleben</span>
+      </a>
+
+      <a href="spieleentwickeln.html">
+        <span class="nav-symbol"
+              aria-hidden="true">🛠️</span>
+        <span>Spiele entwickeln</span>
+      </a>
+
+      <a href="ueber-mich.html">
+        <span class="nav-symbol"
+              aria-hidden="true">👤</span>
+        <span>Über mich</span>
+      </a>
+
+      <a href="hilfe.html">
+        <span class="nav-symbol"
+              aria-hidden="true">❓</span>
+        <span>Hilfe</span>
+      </a>
+
+    </nav>
+
+  </header>
+
+  <main id="hauptinhalt">
+
+    <!-- EINLEITUNG -->
+
+    <section class="lexikon-einleitung">
+
+      <h2>📚 Das große Spiellexikon</h2>
+
+      <p>
+        Willkommen in der Wissensgalaxie
+        des Spielens!
+      </p>
+
+      <p>
+        Hier entdeckst du verschiedene
+        Spielarten, spannende Spielgenres
+        und die Geheimnisse hinter
+        bekannten Spielmechaniken.
+      </p>
+
+      <p>
+        Wähle ein Thema und starte
+        deine Entdeckungsreise!
+      </p>
+
+    </section>
+
+    <!-- THEMENÜBERSICHT -->
+
+    <section class="lexikon-themen"
+             aria-labelledby="themen-titel">
+
+      <h2 id="themen-titel">
+        Entdecke die acht Wissenswelten
+      </h2>
+
+      <div class="lexikon-raster">
+
+        <a href="#spielarten"
+           class="lexikon-kachel">
+          <span class="lexikon-symbol"
+                aria-hidden="true">🌌</span>
+          <h3>Spielarten und Spielgenres</h3>
+        </a>
+
+        <a href="#brettspiele"
+           class="lexikon-kachel">
+          <span class="lexikon-symbol"
+                aria-hidden="true">🎲</span>
+          <h3>Brettspiele und Kartenspiele</h3>
+        </a>
+
+        <a href="#bewegung"
+           class="lexikon-kachel">
+          <span class="lexikon-symbol"
+                aria-hidden="true">🏃</span>
+          <h3>Bewegungs- und Geschicklichkeitsspiele</h3>
+        </a>
+
+        <a href="#rollenspiele"
+           class="lexikon-kachel">
+          <span class="lexikon-symbol"
+                aria-hidden="true">🐉</span>
+          <h3>Rollenspiele und Abenteuerspiele</h3>
+        </a>
+
+        <a href="#videospiele"
+           class="lexikon-kachel">
+          <span class="lexikon-symbol"
+                aria-hidden="true">🎮</span>
+          <h3>Computerspiele und Videospiele</h3>
+        </a>
+
+        <a href="#lernspiele"
+           class="lexikon-kachel">
+          <span class="lexikon-symbol"
+                aria-hidden="true">🧠</span>
+          <h3>Lernspiele und Therapiespiele</h3>
+        </a>
+
+        <a href="#alphabet"
+           class="lexikon-kachel">
+          <span class="lexikon-symbol"
+                aria-hidden="true">🔤</span>
+          <h3>Spielbegriffe von A bis Z</h3>
+        </a>
+
+        <a href="#spielregeln"
+           class="lexikon-kachel">
+          <span class="lexikon-symbol"
+                aria-hidden="true">⚙️</span>
+          <h3>Spielregeln und Spielmechaniken</h3>
+        </a>
+
+      </div>
+
+    </section>
+
+    <!-- WISSENSINHALTE -->
+
+    <div class="lexikon-inhalte">
+
+      <!-- SPIELARTEN -->
+
+      <section id="spielarten"
+               class="lexikon-abschnitt">
+
+        <h2>🌌 Spielarten und Spielgenres</h2>
+
+        <p>
+          Spiele lassen sich auf unterschiedliche
+          Weise einteilen. Manche werden
+          gemeinsam gespielt, andere allein.
+          Manche brauchen Bewegung,
+          andere Strategie oder Fantasie.
+        </p>
+
+        <h3>Beispiele für Spielgenres</h3>
+
+        <ul>
+          <li>Strategiespiele</li>
+          <li>Abenteuerspiele</li>
+          <li>Simulationsspiele</li>
+          <li>Rätselspiele</li>
+          <li>Geschicklichkeitsspiele</li>
+          <li>Rollenspiele</li>
+          <li>Kooperative Spiele</li>
+        </ul>
+
+        <a href="#themen-titel"
+           class="zurueck-link">
+          ↑ Zurück zur Themenauswahl
+        </a>
+
+      </section>
+
+      <!-- BRETTSPIELE -->
+
+      <section id="brettspiele"
+               class="lexikon-abschnitt">
+
+        <h2>🎲 Brettspiele und Kartenspiele</h2>
+
+        <p>
+          Brett- und Kartenspiele werden
+          häufig gemeinsam an einem Tisch
+          gespielt. Dabei kommen Spielbretter,
+          Figuren, Würfel oder Karten
+          zum Einsatz.
+        </p>
+
+        <h3>Bekannte Beispiele</h3>
+
+        <ul>
+          <li>Schach</li>
+          <li>Mühle</li>
+          <li>Mensch ärgere Dich nicht</li>
+          <li>UNO</li>
+          <li>Memory</li>
+          <li>Skat</li>
+        </ul>
+
+        <a href="#themen-titel"
+           class="zurueck-link">
+          ↑ Zurück zur Themenauswahl
+        </a>
+
+      </section>
+
+      <!-- BEWEGUNG -->
+
+      <section id="bewegung"
+               class="lexikon-abschnitt">
+
+        <h2>🏃 Bewegungs- und Geschicklichkeitsspiele</h2>
+
+        <p>
+          Bei diesen Spielen stehen
+          körperliche Bewegung, Koordination,
+          Gleichgewicht oder Geschicklichkeit
+          im Mittelpunkt.
+        </p>
+
+        <h3>Beispiele</h3>
+
+        <ul>
+          <li>Fangen</li>
+          <li>Verstecken</li>
+          <li>Hüpfspiele</li>
+          <li>Balancierspiele</li>
+          <li>Geschicklichkeitsparcours</li>
+          <li>Jenga</li>
+        </ul>
+
+        <a href="#themen-titel"
+           class="zurueck-link">
+          ↑ Zurück zur Themenauswahl
+        </a>
+
+      </section>
+
+      <!-- ROLLENSPIELE -->
+
+      <section id="rollenspiele"
+               class="lexikon-abschnitt">
+
+        <h2>🐉 Rollenspiele und Abenteuerspiele</h2>
+
+        <p>
+          Bei Rollenspielen schlüpfen
+          Menschen in andere Rollen.
+          Sie erleben Geschichten,
+          treffen Entscheidungen und
+          gestalten ihre Abenteuer mit.
+        </p>
+
+        <h3>Beispiele</h3>
+
+        <ul>
+          <li>Pen-and-Paper-Rollenspiele</li>
+          <li>Fantasy-Rollenspiele</li>
+          <li>Detektivspiele</li>
+          <li>Abenteuer- und Erkundungsspiele</li>
+          <li>Live-Rollenspiele (LARP)</li>
+        </ul>
+
+        <a href="#themen-titel"
+           class="zurueck-link">
+          ↑ Zurück zur Themenauswahl
+        </a>
+
+      </section>
+
+      <!-- VIDEOSPIELE -->
+
+      <section id="videospiele"
+               class="lexikon-abschnitt">
+
+        <h2>🎮 Computerspiele und Videospiele</h2>
+
+        <p>
+          Digitale Spiele werden auf
+          Computern, Spielkonsolen,
+          Smartphones und anderen
+          elektronischen Geräten gespielt.
+        </p>
+
+        <h3>Bekannte Genres</h3>
+
+        <ul>
+          <li>Jump ’n’ Run</li>
+          <li>Actionspiele</li>
+          <li>Shooter</li>
+          <li>Adventure</li>
+          <li>Simulation</li>
+          <li>Aufbauspiele</li>
+          <li>Rennspiele</li>
+          <li>Sandbox-Spiele</li>
+        </ul>
+
+        <a href="#themen-titel"
+           class="zurueck-link">
+          ↑ Zurück zur Themenauswahl
+        </a>
+
+      </section>
+
+      <!-- LERNSPIELE -->
+
+      <section id="lernspiele"
+               class="lexikon-abschnitt">
+
+        <h2>🧠 Lernspiele und Therapiespiele</h2>
+
+        <p>
+          Lernspiele verbinden das Spielen
+          mit bestimmten Lernzielen.
+          Therapiespiele können in
+          pädagogischen oder therapeutischen
+          Zusammenhängen eingesetzt werden.
+        </p>
+
+        <h3>Mögliche Lern- und Förderbereiche</h3>
+
+        <ul>
+          <li>Sprache und Kommunikation</li>
+          <li>Mathematik und Logik</li>
+          <li>Gedächtnis und Aufmerksamkeit</li>
+          <li>Motorik und Koordination</li>
+          <li>Soziale Fähigkeiten</li>
+          <li>Wahrnehmung</li>
+        </ul>
+
+        <p>
+          Wichtig: Nicht jedes Lernspiel
+          ist automatisch ein therapeutisch
+          wirksames Hilfsmittel.
+        </p>
+
+        <a href="#themen-titel"
+           class="zurueck-link">
+          ↑ Zurück zur Themenauswahl
+        </a>
+
+      </section>
+
+      <!-- ALPHABET -->
+
+      <section id="alphabet"
+               class="lexikon-abschnitt">
+
+        <h2>🔤 Spielbegriffe von A bis Z</h2>
+
+        <p>
+          In der Welt der Spiele gibt es
+          viele besondere Begriffe.
+          Hier entsteht nach und nach
+          dein Spielewörterbuch.
+        </p>
+
+        <div class="alphabet"
+             aria-label="Buchstaben A bis Z">
+
+          <span>A</span><span>B</span>
+          <span>C</span><span>D</span>
+          <span>E</span><span>F</span>
+          <span>G</span><span>H</span>
+          <span>I</span><span>J</span>
+          <span>K</span><span>L</span>
+          <span>M</span><span>N</span>
+          <span>O</span><span>P</span>
+          <span>Q</span><span>R</span>
+          <span>S</span><span>T</span>
+          <span>U</span><span>V</span>
+          <span>W</span><span>X</span>
+          <span>Y</span><span>Z</span>
+
+        </div>
+
+        <h3>Erste Begriffe</h3>
+
+        <ul>
+          <li>
+            <strong>Avatar:</strong>
+            Eine Spielfigur oder digitale
+            Darstellung einer Person.
+          </li>
+
+          <li>
+            <strong>Gameplay:</strong>
+            Die Art und Weise, wie
+            sich ein Spiel spielt.
+          </li>
+
+          <li>
+            <strong>Level:</strong>
+            Ein Abschnitt oder Bereich
+            innerhalb eines Spiels.
+          </li>
+
+          <li>
+            <strong>NPC:</strong>
+            Eine Figur, die nicht direkt
+            von einem Spieler gesteuert wird.
+          </li>
+
+          <li>
+            <strong>Quest:</strong>
+            Eine Aufgabe oder Mission
+            innerhalb eines Spiels.
+          </li>
+        </ul>
+
+        <a href="#themen-titel"
+           class="zurueck-link">
+          ↑ Zurück zur Themenauswahl
+        </a>
+
+      </section>
+
+      <!-- SPIELMECHANIKEN -->
+
+      <section id="spielregeln"
+               class="lexikon-abschnitt">
+
+        <h2>⚙️ Spielregeln und Spielmechaniken</h2>
+
+        <p>
+          Spielregeln legen fest,
+          was erlaubt ist und wie
+          ein Spiel funktioniert.
+        </p>
+
+        <p>
+          Spielmechaniken beschreiben,
+          welche Handlungen und Abläufe
+          das Spielen bestimmen.
+        </p>
+
+        <h3>Beispiele für Spielmechaniken</h3>
+
+        <ul>
+          <li>Würfeln und Ziehen</li>
+          <li>Karten sammeln</li>
+          <li>Ressourcen verwalten</li>
+          <li>Figuren bewegen</li>
+          <li>Gebiete erobern</li>
+          <li>Gemeinsam Aufgaben lösen</li>
+          <li>Punkte sammeln</li>
+          <li>Entscheidungen treffen</li>
+        </ul>
+
+        <a href="#themen-titel"
+           class="zurueck-link">
+          ↑ Zurück zur Themenauswahl
+        </a>
+
+      </section>
+
+    </div>
+
+  </main>
+
+  <!-- FUSSZEILE -->
+
+  <footer class="fusszeile">
+
+    <p>
+      Ein Studienprojekt im Modul Webprogrammierung
+      von Nadine Liesner.
+    </p>
+
+    <nav class="footer-links"
+         aria-label="Rechtliche Informationen">
+
+      <a href="datenschutz.html">
+        Datenschutz
+      </a>
+
+      <a href="impressum.html">
+        Impressum
+      </a>
+
+      <a href="#seitenanfang">
+        ↑ Nach oben
+      </a>
+
+    </nav>
+
+    <p>© 2026 Universum der Spiele</p>
+
+  </footer>
+
+</body>
+</html>
