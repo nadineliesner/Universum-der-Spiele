@@ -1,0 +1,834 @@
+
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+  <meta charset="UTF-8">
+
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+  <meta name="description"
+        content="Hilfe zum Universum der Spiele:
+        Bedienung, häufige Fragen, Spielregeln,
+        Barrierefreiheit, Medienkompetenz
+        und Kontaktmöglichkeiten.">
+
+  <title>Hilfe | Universum der Spiele</title>
+
+  <link rel="stylesheet" href="css/style.css">
+
+  <style>
+
+    /* =====================================
+       HILFESEITE – GESTALTUNG
+       ===================================== */
+
+    .hilfe-einleitung {
+      max-width: 950px;
+      margin: 0 auto;
+      padding: 45px 20px 25px;
+      text-align: center;
+    }
+
+    .hilfe-einleitung h2 {
+      color: #E3C8FF;
+      font-size: clamp(26px, 4vw, 40px);
+      margin: 0 0 15px;
+    }
+
+    .hilfe-einleitung p {
+      font-size: 18px;
+      line-height: 1.7;
+    }
+
+    /* THEMENKACHELN */
+
+    .hilfe-themen {
+      max-width: 1150px;
+      margin: 0 auto;
+      padding: 20px 20px 50px;
+    }
+
+    .hilfe-themen > h2 {
+      text-align: center;
+      margin-bottom: 25px;
+    }
+
+    .hilfe-raster {
+      display: grid;
+      grid-template-columns:
+        repeat(3, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .hilfe-kachel {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+
+      min-height: 180px;
+      padding: 22px;
+
+      border-radius: 20px;
+      border: 1px solid #82A7D8;
+
+      background: linear-gradient(
+        145deg,
+        #286478,
+        #354A91
+      );
+
+      color: #FFFFFF;
+      text-align: center;
+      text-decoration: none;
+
+      transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+    }
+
+    .hilfe-kachel:hover {
+      transform: translateY(-5px);
+      box-shadow:
+        0 10px 25px rgba(105,201,255,0.3);
+    }
+
+    .hilfe-kachel:focus-visible {
+      outline: 3px solid #FFE69A;
+      outline-offset: 4px;
+    }
+
+    .hilfe-symbol {
+      font-size: 42px;
+      line-height: 1.3;
+    }
+
+    .hilfe-kachel h3 {
+      margin: 0;
+      font-size: 19px;
+      line-height: 1.4;
+    }
+
+    /* HILFEINHALTE */
+
+    .hilfe-inhalte {
+      max-width: 950px;
+      margin: 0 auto;
+      padding: 0 20px 60px;
+    }
+
+    .hilfe-abschnitt {
+      margin-bottom: 25px;
+      padding: 28px;
+
+      background: rgba(30, 30, 75, 0.85);
+      border: 1px solid #594A98;
+      border-radius: 20px;
+    }
+
+    .hilfe-abschnitt h2 {
+      margin-top: 0;
+      color: #DCC4FF;
+      font-size: 25px;
+    }
+
+    .hilfe-abschnitt h3 {
+      color: #A8DEFF;
+      font-size: 20px;
+    }
+
+    .hilfe-abschnitt p,
+    .hilfe-abschnitt li {
+      font-size: 17px;
+      line-height: 1.7;
+    }
+
+    .hilfe-abschnitt ul,
+    .hilfe-abschnitt ol {
+      padding-left: 25px;
+    }
+
+    .hilfe-abschnitt a {
+      color: #A8DEFF;
+    }
+
+    /* FAQ */
+
+    .faq-fragen details {
+      margin-bottom: 12px;
+      padding: 15px;
+
+      background: #252D62;
+      border: 1px solid #536BA8;
+      border-radius: 12px;
+    }
+
+    .faq-fragen summary {
+      cursor: pointer;
+      font-size: 17px;
+      font-weight: bold;
+    }
+
+    .faq-fragen summary:focus-visible {
+      outline: 3px solid #FFE69A;
+      outline-offset: 4px;
+    }
+
+    .faq-fragen details p {
+      margin-bottom: 0;
+    }
+
+    .zurueck-link {
+      display: inline-block;
+      margin-top: 15px;
+      font-weight: bold;
+    }
+
+    /* TABLET */
+
+    @media (max-width: 900px) {
+      .hilfe-raster {
+        grid-template-columns:
+          repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    /* SMARTPHONE */
+
+    @media (max-width: 600px) {
+      .hilfe-raster {
+        grid-template-columns: 1fr;
+      }
+
+      .hilfe-kachel {
+        min-height: 140px;
+      }
+
+      .hilfe-abschnitt {
+        padding: 20px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .hilfe-kachel {
+        transition: none;
+      }
+
+      .hilfe-kachel:hover {
+        transform: none;
+      }
+    }
+
+  </style>
+
+</head>
+
+<body id="seitenanfang" class="startseite">
+
+  <a class="skip-link" href="#hauptinhalt">
+    Direkt zum Inhalt
+  </a>
+
+  <!-- KOPFZEILE -->
+
+  <header class="kopfzeile">
+
+    <h1>Universum der Spiele</h1>
+
+    <nav aria-label="Hauptnavigation">
+
+      <a href="index.html">
+        <span class="nav-symbol"
+              aria-hidden="true">🏠</span>
+        <span>Start</span>
+      </a>
+
+      <a href="geschichte.html">
+        <span class="nav-symbol"
+              aria-hidden="true">🕰️</span>
+        <span>Spielgeschichte</span>
+      </a>
+
+      <a href="spiellexikon.html">
+        <span class="nav-symbol"
+              aria-hidden="true">📚</span>
+        <span>Spiellexikon</span>
+      </a>
+
+      <a href="spiele-erleben.html">
+        <span class="nav-symbol"
+              aria-hidden="true">🎮</span>
+        <span>Spiele erleben</span>
+      </a>
+
+      <a href="spieleentwickeln.html">
+        <span class="nav-symbol"
+              aria-hidden="true">🛠️</span>
+        <span>Spiele entwickeln</span>
+      </a>
+
+      <a href="ueber-mich.html">
+        <span class="nav-symbol"
+              aria-hidden="true">👤</span>
+        <span>Über mich</span>
+      </a>
+
+      <a href="hilfe.html"
+         aria-current="page">
+        <span class="nav-symbol"
+              aria-hidden="true">❓</span>
+        <span>Hilfe</span>
+      </a>
+
+    </nav>
+
+  </header>
+
+  <main id="hauptinhalt">
+
+    <!-- EINLEITUNG -->
+
+    <section class="hilfe-einleitung">
+
+      <h2>❓ Hilfe für deine Reise durchs Spieleuniversum</h2>
+
+      <p>
+        Du hast eine Frage,
+        brauchst Unterstützung
+        oder möchtest mehr über
+        die Bedienung der Website erfahren?
+      </p>
+
+      <p>
+        Hier findest du hilfreiche
+        Erklärungen, Tipps und Antworten.
+      </p>
+
+      <p>
+        Wähle einfach das Thema,
+        bei dem du Unterstützung brauchst!
+      </p>
+
+    </section>
+
+    <!-- SIEBEN THEMENKACHELN -->
+
+    <section class="hilfe-themen"
+             aria-labelledby="themen-titel">
+
+      <h2 id="themen-titel">
+        Wobei können wir dir helfen?
+      </h2>
+
+      <div class="hilfe-raster">
+
+        <a href="#bedienung"
+           class="hilfe-kachel">
+          <span class="hilfe-symbol"
+                aria-hidden="true">🧭</span>
+          <h3>So funktioniert die Website</h3>
+        </a>
+
+        <a href="#faq"
+           class="hilfe-kachel">
+          <span class="hilfe-symbol"
+                aria-hidden="true">💬</span>
+          <h3>Häufig gestellte Fragen</h3>
+        </a>
+
+        <a href="#spielregeln"
+           class="hilfe-kachel">
+          <span class="hilfe-symbol"
+                aria-hidden="true">🎲</span>
+          <h3>Hilfe bei Spielregeln</h3>
+        </a>
+
+        <a href="#eltern"
+           class="hilfe-kachel">
+          <span class="hilfe-symbol"
+                aria-hidden="true">👨‍👩‍👧</span>
+          <h3>Tipps für Eltern und Pädagogen</h3>
+        </a>
+
+        <a href="#barrierefreiheit"
+           class="hilfe-kachel">
+          <span class="hilfe-symbol"
+                aria-hidden="true">♿</span>
+          <h3>Barrierefreiheit und Bedienung</h3>
+        </a>
+
+        <a href="#medienkompetenz"
+           class="hilfe-kachel">
+          <span class="hilfe-symbol"
+                aria-hidden="true">🛡️</span>
+          <h3>Sicher spielen und Medienkompetenz</h3>
+        </a>
+
+        <a href="#kontakt"
+           class="hilfe-kachel">
+          <span class="hilfe-symbol"
+                aria-hidden="true">✉️</span>
+          <h3>Kontakt und Feedback</h3>
+        </a>
+
+      </div>
+
+    </section>
+
+    <!-- HILFEINHALTE -->
+
+    <div class="hilfe-inhalte">
+
+      <!-- WEBSITE -->
+
+      <section id="bedienung"
+               class="hilfe-abschnitt">
+
+        <h2>🧭 So funktioniert die Website</h2>
+
+        <p>
+          Das Universum der Spiele
+          besteht aus verschiedenen
+          Themenbereichen.
+        </p>
+
+        <h3>So findest du dich zurecht</h3>
+
+        <ol>
+          <li>
+            Öffne die Startseite.
+          </li>
+          <li>
+            Wähle einen Themenbereich.
+          </li>
+          <li>
+            Klicke auf eine Themenkachel.
+          </li>
+          <li>
+            Lies die Informationen
+            oder entdecke weitere Inhalte.
+          </li>
+          <li>
+            Nutze die Navigation,
+            um andere Bereiche zu besuchen.
+          </li>
+        </ol>
+
+        <p>
+          Du kannst jederzeit
+          über die Hauptnavigation
+          zur Startseite zurückkehren.
+        </p>
+
+        <a href="#themen-titel"
+           class="zurueck-link">
+          ↑ Zurück zur Themenauswahl
+        </a>
+
+      </section>
+
+      <!-- FAQ -->
+
+      <section id="faq"
+               class="hilfe-abschnitt">
+
+        <h2>💬 Häufig gestellte Fragen</h2>
+
+        <p>
+          Klicke auf eine Frage,
+          um die Antwort zu öffnen.
+        </p>
+
+        <div class="faq-fragen">
+
+          <details>
+            <summary>
+              Ist die Website kostenlos?
+            </summary>
+
+            <p>
+              Die frei zugänglichen Inhalte
+              dieser Website können
+              kostenlos genutzt werden.
+            </p>
+          </details>
+
+          <details>
+            <summary>
+              Muss ich mich anmelden?
+            </summary>
+
+            <p>
+              Für die bisherigen
+              Informationsseiten ist
+              keine Anmeldung erforderlich.
+            </p>
+          </details>
+
+          <details>
+            <summary>
+              Für wen ist die Website gedacht?
+            </summary>
+
+            <p>
+              Die Website richtet sich
+              an alle Menschen,
+              die sich für Spiele,
+              Spielgeschichte und
+              Spieleentwicklung interessieren.
+            </p>
+          </details>
+
+          <details>
+            <summary>
+              Kann ich hier selbst Spiele spielen?
+            </summary>
+
+            <p>
+              Der Bereich "Spiele erleben"
+              ist für eigene Spiele,
+              Rätsel und interaktive
+              Angebote vorgesehen.
+            </p>
+          </details>
+
+          <details>
+            <summary>
+              Wird die Website erweitert?
+            </summary>
+
+            <p>
+              Ja, das Spieleuniversum
+              ist ein wachsendes Projekt.
+              Neue Informationen und
+              Funktionen können
+              nach und nach hinzukommen.
+            </p>
+          </details>
+
+        </div>
+
+        <a href="#themen-titel"
+           class="zurueck-link">
+          ↑ Zurück zur Themenauswahl
+        </a>
+
+      </section>
+
+      <!-- SPIELREGELN -->
+
+      <section id="spielregeln"
+               class="hilfe-abschnitt">
+
+        <h2>🎲 Hilfe bei Spielregeln</h2>
+
+        <p>
+          Manchmal sind Spielregeln
+          schwer zu verstehen.
+          Mit einigen einfachen Fragen
+          kannst du ein Spiel
+          besser kennenlernen.
+        </p>
+
+        <h3>Fünf wichtige Fragen</h3>
+
+        <ol>
+          <li>Was ist das Ziel des Spiels?</li>
+          <li>Wer beginnt?</li>
+          <li>Was darf ich in meinem Zug tun?</li>
+          <li>Was passiert bei besonderen Ereignissen?</li>
+          <li>Wann endet das Spiel?</li>
+        </ol>
+
+        <p>
+          Probiere zunächst
+          eine kleine Testrunde aus.
+          So lassen sich viele Regeln
+          leichter verstehen.
+        </p>
+
+        <a href="spiellexikon.html#spielregeln">
+          Mehr über Spielregeln und Mechaniken
+        </a>
+
+        <p>
+          <a href="#themen-titel"
+             class="zurueck-link">
+            ↑ Zurück zur Themenauswahl
+          </a>
+        </p>
+
+      </section>
+
+      <!-- ELTERN -->
+
+      <section id="eltern"
+               class="hilfe-abschnitt">
+
+        <h2>👨‍👩‍👧 Tipps für Eltern und Pädagogen</h2>
+
+        <p>
+          Spiele können Kindern
+          und Jugendlichen viele
+          Lern- und Entwicklungsmöglichkeiten
+          bieten.
+        </p>
+
+        <h3>Praktische Tipps</h3>
+
+        <ul>
+          <li>
+            Wähle Spiele passend
+            zu Alter und Interessen.
+          </li>
+
+          <li>
+            Erkläre die Regeln
+            in kleinen Schritten.
+          </li>
+
+          <li>
+            Gib genügend Zeit
+            zum Ausprobieren.
+          </li>
+
+          <li>
+            Achte auf Pausen
+            und unterschiedliche Bedürfnisse.
+          </li>
+
+          <li>
+            Lass Kinder eigene
+            Spielideen entwickeln.
+          </li>
+
+          <li>
+            Sprich über Erlebnisse,
+            Erfolge und Schwierigkeiten.
+          </li>
+        </ul>
+
+        <p>
+          Gemeinsames Spielen kann
+          Austausch und Zusammenarbeit
+          fördern.
+        </p>
+
+        <a href="#themen-titel"
+           class="zurueck-link">
+          ↑ Zurück zur Themenauswahl
+        </a>
+
+      </section>
+
+      <!-- BARRIEREFREIHEIT -->
+
+      <section id="barrierefreiheit"
+               class="hilfe-abschnitt">
+
+        <h2>♿ Barrierefreiheit und Bedienung</h2>
+
+        <p>
+          Das Universum der Spiele
+          soll möglichst vielen Menschen
+          zugänglich sein.
+        </p>
+
+        <h3>Hilfreiche Bedienmöglichkeiten</h3>
+
+        <ul>
+          <li>
+            Mit der Tabulatortaste
+            kannst du zwischen
+            Links wechseln.
+          </li>
+
+          <li>
+            Mit Enter kannst du
+            ausgewählte Links öffnen.
+          </li>
+
+          <li>
+            Mit Strg und Plus kannst du
+            in vielen Browsern
+            die Ansicht vergrößern.
+          </li>
+
+          <li>
+            Die Website ist für
+            verschiedene Bildschirmgrößen
+            gestaltet.
+          </li>
+
+          <li>
+            Überschriften helfen
+            bei der Orientierung.
+          </li>
+        </ul>
+
+        <p>
+          Die Barrierefreiheit der Website
+          wird während der Entwicklung
+          weiter überprüft und verbessert.
+        </p>
+
+        <a href="#themen-titel"
+           class="zurueck-link">
+          ↑ Zurück zur Themenauswahl
+        </a>
+
+      </section>
+
+      <!-- MEDIENKOMPETENZ -->
+
+      <section id="medienkompetenz"
+               class="hilfe-abschnitt">
+
+        <h2>🛡️ Sicher spielen und Medienkompetenz</h2>
+
+        <p>
+          Digitale Spiele können
+          spannend und lehrreich sein.
+          Gleichzeitig ist ein
+          bewusster Umgang wichtig.
+        </p>
+
+        <h3>Tipps für sicheres Spielen</h3>
+
+        <ul>
+          <li>
+            Achte auf Altersfreigaben
+            und Spielinhalte.
+          </li>
+
+          <li>
+            Teile keine privaten
+            Informationen mit Fremden.
+          </li>
+
+          <li>
+            Überprüfe Kosten
+            und In-App-Käufe.
+          </li>
+
+          <li>
+            Lege regelmäßig Pausen ein.
+          </li>
+
+          <li>
+            Melde unangemessenes
+            Verhalten in Online-Spielen.
+          </li>
+
+          <li>
+            Sprich mit einer
+            Vertrauensperson,
+            wenn dich etwas belastet.
+          </li>
+        </ul>
+
+        <h3>Weiterführende Informationen</h3>
+
+        <p>
+          Informationen zu Altersfreigaben
+          findest du bei der
+          <a href="https://usk.de/"
+             target="_blank"
+             rel="noopener noreferrer">
+            Unterhaltungssoftware Selbstkontrolle (USK)
+          </a>.
+        </p>
+
+        <p>
+          Weitere Tipps zur Mediennutzung
+          bietet
+          <a href="https://www.klicksafe.de/"
+             target="_blank"
+             rel="noopener noreferrer">
+            klicksafe
+          </a>.
+        </p>
+
+        <a href="#themen-titel"
+           class="zurueck-link">
+          ↑ Zurück zur Themenauswahl
+        </a>
+
+      </section>
+
+      <!-- KONTAKT -->
+
+      <section id="kontakt"
+               class="hilfe-abschnitt">
+
+        <h2>✉️ Kontakt und Feedback</h2>
+
+        <p>
+          Hast du einen Fehler entdeckt,
+          eine Frage oder eine Idee
+          für das Spieleuniversum?
+        </p>
+
+        <p>
+          Rückmeldungen können helfen,
+          die Website verständlicher
+          und zugänglicher zu gestalten.
+        </p>
+
+        <p>
+          Eine Kontaktmöglichkeit
+          wird hier später ergänzt.
+        </p>
+
+        <a href="ueber-mich.html#kontakt">
+          Mehr über Kontakt und Zusammenarbeit
+        </a>
+
+        <p>
+          <a href="#themen-titel"
+             class="zurueck-link">
+            ↑ Zurück zur Themenauswahl
+          </a>
+        </p>
+
+      </section>
+
+    </div>
+
+  </main>
+
+  <!-- FUSSZEILE -->
+
+  <footer class="fusszeile">
+
+    <p>
+      Ein Studienprojekt im Modul Webprogrammierung
+      von Nadine Liesner.
+    </p>
+
+    <nav class="footer-links"
+         aria-label="Rechtliche Informationen">
+
+      <a href="datenschutz.html">
+        Datenschutz
+      </a>
+
+      <a href="impressum.html">
+        Impressum
+      </a>
+
+      <a href="#seitenanfang">
+        ↑ Nach oben
+      </a>
+
+    </nav>
+
+    <p>© 2026 Universum der Spiele</p>
+
+  </footer>
+
+</body>
+</html>
