@@ -1,0 +1,609 @@
+
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Spiele aus aller Welt | Universum der Spiele</title>
+
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(135deg, #10132b, #251547);
+  color: #f5f2ff;
+  line-height: 1.7;
+}
+
+header {
+  background: #171a3b;
+  text-align: center;
+  padding: 40px 20px;
+}
+
+h1 {
+  color: #d4baff;
+}
+
+h2 {
+  color: #b69aff;
+}
+
+nav {
+  background: #25204a;
+  padding: 15px;
+  text-align: center;
+}
+
+nav a {
+  color: white;
+  display: inline-block;
+  text-decoration: none;
+  margin: 8px;
+}
+
+nav a:hover,
+nav a:focus-visible {
+  text-decoration: underline;
+  color: #d4baff;
+}
+
+main {
+  max-width: 1200px;
+  margin: auto;
+  padding: 25px;
+}
+
+.intro {
+  text-align: center;
+  max-width: 750px;
+  margin: 20px auto 35px;
+}
+
+.karte-box {
+  background: #171a3b;
+  padding: 20px;
+  border: 2px solid #65519a;
+  border-radius: 20px;
+}
+
+#karte {
+  width: 100%;
+  height: 500px;
+  border-radius: 12px;
+  background: #111a36;
+  z-index: 1;
+}
+
+.suche {
+  margin: 30px 0;
+  text-align: center;
+}
+
+input,
+select {
+  background: #211d43;
+  color: white;
+  border: 2px solid #7766aa;
+  border-radius: 12px;
+  padding: 14px;
+  font-size: 16px;
+  width: 100%;
+  max-width: 350px;
+  margin: 6px;
+}
+
+input:focus,
+select:focus {
+  outline: 3px solid #d4baff;
+}
+
+.spielkarte {
+  background: #211d43;
+  border: 1px solid #65519a;
+  padding: 25px;
+  border-radius: 18px;
+  margin: 20px 0;
+}
+
+.spielkarte h3 {
+  color: #d4baff;
+}
+
+button {
+  background: #9772e8;
+  color: #10132b;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 12px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #c5a8ff;
+}
+
+button:focus-visible {
+  outline: 3px solid white;
+  outline-offset: 3px;
+}
+
+.hinweis {
+  color: #d4c8f4;
+  font-size: 0.95rem;
+}
+
+footer {
+  background: #171a3b;
+  text-align: center;
+  padding: 25px;
+  margin-top: 40px;
+}
+
+footer a {
+  color: #d4baff;
+  margin: 10px;
+}
+
+/* Leaflet-Farben */
+.leaflet-container {
+  background: #111a36;
+}
+
+.leaflet-popup-content-wrapper,
+.leaflet-popup-tip {
+  background: #25204a;
+  color: white;
+}
+
+.leaflet-popup-content button {
+  margin-top: 8px;
+}
+
+@media (max-width: 600px) {
+  #karte {
+    height: 350px;
+  }
+
+  main {
+    padding: 15px;
+  }
+}
+</style>
+
+<!-- Leaflet: Bibliothek für interaktive Karten -->
+<link
+  rel="stylesheet"
+  href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+>
+
+<script
+  src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js">
+</script>
+
+</head>
+
+<body>
+
+<header>
+  <h1>🌍 Spiele aus aller Welt</h1>
+  <p>Eine Reise durch Länder und Kulturen</p>
+</header>
+
+<nav aria-label="Hauptnavigation">
+  <a href="index.html">Startseite</a>
+  <a href="spielgeschichte.html">Spielgeschichte</a>
+  <a href="spielgenres.html">Spielgenres</a>
+  <a href="spiele-erleben.html">Spiele erleben</a>
+</nav>
+
+<main>
+
+<section class="intro">
+  <h2>Entdecke die Welt der Spiele!</h2>
+
+  <p>
+    Überall auf der Welt spielen Menschen.
+    Manche Spiele sind sehr alt.
+    Andere sind ganz neu.
+  </p>
+
+  <p>
+    Klicke auf ein markiertes Land.
+    Entdecke ein Spiel und seine Geschichte!
+  </p>
+</section>
+
+<section class="karte-box">
+  <h2>🗺️ Unsere Spielewelt</h2>
+
+  <div
+    id="karte"
+    aria-label="Interaktive Weltkarte mit Spielen">
+  </div>
+
+  <p id="kartenstatus" class="hinweis">
+    Die Weltkarte wird geladen ...
+  </p>
+
+  <p class="hinweis">
+    Tipp: Du kannst die Karte mit der Maus
+    oder mit deinen Fingern bewegen.
+    Die Länderauswahl darunter funktioniert
+    auch ohne Karte.
+  </p>
+</section>
+
+<section class="suche">
+  <h2>🔎 Spiele entdecken</h2>
+
+  <label for="suchfeld">Suche ein Spiel oder Land</label>
+  <br>
+  <input
+    id="suchfeld"
+    type="search"
+    placeholder="Zum Beispiel: Japan"
+  >
+
+  <br>
+
+  <label for="landauswahl">Oder wähle ein Land</label>
+  <br>
+  <select id="landauswahl">
+    <option value="">Alle Länder</option>
+  </select>
+</section>
+
+<section id="ergebnis" aria-live="polite">
+  <h2>🎲 Spiele und ihre Geschichten</h2>
+  <div id="spielkarten"></div>
+</section>
+
+</main>
+
+<footer>
+  <p>© 2026 Universum der Spiele</p>
+
+  <a href="index.html">Startseite</a>
+  <a href="impressum.html">Impressum</a>
+  <a href="datenschutz.html">Datenschutz</a>
+</footer>
+
+<script>
+// ====================================
+// 1. UNSERE SPIELESAMMLUNG
+// ====================================
+
+const spiele = [
+  {
+    code: "JP",
+    land: "Japan",
+    flagge: "🇯🇵",
+    spiel: "Kendama",
+    art: "Geschicklichkeitsspiel",
+    beschreibung:
+      "Du hast einen Holzgriff und eine Kugel. " +
+      "Versuche, die Kugel aufzufangen.",
+    geschichte:
+      "Kendama ist in Japan besonders bekannt. " +
+      "Es verbindet Geschicklichkeit und Übung."
+  },
+  {
+    code: "CN",
+    land: "China",
+    flagge: "🇨🇳",
+    spiel: "Go (Weiqi)",
+    art: "Strategiespiel",
+    beschreibung:
+      "Zwei Menschen setzen schwarze und weiße " +
+      "Steine auf ein Spielbrett.",
+    geschichte:
+      "Go entstand vor sehr langer Zeit in China. " +
+      "Heute wird es weltweit gespielt."
+  },
+  {
+    code: "IN",
+    land: "Indien",
+    flagge: "🇮🇳",
+    spiel: "Pachisi",
+    art: "Brettspiel",
+    beschreibung:
+      "Bewege deine Spielfiguren über ein " +
+      "kreuzförmiges Spielfeld.",
+    geschichte:
+      "Pachisi ist ein traditionelles Spiel " +
+      "aus Indien. Es ist mit modernen " +
+      "Laufspielen verwandt."
+  },
+  {
+    code: "GH",
+    land: "Ghana",
+    flagge: "🇬🇭",
+    spiel: "Oware",
+    art: "Strategiespiel",
+    beschreibung:
+      "Verteile Samen oder Steine auf Mulden. " +
+      "Versuche, Spielsteine zu gewinnen.",
+    geschichte:
+      "Oware gehört zur Familie der " +
+      "Mancala-Spiele und ist in Westafrika " +
+      "weit verbreitet."
+  },
+  {
+    code: "SE",
+    land: "Schweden",
+    flagge: "🇸🇪",
+    spiel: "Kubb",
+    art: "Wurfspiel",
+    beschreibung:
+      "Wirf Holzstäbe und versuche, " +
+      "die Holzklötze der anderen Mannschaft " +
+      "umzuwerfen.",
+    geschichte:
+      "Kubb ist besonders in Schweden " +
+      "beliebt und wird oft draußen gespielt."
+  },
+  {
+    code: "NZ",
+    land: "Neuseeland",
+    flagge: "🇳🇿",
+    spiel: "Kī-o-rahi",
+    art: "Mannschaftsspiel",
+    beschreibung:
+      "Zwei Mannschaften spielen mit einem Ball " +
+      "auf einem kreisförmigen Spielfeld.",
+    geschichte:
+      "Kī-o-rahi ist mit der Māori-Kultur " +
+      "verbunden. Es gibt verschiedene " +
+      "Spielvarianten."
+  },
+  {
+    code: "EG",
+    land: "Ägypten",
+    flagge: "🇪🇬",
+    spiel: "Senet",
+    art: "Historisches Brettspiel",
+    beschreibung:
+      "Bewege deine Spielsteine über " +
+      "ein Brett mit 30 Feldern.",
+    geschichte:
+      "Senet wurde im alten Ägypten gespielt. " +
+      "Die vollständigen ursprünglichen " +
+      "Regeln sind heute nicht bekannt."
+  },
+  {
+    code: "MX",
+    land: "Mexiko",
+    flagge: "🇲🇽",
+    spiel: "Patolli",
+    art: "Historisches Brettspiel",
+    beschreibung:
+      "Ein historisches Laufspiel mit " +
+      "Spielsteinen und Wurfelementen.",
+    geschichte:
+      "Patolli wurde in Mesoamerika gespielt, " +
+      "unter anderem von den Azteken. " +
+      "Die historischen Regeln sind " +
+      "nicht vollständig überliefert."
+  }
+];
+
+// ====================================
+// 2. WELTKARTE ERSTELLEN
+// ====================================
+
+const karte = L.map("karte", {
+  worldCopyJump: true
+}).setView([20, 10], 2);
+
+// Keine externen Kartenkacheln nötig.
+// Die Länder werden als GeoJSON geladen.
+
+const markierteLaender = spiele.map(
+  spiel => spiel.code
+);
+
+function landFarbe(feature) {
+  const code = feature.properties.ISO3166_1_Alpha_2;
+
+  if (markierteLaender.includes(code)) {
+    return {
+      color: "#d4baff",
+      weight: 1.5,
+      fillColor: "#8060cc",
+      fillOpacity: 0.85
+    };
+  }
+
+  return {
+    color: "#49577b",
+    weight: 0.6,
+    fillColor: "#26345b",
+    fillOpacity: 0.9
+  };
+}
+
+const geoUrl =
+  "https://raw.githubusercontent.com/" +
+  "datasets/geo-countries/master/data/countries.geojson";
+
+fetch(geoUrl)
+  .then(antwort => {
+    if (!antwort.ok) {
+      throw new Error("Karte nicht verfügbar");
+    }
+    return antwort.json();
+  })
+  .then(daten => {
+    L.geoJSON(daten, {
+      style: landFarbe,
+
+      onEachFeature: function(feature, layer) {
+        const code =
+          feature.properties.ISO3166_1_Alpha_2;
+
+        const spiel = spiele.find(
+          eintrag => eintrag.code === code
+        );
+
+        if (spiel) {
+          layer.bindTooltip(
+            spiel.flagge + " " + spiel.land
+          );
+
+          layer.on("click", function() {
+            landAnzeigen(spiel.code);
+          });
+        }
+      }
+    }).addTo(karte);
+
+    document.getElementById("kartenstatus")
+      .textContent =
+      "Klicke auf ein lila markiertes Land!";
+  })
+  .catch(() => {
+    document.getElementById("kartenstatus")
+      .textContent =
+      "Die Karte konnte nicht geladen werden. " +
+      "Du kannst die Spiele unten auswählen.";
+  });
+
+// ====================================
+// 3. SPIELKARTEN ANZEIGEN
+// ====================================
+
+const spielkarten =
+  document.getElementById("spielkarten");
+
+function spieleAnzeigen(liste) {
+  spielkarten.replaceChildren();
+
+  if (liste.length === 0) {
+    const meldung = document.createElement("p");
+    meldung.textContent =
+      "Leider wurde kein Spiel gefunden.";
+    spielkarten.appendChild(meldung);
+    return;
+  }
+
+  liste.forEach(spiel => {
+    const karteElement =
+      document.createElement("article");
+
+    karteElement.className = "spielkarte";
+
+    const titel = document.createElement("h3");
+    titel.textContent =
+      spiel.flagge + " " + spiel.land +
+      " – " + spiel.spiel;
+
+    const art = document.createElement("p");
+    art.textContent = "Spielart: " + spiel.art;
+
+    const beschreibung = document.createElement("p");
+    beschreibung.textContent =
+      spiel.beschreibung;
+
+    const geschichteTitel =
+      document.createElement("h4");
+    geschichteTitel.textContent =
+      "📖 Die Geschichte";
+
+    const geschichte = document.createElement("p");
+    geschichte.textContent =
+      spiel.geschichte;
+
+    karteElement.append(
+      titel,
+      art,
+      beschreibung,
+      geschichteTitel,
+      geschichte
+    );
+
+    spielkarten.appendChild(karteElement);
+  });
+}
+
+// ====================================
+// 4. LAND AUSWÄHLEN
+// ====================================
+
+const auswahl =
+  document.getElementById("landauswahl");
+
+spiele.forEach(spiel => {
+  const option = document.createElement("option");
+
+  option.value = spiel.code;
+  option.textContent =
+    spiel.flagge + " " + spiel.land;
+
+  auswahl.appendChild(option);
+});
+
+function landAnzeigen(code) {
+  auswahl.value = code;
+  document.getElementById("suchfeld").value = "";
+
+  const gefiltert = spiele.filter(
+    spiel => spiel.code === code
+  );
+
+  spieleAnzeigen(gefiltert);
+
+  document.getElementById("ergebnis")
+    .scrollIntoView({
+      behavior: "smooth",
+      block: "start"
+    });
+}
+
+auswahl.addEventListener("change", function() {
+  const code = auswahl.value;
+
+  document.getElementById("suchfeld").value = "";
+
+  if (code === "") {
+    spieleAnzeigen(spiele);
+  } else {
+    landAnzeigen(code);
+  }
+});
+
+// ====================================
+// 5. SUCHFUNKTION
+// ====================================
+
+document.getElementById("suchfeld")
+  .addEventListener("input", function() {
+    const suche = this.value.toLocaleLowerCase("de");
+
+    auswahl.value = "";
+
+    const ergebnisse = spiele.filter(spiel =>
+      spiel.land.toLocaleLowerCase("de")
+        .includes(suche) ||
+      spiel.spiel.toLocaleLowerCase("de")
+        .includes(suche) ||
+      spiel.art.toLocaleLowerCase("de")
+        .includes(suche)
+    );
+
+    spieleAnzeigen(ergebnisse);
+  });
+
+// Beim Start alle Spiele anzeigen.
+spieleAnzeigen(spiele);
+
+</script>
+
+</body>
+</html>
