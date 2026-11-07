@@ -1,590 +1,384 @@
 
 <!DOCTYPE html>
 <html lang="de">
-
 <head>
-  <meta charset="UTF-8">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <meta name="viewport"
-        content="width=device-width, initial-scale=1.0">
+<title>Spielgeschichte | Universum der Spiele</title>
 
-  <meta name="description"
-        content="Entdecke die Geschichte der Spiele:
-        von den ersten Spielformen über das
-        Mittelalter bis zu Computerspielen
-        und virtuellen Welten.">
+<style>
+* {
+  box-sizing: border-box;
+}
 
-  <title>
-    Spielgeschichte | Universum der Spiele
-  </title>
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(135deg, #10132b, #251547);
+  color: #f5f2ff;
+  line-height: 1.7;
+}
 
-  <link rel="stylesheet" href="css/style.css">
+header {
+  background: #171a3b;
+  text-align: center;
+  padding: 45px 20px;
+}
 
-  <style>
-    /* SPIELGESCHICHTE */
+h1 {
+  color: #d4baff;
+}
 
-    .geschichte-einleitung {
-      max-width: 950px;
-      margin: 0 auto;
-      padding: 45px 20px 25px;
-      text-align: center;
-    }
+h2 {
+  color: #b69aff;
+}
 
-    .geschichte-einleitung h2 {
-      color: #E3C8FF;
-      font-size: clamp(26px, 4vw, 40px);
-      margin: 0 0 15px;
-    }
+nav {
+  background: #25204a;
+  padding: 15px;
+  text-align: center;
+}
 
-    .geschichte-einleitung p {
-      font-size: 18px;
-      line-height: 1.7;
-    }
+nav a {
+  display: inline-block;
+  color: white;
+  margin: 8px;
+  text-decoration: none;
+}
 
-    .geschichte-themen {
-      max-width: 1150px;
-      margin: 0 auto;
-      padding: 20px 20px 50px;
-    }
+nav a:hover,
+nav a:focus-visible {
+  color: #e1c8ff;
+  text-decoration: underline;
+}
 
-    .geschichte-raster {
-      display: grid;
-      grid-template-columns:
-        repeat(4, minmax(0, 1fr));
-      gap: 18px;
-    }
+main {
+  max-width: 1100px;
+  margin: auto;
+  padding: 30px 18px;
+}
 
-    .geschichte-kachel {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      gap: 12px;
+.einleitung {
+  text-align: center;
+  margin-bottom: 40px;
+}
 
-      min-height: 190px;
-      padding: 22px 15px;
+.einleitung p {
+  max-width: 700px;
+  margin: 15px auto;
+}
 
-      border-radius: 20px;
-      border: 1px solid #9A84DB;
+.kacheln {
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(240px, 1fr)
+  );
+  gap: 22px;
+}
 
-      background: linear-gradient(
-        145deg,
-        #493487,
-        #243C78
-      );
+.kachel {
+  background: #222447;
+  border: 2px solid #504779;
+  border-radius: 18px;
+  padding: 25px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition:
+    transform 0.2s,
+    box-shadow 0.2s;
+}
 
-      color: white;
-      text-align: center;
-      text-decoration: none;
+.kachel:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 0 22px #8169c655;
+}
 
-      transition:
-        transform 0.2s ease,
-        box-shadow 0.2s ease;
-    }
+.symbol {
+  font-size: 3.2rem;
+  margin-bottom: 10px;
+}
 
-    .geschichte-kachel:hover {
-      transform: translateY(-5px);
-      box-shadow:
-        0 10px 25px rgba(185,140,242,0.3);
-    }
+.kachel h2 {
+  font-size: 1.3rem;
+  margin: 10px 0;
+}
 
-    .geschichte-kachel:focus-visible {
-      outline: 3px solid #FFE69A;
-      outline-offset: 4px;
-    }
+.kachel p {
+  flex-grow: 1;
+}
 
-    .geschichte-symbol {
-      font-size: 42px;
-    }
+.button {
+  display: inline-block;
+  background: #6551a5;
+  color: white;
+  padding: 12px 20px;
+  border-radius: 10px;
+  text-decoration: none;
+  margin-top: 15px;
+}
 
-    .geschichte-kachel h3 {
-      margin: 0;
-      font-size: 19px;
-      line-height: 1.4;
-    }
+.button:hover,
+.button:focus-visible {
+  background: #8169c6;
+}
 
-    .geschichte-inhalte {
-      max-width: 950px;
-      margin: 0 auto;
-      padding: 0 20px 60px;
-    }
+/* Farben der acht Themenbereiche */
 
-    .geschichte-abschnitt {
-      margin: 0 0 25px;
-      padding: 28px;
+.zeit {
+  border-color: #8670dc;
+  background: #29234f;
+}
 
-      border: 1px solid #594A98;
-      border-radius: 20px;
+.spielart {
+  border-color: #508dd0;
+  background: #1d3155;
+}
 
-      background: rgba(30, 30, 75, 0.8);
-    }
+.kultur {
+  border-color: #41aaa4;
+  background: #193f49;
+}
 
-    .geschichte-abschnitt h2 {
-      margin: 0 0 12px;
-      color: #DCC4FF;
-      font-size: 25px;
-    }
+.material {
+  border-color: #c38d50;
+  background: #493447;
+}
 
-    .geschichte-abschnitt p {
-      font-size: 17px;
-      line-height: 1.7;
-    }
+.technik {
+  border-color: #7b78dd;
+  background: #292b60;
+}
 
-    .geschichte-abschnitt a {
-      color: #A8DEFF;
-    }
+.gesellschaft {
+  border-color: #c06caa;
+  background: #4b2855;
+}
 
-    .zurueck-link {
-      display: inline-block;
-      margin-top: 12px;
-      font-weight: bold;
-    }
+.erfinder {
+  border-color: #d3b35e;
+  background: #453951;
+}
 
-    @media (max-width: 900px) {
-      .geschichte-raster {
-        grid-template-columns:
-          repeat(2, minmax(0, 1fr));
-      }
-    }
+.inklusion {
+  border-color: #65b78b;
+  background: #244447;
+}
 
-    @media (max-width: 600px) {
-      .geschichte-raster {
-        grid-template-columns: 1fr;
-      }
+footer {
+  background: #111329;
+  text-align: center;
+  padding: 25px;
+  margin-top: 40px;
+}
 
-      .geschichte-kachel {
-        min-height: 140px;
-      }
+@media (max-width: 600px) {
+  header {
+    padding: 30px 15px;
+  }
 
-      .geschichte-abschnitt {
-        padding: 20px;
-      }
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      .geschichte-kachel {
-        transition: none;
-      }
-
-      .geschichte-kachel:hover {
-        transform: none;
-      }
-    }
-  </style>
+  .kacheln {
+    grid-template-columns: 1fr;
+  }
+}
+</style>
 </head>
 
-<body id="seitenanfang" class="startseite">
+<body>
 
-  <a class="skip-link" href="#hauptinhalt">
-    Direkt zum Inhalt
+<header>
+  <h1>📜 Geschichte der Spiele</h1>
+  <p>
+    Eine Reise durch die Vergangenheit
+    des Spielens
+  </p>
+</header>
+
+<nav aria-label="Hauptnavigation">
+  <a href="index.html">Start</a>
+  <a href="spielgeschichte.html" aria-current="page">
+    Spielgeschichte
   </a>
-
-  <!-- KOPFZEILE -->
-
-  <header class="kopfzeile">
-
-    <h1>Universum der Spiele</h1>
-
-    <nav aria-label="Hauptnavigation">
-
-      <a href="index.html">
-        <span class="nav-symbol"
-              aria-hidden="true">🏠</span>
-        <span>Start</span>
-      </a>
-
-      <a href="geschichte.html"
-         aria-current="page">
-        <span class="nav-symbol"
-              aria-hidden="true">🕰️</span>
-        <span>Spielgeschichte</span>
-      </a>
-
-      <a href="spiellexikon.html">
-        <span class="nav-symbol"
-              aria-hidden="true">📚</span>
-        <span>Spiellexikon</span>
-      </a>
-
-      <a href="spiele-erleben.html">
-        <span class="nav-symbol"
-              aria-hidden="true">🎮</span>
-        <span>Spiele erleben</span>
-      </a>
-
-      <a href="spieleentwickeln.html">
-        <span class="nav-symbol"
-              aria-hidden="true">🛠️</span>
-        <span>Spiele entwickeln</span>
-      </a>
-
-      <a href="ueber-mich.html">
-        <span class="nav-symbol"
-              aria-hidden="true">👤</span>
-        <span>Über mich</span>
-      </a>
-
-      <a href="hilfe.html">
-        <span class="nav-symbol"
-              aria-hidden="true">❓</span>
-        <span>Hilfe</span>
-      </a>
-
-    </nav>
-
-<img src="bilder/spielgeschichte.png"
-     alt="Spielgeschichte">
-
-    
-  </header>
-
-  <main id="hauptinhalt">
-
-    <!-- EINLEITUNG -->
-
-    <section class="geschichte-einleitung">
-
-      <h2>🕰️ Zeitreise durch die Spielgeschichte</h2>
-
-      <p>
-        Hast du dich schon einmal gefragt,
-        womit Menschen vor Tausenden von Jahren
-        gespielt haben?
-      </p>
-
-      <p>
-        Begib dich auf eine spannende Zeitreise!
-        Entdecke, wie aus einfachen Spielformen
-        Brettspiele, Spielkonsolen und schließlich
-        ganze digitale Welten entstanden.
-      </p>
-
-      <p>
-        Wähle eine Epoche und starte
-        deine Entdeckungsreise!
-      </p>
-
-    </section>
-
-    <!-- ACHT THEMENKACHELN -->
-
-    <section class="geschichte-themen"
-             aria-labelledby="epochen-titel">
-
-      <h2 id="epochen-titel">
-        Wähle dein Reiseziel
-      </h2>
-
-      <div class="geschichte-raster">
-
-        <a href="#ursprung"
-           class="geschichte-kachel">
-          <span class="geschichte-symbol"
-                aria-hidden="true">🪨</span>
-          <h3>Ursprung und Bedeutung des Spielens</h3>
-        </a>
-
-        <a href="#antike"
-           class="geschichte-kachel">
-          <span class="geschichte-symbol"
-                aria-hidden="true">🏛️</span>
-          <h3>Spiele in der Antike</h3>
-        </a>
-
-        <a href="#mittelalter"
-           class="geschichte-kachel">
-          <span class="geschichte-symbol"
-                aria-hidden="true">🏰</span>
-          <h3>Spiele im Mittelalter</h3>
-        </a>
-
-        <a href="#neuzeit"
-           class="geschichte-kachel">
-          <span class="geschichte-symbol"
-                aria-hidden="true">🃏</span>
-          <h3>Spiele der Neuzeit</h3>
-        </a>
-
-        <a href="#brettspiele"
-           class="geschichte-kachel">
-          <span class="geschichte-symbol"
-                aria-hidden="true">🎲</span>
-          <h3>Brett- und Gesellschaftsspiele im Wandel</h3>
-        </a>
-
-        <a href="#digital"
-           class="geschichte-kachel">
-          <span class="geschichte-symbol"
-                aria-hidden="true">👾</span>
-          <h3>Geschichte der digitalen Spiele</h3>
-        </a>
-
-        <a href="#konsolen"
-           class="geschichte-kachel">
-          <span class="geschichte-symbol"
-                aria-hidden="true">🕹️</span>
-          <h3>Spielkonsolen und Computer</h3>
-        </a>
-
-        <a href="#zukunft"
-           class="geschichte-kachel">
-          <span class="geschichte-symbol"
-                aria-hidden="true">🚀</span>
-          <h3>Spielen heute und in der Zukunft</h3>
-        </a>
-
-      </div>
-
-    </section>
-
-    <!-- INHALTE -->
-
-    <div class="geschichte-inhalte">
-
-      <section id="ursprung"
-               class="geschichte-abschnitt">
-
-        <h2>🪨 Ursprung und Bedeutung des Spielens</h2>
-
-        <p>
-          Spielen begleitet die Menschheit
-          vermutlich schon seit ihren frühesten
-          Anfängen. Menschen probieren Dinge aus,
-          bewegen sich, ahmen andere nach und
-          entwickeln gemeinsame Regeln.
-        </p>
-
-        <p>
-          Spielen kann Freude machen,
-          Fähigkeiten fördern und Menschen
-          miteinander verbinden.
-        </p>
-
-        <a href="#epochen-titel"
-           class="zurueck-link">
-          ↑ Zurück zur Themenauswahl
-        </a>
-
-      </section>
-
-      <section id="antike"
-               class="geschichte-abschnitt">
-
-        <h2>🏛️ Spiele in der Antike</h2>
-
-        <p>
-          Schon im alten Ägypten wurden
-          Brettspiele wie Senet gespielt.
-          Auch Würfel und verschiedene
-          Geschicklichkeitsspiele waren bekannt.
-        </p>
-
-        <p>
-          In Griechenland und Rom gehörten
-          Spiele ebenfalls zum Alltag.
-          Kinder und Erwachsene spielten
-          mit unterschiedlichen Materialien
-          und nach verschiedenen Regeln.
-        </p>
-
-        <a href="#epochen-titel"
-           class="zurueck-link">
-          ↑ Zurück zur Themenauswahl
-        </a>
-
-      </section>
-
-      <section id="mittelalter"
-               class="geschichte-abschnitt">
-
-        <h2>🏰 Spiele im Mittelalter</h2>
-
-        <p>
-          Im Mittelalter spielten Menschen
-          unter anderem Schach, Mühle,
-          Würfel- und Bewegungsspiele.
-        </p>
-
-        <p>
-          Gespielt wurde auf Marktplätzen,
-          in Häusern und an Adelshöfen.
-          Manche Spiele dienten der
-          Unterhaltung, andere dem Wettbewerb.
-        </p>
-
-        <a href="#epochen-titel"
-           class="zurueck-link">
-          ↑ Zurück zur Themenauswahl
-        </a>
-
-      </section>
-
-      <section id="neuzeit"
-               class="geschichte-abschnitt">
-
-        <h2>🃏 Spiele der Neuzeit</h2>
-
-        <p>
-          Mit der Verbreitung des Buchdrucks
-          und neuen Herstellungstechniken
-          konnten Spielkarten und Spielpläne
-          zunehmend verbreitet werden.
-        </p>
-
-        <p>
-          Im Laufe der Neuzeit entstanden
-          immer mehr unterschiedliche
-          Gesellschaftsspiele.
-        </p>
-
-        <a href="#epochen-titel"
-           class="zurueck-link">
-          ↑ Zurück zur Themenauswahl
-        </a>
-
-      </section>
-
-      <section id="brettspiele"
-               class="geschichte-abschnitt">
-
-        <h2>🎲 Brett- und Gesellschaftsspiele im Wandel</h2>
-
-        <p>
-          Brettspiele haben sich über viele
-          Jahrhunderte verändert.
-          Neben traditionellen Spielen
-          entstanden neue Spielideen,
-          Regeln und Spielmaterialien.
-        </p>
-
-        <p>
-          Heute gibt es kooperative Spiele,
-          Strategiespiele, Familienspiele
-          und viele weitere Formen.
-        </p>
-
-        <a href="#epochen-titel"
-           class="zurueck-link">
-          ↑ Zurück zur Themenauswahl
-        </a>
-
-      </section>
-
-      <section id="digital"
-               class="geschichte-abschnitt">
-
-        <h2>👾 Geschichte der digitalen Spiele</h2>
-
-        <p>
-          Bereits in den 1950er- und
-          1960er-Jahren entstanden frühe
-          elektronische und computergestützte
-          Spiele.
-        </p>
-
-        <p>
-          In den 1970er-Jahren wurden
-          Videospiele durch Automaten
-          und Heimkonsolen bekannter.
-          Daraus entwickelte sich eine
-          weltweite Spieleindustrie.
-        </p>
-
-        <a href="#epochen-titel"
-           class="zurueck-link">
-          ↑ Zurück zur Themenauswahl
-        </a>
-
-      </section>
-
-      <section id="konsolen"
-               class="geschichte-abschnitt">
-
-        <h2>🕹️ Spielkonsolen und Computer</h2>
-
-        <p>
-          Heimcomputer und Spielkonsolen
-          brachten digitale Spiele in
-          immer mehr Haushalte.
-        </p>
-
-        <p>
-          Bekannte Entwicklungen sind
-          beispielsweise Atari-Systeme,
-          Nintendo-Konsolen,
-          der Game Boy und die PlayStation.
-        </p>
-
-        <a href="#epochen-titel"
-           class="zurueck-link">
-          ↑ Zurück zur Themenauswahl
-        </a>
-
-      </section>
-
-      <section id="zukunft"
-               class="geschichte-abschnitt">
-
-        <h2>🚀 Spielen heute und in der Zukunft</h2>
-
-        <p>
-          Heute spielen Menschen auf
-          Smartphones, Computern,
-          Konsolen und in virtuellen Welten.
-        </p>
-
-        <p>
-          Virtual Reality, Augmented Reality,
-          künstliche Intelligenz und
-          barrierefreie Technologien
-          eröffnen neue Möglichkeiten.
-        </p>
-
-        <p>
-          Wie werden wir wohl in
-          20 oder 50 Jahren spielen?
-        </p>
-
-        <a href="#epochen-titel"
-           class="zurueck-link">
-          ↑ Zurück zur Themenauswahl
-        </a>
-
-      </section>
-
-    </div>
-
-  </main>
-
-  <!-- FUSSZEILE -->
-
-  <footer class="fusszeile">
+  <a href="spielgenres.html">Spielgenres</a>
+  <a href="spiele-erleben.html">Spiele erleben</a>
+  <a href="spieleentwickeln.html">Spiele entwickeln</a>
+  <a href="ueber-mich.html">Über mich</a>
+  <a href="hilfe.html">Hilfe</a>
+</nav>
+
+<main>
+
+<section class="einleitung">
+  <h2>🌌 Jedes Spiel hat eine Geschichte</h2>
+
+  <p>
+    Seit Jahrtausenden spielen Menschen.
+    Doch woher stammen unsere Spiele?
+    Wer hat sie erfunden?
+    Und wie haben sie sich verändert?
+  </p>
+
+  <p>
+    Entdecke acht spannende Wege
+    durch die Geschichte der Spiele!
+  </p>
+</section>
+
+<div class="kacheln">
+
+  <!-- 1. SPIELGESCHICHTE NACH ZEIT -->
+
+  <article class="kachel zeit">
+    <div class="symbol" aria-hidden="true">⏳</div>
+    <h2>Nach Zeit</h2>
 
     <p>
-      Ein Studienprojekt im Modul Webprogrammierung
-      von Nadine Liesner.
+      Von der Steinzeit über die Antike
+      und das Mittelalter bis in
+      die Zukunft des Spielens.
     </p>
 
-    <nav class="footer-links"
-         aria-label="Rechtliche Informationen">
+    <a class="button" href="geschichte-zeit.html">
+      Zeitreise starten
+    </a>
+  </article>
 
-      <a href="datenschutz.html">
-        Datenschutz
-      </a>
+  <!-- 2. SPIELGESCHICHTE NACH SPIELART -->
 
-      <a href="impressum.html">
-        Impressum
-      </a>
+  <article class="kachel spielart">
+    <div class="symbol" aria-hidden="true">🎲</div>
+    <h2>Nach Spielart</h2>
 
-      <a href="#seitenanfang">
-        ↑ Nach oben
-      </a>
+    <p>
+      Entdecke die Geschichte
+      von Brettspielen, Kartenspielen,
+      Rollenspielen, Computerspielen
+      und vielen weiteren Spielarten.
+    </p>
 
-    </nav>
+    <a class="button" href="geschichte-spielarten.html">
+      Spielarten entdecken
+    </a>
+  </article>
 
-    <p>© 2026 Universum der Spiele</p>
+  <!-- 3. LÄNDER UND KULTUREN -->
 
-  </footer>
+  <article class="kachel kultur">
+    <div class="symbol" aria-hidden="true">🌍</div>
+    <h2>Länder und Kulturen</h2>
+
+    <p>
+      Welche Spiele entstanden
+      in Ägypten, China, Indien,
+      Europa oder Amerika?
+      Entdecke Spiele aus aller Welt.
+    </p>
+
+    <a class="button" href="geschichte-kulturen.html">
+      Weltreise starten
+    </a>
+  </article>
+
+  <!-- 4. SPIELMATERIALIEN -->
+
+  <article class="kachel material">
+    <div class="symbol" aria-hidden="true">🧩</div>
+    <h2>Spielmaterialien</h2>
+
+    <p>
+      Von Steinen, Holz und Knochen
+      über Papier und Kunststoff
+      bis zu modernen Materialien.
+    </p>
+
+    <a class="button" href="geschichte-materialien.html">
+      Materialien entdecken
+    </a>
+  </article>
+
+  <!-- 5. SPIELTECHNIK -->
+
+  <article class="kachel technik">
+    <div class="symbol" aria-hidden="true">⚙️</div>
+    <h2>Spieltechnik</h2>
+
+    <p>
+      Von mechanischen Automaten
+      über elektronische Spiele
+      bis zu Virtual Reality
+      und künstlicher Intelligenz.
+    </p>
+
+    <a class="button" href="geschichte-technik.html">
+      Technik entdecken
+    </a>
+  </article>
+
+  <!-- 6. SPIELEN UND GESELLSCHAFT -->
+
+  <article class="kachel gesellschaft">
+    <div class="symbol" aria-hidden="true">👥</div>
+    <h2>Spielen und Gesellschaft</h2>
+
+    <p>
+      Wie beeinflussten Spiele
+      Familie, Bildung, Religion,
+      Gemeinschaft und
+      das gesellschaftliche Leben?
+    </p>
+
+    <a class="button" href="geschichte-gesellschaft.html">
+      Gesellschaft entdecken
+    </a>
+  </article>
+
+  <!-- 7. BERÜHMTE SPIELE UND ERFINDER -->
+
+  <article class="kachel erfinder">
+    <div class="symbol" aria-hidden="true">💡</div>
+    <h2>Spiele und Erfinder</h2>
+
+    <p>
+      Entdecke berühmte Spiele,
+      kreative Erfinderinnen
+      und Erfinder sowie
+      spannende Entstehungsgeschichten.
+    </p>
+
+    <a class="button" href="geschichte-erfinder.html">
+      Geschichten entdecken
+    </a>
+  </article>
+
+  <!-- 8. INKLUSIVE SPIELE -->
+
+  <article class="kachel inklusion">
+    <div class="symbol" aria-hidden="true">♿</div>
+    <h2>Inklusive Spiele</h2>
+
+    <p>
+      Von taktilen Spielmaterialien
+      und Braille bis zu
+      barrierefreien Computerspielen
+      und adaptiven Controllern.
+    </p>
+
+    <a class="button" href="geschichte-inklusion.html">
+      Inklusion entdecken
+    </a>
+  </article>
+
+</div>
+
+</main>
+
+<footer>
+  <p>🌌 Universum der Spiele</p>
+  <p>Entdecken · Spielen · Verstehen · Gestalten</p>
+</footer>
 
 </body>
 </html>
