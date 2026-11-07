@@ -1,0 +1,578 @@
+
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+  <meta charset="UTF-8">
+
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+  <meta name="description"
+        content="Lerne die Person hinter dem
+        Universum der Spiele kennen.
+        Erfahre mehr über Spieleentwicklung,
+        Studium, Projekte und inklusive Spiele.">
+
+  <title>Über mich | Universum der Spiele</title>
+
+  <link rel="stylesheet" href="css/style.css">
+
+  <style>
+
+    /* =====================================
+       ÜBER MICH – GESTALTUNG
+       ===================================== */
+
+    .ueber-einleitung {
+      max-width: 950px;
+      margin: 0 auto;
+      padding: 45px 20px 25px;
+      text-align: center;
+    }
+
+    .ueber-einleitung h2 {
+      color: #E3C8FF;
+      font-size: clamp(26px, 4vw, 40px);
+      margin: 0 0 15px;
+    }
+
+    .ueber-einleitung p {
+      font-size: 18px;
+      line-height: 1.7;
+    }
+
+    /* THEMENKACHELN */
+
+    .ueber-themen {
+      max-width: 1150px;
+      margin: 0 auto;
+      padding: 20px 20px 50px;
+    }
+
+    .ueber-themen > h2 {
+      text-align: center;
+      color: white;
+      margin-bottom: 25px;
+    }
+
+    .ueber-raster {
+      display: grid;
+      grid-template-columns:
+        repeat(3, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .ueber-kachel {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+
+      min-height: 180px;
+      padding: 22px;
+
+      border-radius: 20px;
+      border: 1px solid #9A84DB;
+
+      background: linear-gradient(
+        145deg,
+        #68418F,
+        #354A91
+      );
+
+      color: white;
+      text-align: center;
+      text-decoration: none;
+
+      transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+    }
+
+    .ueber-kachel:hover {
+      transform: translateY(-5px);
+      box-shadow:
+        0 10px 25px rgba(185,140,242,0.3);
+    }
+
+    .ueber-kachel:focus-visible {
+      outline: 3px solid #FFE69A;
+      outline-offset: 4px;
+    }
+
+    .ueber-symbol {
+      font-size: 42px;
+      line-height: 1.3;
+    }
+
+    .ueber-kachel h3 {
+      margin: 0;
+      font-size: 19px;
+      line-height: 1.4;
+    }
+
+    /* INHALTSABSCHNITTE */
+
+    .ueber-inhalte {
+      max-width: 950px;
+      margin: 0 auto;
+      padding: 0 20px 60px;
+    }
+
+    .ueber-abschnitt {
+      margin-bottom: 25px;
+      padding: 28px;
+
+      background: rgba(30, 30, 75, 0.85);
+      border: 1px solid #594A98;
+      border-radius: 20px;
+    }
+
+    .ueber-abschnitt h2 {
+      margin-top: 0;
+      color: #DCC4FF;
+      font-size: 25px;
+    }
+
+    .ueber-abschnitt h3 {
+      color: #A8DEFF;
+      font-size: 20px;
+    }
+
+    .ueber-abschnitt p,
+    .ueber-abschnitt li {
+      font-size: 17px;
+      line-height: 1.7;
+    }
+
+    .ueber-abschnitt ul {
+      padding-left: 25px;
+    }
+
+    .ueber-abschnitt a {
+      color: #A8DEFF;
+    }
+
+    .zurueck-link {
+      display: inline-block;
+      margin-top: 15px;
+      font-weight: bold;
+    }
+
+    /* TABLET */
+
+    @media (max-width: 900px) {
+      .ueber-raster {
+        grid-template-columns:
+          repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    /* SMARTPHONE */
+
+    @media (max-width: 600px) {
+      .ueber-raster {
+        grid-template-columns: 1fr;
+      }
+
+      .ueber-kachel {
+        min-height: 140px;
+      }
+
+      .ueber-abschnitt {
+        padding: 20px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .ueber-kachel {
+        transition: none;
+      }
+
+      .ueber-kachel:hover {
+        transform: none;
+      }
+    }
+
+  </style>
+
+</head>
+
+<body id="seitenanfang" class="startseite">
+
+  <a class="skip-link" href="#hauptinhalt">
+    Direkt zum Inhalt
+  </a>
+
+  <!-- KOPFZEILE -->
+
+  <header class="kopfzeile">
+
+    <h1>Universum der Spiele</h1>
+
+    <nav aria-label="Hauptnavigation">
+
+      <a href="index.html">
+        <span class="nav-symbol"
+              aria-hidden="true">🏠</span>
+        <span>Start</span>
+      </a>
+
+      <a href="geschichte.html">
+        <span class="nav-symbol"
+              aria-hidden="true">🕰️</span>
+        <span>Spielgeschichte</span>
+      </a>
+
+      <a href="spiellexikon.html">
+        <span class="nav-symbol"
+              aria-hidden="true">📚</span>
+        <span>Spiellexikon</span>
+      </a>
+
+      <a href="spiele-erleben.html">
+        <span class="nav-symbol"
+              aria-hidden="true">🎮</span>
+        <span>Spiele erleben</span>
+      </a>
+
+      <a href="spieleentwickeln.html">
+        <span class="nav-symbol"
+              aria-hidden="true">🛠️</span>
+        <span>Spiele entwickeln</span>
+      </a>
+
+      <a href="ueber-mich.html"
+         aria-current="page">
+        <span class="nav-symbol"
+              aria-hidden="true">👤</span>
+        <span>Über mich</span>
+      </a>
+
+      <a href="hilfe.html">
+        <span class="nav-symbol"
+              aria-hidden="true">❓</span>
+        <span>Hilfe</span>
+      </a>
+
+    </nav>
+
+  </header>
+
+  <main id="hauptinhalt">
+
+    <!-- EINLEITUNG -->
+
+    <section class="ueber-einleitung">
+
+      <h2>👤 Wer steckt hinter dem Spieleuniversum?</h2>
+
+      <p>
+        Hallo und herzlich willkommen!
+        Ich bin Nadine und freue mich,
+        dass du mein Spieleuniversum
+        entdeckt hast.
+      </p>
+
+      <p>
+        Hier erfährst du mehr über
+        meine Begeisterung für Spiele,
+        meine Lernreise und meine Ideen
+        für die Spielewelt von morgen.
+      </p>
+
+    </section>
+
+    <!-- SECHS THEMENKACHELN -->
+
+    <section class="ueber-themen"
+             aria-labelledby="themen-titel">
+
+      <h2 id="themen-titel">
+        Entdecke meine Welt
+      </h2>
+
+      <div class="ueber-raster">
+
+        <a href="#wer-bin-ich"
+           class="ueber-kachel">
+          <span class="ueber-symbol"
+                aria-hidden="true">👤</span>
+          <h3>Wer steckt hinter dem Spieleuniversum?</h3>
+        </a>
+
+        <a href="#faszination"
+           class="ueber-kachel">
+          <span class="ueber-symbol"
+                aria-hidden="true">🎲</span>
+          <h3>Warum mich Spiele faszinieren</h3>
+        </a>
+
+        <a href="#studium"
+           class="ueber-kachel">
+          <span class="ueber-symbol"
+                aria-hidden="true">🎓</span>
+          <h3>Mein Studium und meine Lernreise</h3>
+        </a>
+
+        <a href="#projekte"
+           class="ueber-kachel">
+          <span class="ueber-symbol"
+                aria-hidden="true">🛠️</span>
+          <h3>Meine eigenen Spieleprojekte</h3>
+        </a>
+
+        <a href="#vision"
+           class="ueber-kachel">
+          <span class="ueber-symbol"
+                aria-hidden="true">🌈</span>
+          <h3>Meine Vision für inklusive Spiele</h3>
+        </a>
+
+        <a href="#kontakt"
+           class="ueber-kachel">
+          <span class="ueber-symbol"
+                aria-hidden="true">✉️</span>
+          <h3>Kontakt und Zusammenarbeit</h3>
+        </a>
+
+      </div>
+
+    </section>
+
+    <!-- INHALTE -->
+
+    <div class="ueber-inhalte">
+
+      <section id="wer-bin-ich"
+               class="ueber-abschnitt">
+
+        <h2>👤 Wer steckt hinter dem Spieleuniversum?</h2>
+
+        <p>
+          Mein Name ist Nadine Liesner.
+          Ich beschäftige mich mit
+          kreativen Ideen, Spielen,
+          Lernen und der Frage,
+          wie Menschen durch Spiele
+          neue Möglichkeiten entdecken können.
+        </p>
+
+        <p>
+          Mit dem Universum der Spiele
+          möchte ich einen Ort schaffen,
+          an dem Wissen, Fantasie
+          und eigene Ideen zusammenkommen.
+        </p>
+
+        <a href="#themen-titel"
+           class="zurueck-link">
+          ↑ Zurück zur Themenauswahl
+        </a>
+
+      </section>
+
+      <section id="faszination"
+               class="ueber-abschnitt">
+
+        <h2>🎲 Warum mich Spiele faszinieren</h2>
+
+        <p>
+          Spiele sind für mich mehr
+          als ein Zeitvertreib.
+          Sie können Menschen verbinden,
+          zum Nachdenken anregen
+          und neue Fähigkeiten fördern.
+        </p>
+
+        <p>
+          Besonders spannend finde ich,
+          wie sich Lernen, Kreativität,
+          Geschichten und Technik
+          miteinander verbinden lassen.
+        </p>
+
+        <a href="#themen-titel"
+           class="zurueck-link">
+          ↑ Zurück zur Themenauswahl
+        </a>
+
+      </section>
+
+      <section id="studium"
+               class="ueber-abschnitt">
+
+        <h2>🎓 Mein Studium und meine Lernreise</h2>
+
+        <p>
+          Ich studiere Medieninformatik
+          und Interaktives Entertainment
+          an der Hochschule Mittweida.
+        </p>
+
+        <p>
+          Dabei beschäftige ich mich
+          unter anderem mit Programmierung,
+          Webentwicklung, digitalen Medien
+          und der Entwicklung interaktiver
+          Anwendungen.
+        </p>
+
+        <p>
+          Dieses Spieleuniversum ist
+          auch ein Teil meiner Lernreise.
+          Die Website wächst mit meinem
+          Wissen und meinen Erfahrungen.
+        </p>
+
+        <a href="#themen-titel"
+           class="zurueck-link">
+          ↑ Zurück zur Themenauswahl
+        </a>
+
+      </section>
+
+      <section id="projekte"
+               class="ueber-abschnitt">
+
+        <h2>🛠️ Meine eigenen Spieleprojekte</h2>
+
+        <p>
+          Ich interessiere mich besonders
+          für Spiele, die analoge
+          und digitale Elemente verbinden.
+        </p>
+
+        <p>
+          Dazu gehören Brettspiele,
+          Lernspiele, interaktive
+          Geschichten und neue
+          Spielkonzepte.
+        </p>
+
+        <h3>Meine Interessengebiete</h3>
+
+        <ul>
+          <li>Eigene Brett- und Kartenspiele</li>
+          <li>Digitale Lernspiele</li>
+          <li>Interaktive Abenteuer</li>
+          <li>Spiele mit pädagogischem Nutzen</li>
+          <li>Barrierearme Spielkonzepte</li>
+        </ul>
+
+        <p>
+          Nach und nach möchte ich
+          hier eigene Projekte
+          und ihre Entwicklung vorstellen.
+        </p>
+
+        <a href="#themen-titel"
+           class="zurueck-link">
+          ↑ Zurück zur Themenauswahl
+        </a>
+
+      </section>
+
+      <section id="vision"
+               class="ueber-abschnitt">
+
+        <h2>🌈 Meine Vision für inklusive Spiele</h2>
+
+        <p>
+          Meine Vision ist eine Spielewelt,
+          in der möglichst viele Menschen
+          mit unterschiedlichen Fähigkeiten
+          und Bedürfnissen mitspielen können.
+        </p>
+
+        <p>
+          Dabei sind mir verständliche
+          Spielregeln, gut erkennbare
+          Symbole, verschiedene
+          Bedienmöglichkeiten und
+          flexible Spielkonzepte wichtig.
+        </p>
+
+        <p>
+          Ich möchte Spiele mitgestalten,
+          die nicht nur unterhalten,
+          sondern auch Begegnungen,
+          Teilhabe und gemeinsames
+          Lernen ermöglichen.
+        </p>
+
+        <a href="#themen-titel"
+           class="zurueck-link">
+          ↑ Zurück zur Themenauswahl
+        </a>
+
+      </section>
+
+      <section id="kontakt"
+               class="ueber-abschnitt">
+
+        <h2>✉️ Kontakt und Zusammenarbeit</h2>
+
+        <p>
+          Du interessierst dich für
+          Spieleentwicklung, Lernspiele
+          oder inklusive Spielideen?
+        </p>
+
+        <p>
+          Ich freue mich über
+          interessante Ideen,
+          Rückmeldungen und
+          Möglichkeiten zur Zusammenarbeit.
+        </p>
+
+        <p>
+          Eine Kontaktmöglichkeit
+          wird hier ergänzt.
+        </p>
+
+        <a href="#themen-titel"
+           class="zurueck-link">
+          ↑ Zurück zur Themenauswahl
+        </a>
+
+      </section>
+
+    </div>
+
+  </main>
+
+  <!-- FUSSZEILE -->
+
+  <footer class="fusszeile">
+
+    <p>
+      Ein Studienprojekt im Modul Webprogrammierung
+      von Nadine Liesner.
+    </p>
+
+    <nav class="footer-links"
+         aria-label="Rechtliche Informationen">
+
+      <a href="datenschutz.html">
+        Datenschutz
+      </a>
+
+      <a href="impressum.html">
+        Impressum
+      </a>
+
+      <a href="#seitenanfang">
+        ↑ Nach oben
+      </a>
+
+    </nav>
+
+    <p>© 2026 Universum der Spiele</p>
+
+  </footer>
+
+</body>
+</html>
