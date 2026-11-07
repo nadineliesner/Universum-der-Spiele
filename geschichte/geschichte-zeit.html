@@ -15,9 +15,27 @@
 body {
   margin: 0;
   font-family: Arial, sans-serif;
-  background: linear-gradient(135deg, #10132b, #251547);
   color: #f5f2ff;
-  line-height: 1.7;
+  line-height: 1.6;
+  background:
+    radial-gradient(ellipse at 20% 20%, #35205b 0%, transparent 45%),
+    radial-gradient(ellipse at 80% 70%, #212c66 0%, transparent 45%),
+    #10132b;
+}
+
+/* Kleine Sterne im Hintergrund */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.35;
+  background-image:
+    radial-gradient(2px 2px at 10% 15%, white 90%, transparent),
+    radial-gradient(2px 2px at 75% 25%, white 90%, transparent),
+    radial-gradient(2px 2px at 40% 70%, white 90%, transparent),
+    radial-gradient(2px 2px at 85% 85%, white 90%, transparent);
+  background-size: 350px 350px;
 }
 
 header {
@@ -28,10 +46,11 @@ header {
 
 h1 {
   color: #d4baff;
+  font-size: clamp(2rem, 5vw, 3rem);
 }
 
 h2 {
-  color: #b69aff;
+  color: #decaff;
 }
 
 nav {
@@ -54,69 +73,121 @@ nav a:focus-visible {
 }
 
 main {
-  max-width: 1100px;
+  max-width: 1200px;
   margin: auto;
-  padding: 30px 18px;
+  padding: 30px 20px;
 }
 
 .einleitung {
   text-align: center;
-  margin-bottom: 40px;
+  margin-bottom: 55px;
 }
 
 .einleitung p {
   max-width: 700px;
-  margin: 15px auto;
+  margin: auto;
 }
 
-.zeitstrahl {
-  border-left: 4px solid #b69aff;
-  margin-left: 18px;
-  padding-left: 28px;
+/* GESCHWUNGENER ZEITSTRAHL */
+
+.zeitreise {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 65px;
+  isolation: isolate;
 }
+
+/* Leuchtende geschwungene Linie */
+.zeitlinie {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  overflow: visible;
+}
+
+.zeitlinie path {
+  fill: none;
+  stroke: #c98dff;
+  stroke-width: 7;
+  stroke-linecap: round;
+  filter: drop-shadow(0 0 8px #b765ff);
+}
+
+/* EPOCHEN */
 
 .epoche {
   position: relative;
-  background: #222447;
-  border: 1px solid #504779;
-  border-radius: 18px;
-  padding: 25px;
-  margin-bottom: 25px;
+  width: 46%;
+  min-height: 280px;
+  background: linear-gradient(135deg, #29234f, #20294d);
+  border: 2px solid #a47bea;
+  border-radius: 35px;
+  overflow: hidden;
+  box-shadow: 0 0 20px #8c61d544;
+  transition: transform 0.25s, box-shadow 0.25s;
 }
 
-.epoche::before {
-  content: "";
-  position: absolute;
-  width: 17px;
-  height: 17px;
-  background: #d4baff;
-  border: 3px solid #171a3b;
-  border-radius: 50%;
-  left: -40px;
-  top: 30px;
+.epoche:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 0 28px #b87aff88;
 }
 
-.symbol {
-  font-size: 2.8rem;
+.epoche:nth-of-type(odd) {
+  align-self: flex-start;
 }
 
-.zeit {
-  color: #e1c8ff;
-  font-weight: bold;
+.epoche:nth-of-type(even) {
+  align-self: flex-end;
+}
+
+/* BILDER */
+
+.epoche img {
+  display: block;
+  width: 100%;
+  height: 170px;
+  object-fit: cover;
+  background: #35305f;
+}
+
+/* TEXT */
+
+.inhalt {
+  padding: 22px;
+}
+
+.nummer {
+  font-size: 1.5rem;
+  margin-right: 6px;
 }
 
 .epoche h2 {
-  margin-top: 8px;
+  margin: 0 0 10px;
+  font-size: 1.4rem;
+}
+
+.zeit {
+  display: inline-block;
+  background: #5a438d;
+  color: #fff;
+  border-radius: 30px;
+  padding: 4px 14px;
+  font-size: 0.9rem;
+  margin-bottom: 10px;
 }
 
 .button {
   display: inline-block;
   background: #6551a5;
   color: white;
-  padding: 12px 20px;
-  border-radius: 10px;
+  padding: 11px 18px;
+  border-radius: 25px;
   text-decoration: none;
-  margin-top: 12px;
+  margin-top: 10px;
+  border: 1px solid #c18aff;
 }
 
 .button:hover,
@@ -125,8 +196,8 @@ main {
 }
 
 .zurueck {
-  margin-top: 35px;
   text-align: center;
+  margin-top: 55px;
 }
 
 footer {
@@ -136,13 +207,50 @@ footer {
   margin-top: 40px;
 }
 
-@media (max-width: 600px) {
-  header {
-    padding: 30px 15px;
+/* SMARTPHONE */
+
+@media (max-width: 700px) {
+  .zeitreise {
+    gap: 35px;
+    padding-left: 25px;
+  }
+
+  .zeitlinie {
+    display: none;
+  }
+
+  .zeitreise::before {
+    content: "";
+    position: absolute;
+    left: 7px;
+    top: 0;
+    bottom: 0;
+    width: 5px;
+    background: #c98dff;
+    border-radius: 10px;
+    box-shadow: 0 0 12px #b765ff;
   }
 
   .epoche {
-    padding: 18px;
+    width: 100%;
+    min-height: auto;
+    align-self: stretch !important;
+  }
+
+  .epoche::before {
+    content: "";
+    position: absolute;
+    left: -30px;
+    top: 35px;
+    width: 15px;
+    height: 15px;
+    background: #fff;
+    border: 3px solid #c98dff;
+    border-radius: 50%;
+  }
+
+  .epoche img {
+    height: 160px;
   }
 }
 </style>
@@ -152,7 +260,7 @@ footer {
 
 <header>
   <h1>⏳ Spielgeschichte nach Zeit</h1>
-  <p>Eine Zeitreise durch die Welt der Spiele</p>
+  <p>Eine magische Zeitreise durch die Welt der Spiele</p>
 </header>
 
 <nav aria-label="Hauptnavigation">
@@ -169,235 +277,179 @@ footer {
 
 <section class="einleitung">
   <h2>🌌 Entdecke die Geschichte des Spielens</h2>
-
   <p>
-    Schon vor Tausenden von Jahren
-    haben Menschen gespielt.
-  </p>
-
-  <p>
-    Doch wie veränderten sich
-    Spiele im Laufe der Zeit?
-    Welche Spiele gab es früher?
-    Und welche Erfindungen
-    veränderten unsere Spielwelt?
-  </p>
-
-  <p>
-    Reise durch acht spannende
-    Abschnitte der Spielgeschichte!
+    Folge dem leuchtenden Zeitstrahl
+    durch acht spannende Epochen.
+    Von den ersten Spielen bis zu
+    den Spielwelten der Zukunft!
   </p>
 </section>
 
-<div class="zeitstrahl">
+<div class="zeitreise">
 
-  <!-- STEINZEIT -->
+  <!-- GESCHWUNGENE LINIE -->
+  <svg class="zeitlinie"
+       viewBox="0 0 1000 3200"
+       preserveAspectRatio="none"
+       aria-hidden="true">
+    <path d="
+      M 500 0
+      C 850 200, 850 400, 500 500
+      S 150 800, 500 1000
+      S 850 1300, 500 1500
+      S 150 1800, 500 2000
+      S 850 2300, 500 2500
+      S 150 2800, 500 3200
+    "/>
+  </svg>
 
+  <!-- 1 STEINZEIT -->
   <article class="epoche">
-    <div class="symbol" aria-hidden="true">🪨</div>
-    <p class="zeit">Urgeschichte – bis ca. 3000 v. Chr.</p>
+    <img src="bilder/steinzeit.png"
+         alt="Menschen in der Steinzeit beim Spielen">
 
-    <h2>1. Steinzeit und Urgeschichte</h2>
-
-    <p>
-      Wie spielten Menschen,
-      bevor es Spielzeuggeschäfte,
-      Spielbretter und Computer gab?
-    </p>
-
-    <p>
-      Entdecke mögliche frühe
-      Spielformen mit Naturmaterialien,
-      Bewegung und Nachahmung.
-    </p>
-
-    <a class="button" href="spiele-steinzeit.html">
-      Steinzeit entdecken
-    </a>
+    <div class="inhalt">
+      <h2><span class="nummer">🪨 1.</span> Steinzeit</h2>
+      <span class="zeit">Bis ca. 3000 v. Chr.</span>
+      <p>
+        Erste Spielformen mit
+        Naturmaterialien, Bewegung
+        und Nachahmung.
+      </p>
+      <a class="button" href="spiele-steinzeit.html">
+        Steinzeit entdecken →
+      </a>
+    </div>
   </article>
 
-  <!-- ANTIKE -->
-
+  <!-- 2 ANTIKE -->
   <article class="epoche">
-    <div class="symbol" aria-hidden="true">🏺</div>
-    <p class="zeit">Ca. 3000 v. Chr. – 500 n. Chr.</p>
+    <img src="bilder/antike.png"
+         alt="Antikes Brettspiel vor ägyptischen Pyramiden">
 
-    <h2>2. Antike</h2>
-
-    <p>
-      Die ersten bekannten
-      Brettspiele entwickelten sich
-      in frühen Hochkulturen.
-    </p>
-
-    <p>
-      Entdecke Senet,
-      das Königliche Spiel von Ur,
-      Würfelspiele und
-      Spiele im alten Rom.
-    </p>
-
-    <a class="button" href="spiele-antike.html">
-      Antike entdecken
-    </a>
+    <div class="inhalt">
+      <h2><span class="nummer">🏺 2.</span> Antike</h2>
+      <span class="zeit">Ca. 3000 v. Chr. – 500 n. Chr.</span>
+      <p>
+        Senet, das Königliche Spiel
+        von Ur und frühe Würfelspiele.
+      </p>
+      <a class="button" href="spiele-antike.html">
+        Antike entdecken →
+      </a>
+    </div>
   </article>
 
-  <!-- MITTELALTER -->
-
+  <!-- 3 MITTELALTER -->
   <article class="epoche">
-    <div class="symbol" aria-hidden="true">🏰</div>
-    <p class="zeit">Ca. 500–1500</p>
+    <img src="bilder/mittelalter.png"
+         alt="Mittelalterliche Burg mit Schachfiguren">
 
-    <h2>3. Mittelalter</h2>
-
-    <p>
-      Im Mittelalter spielten
-      Menschen mit Würfeln,
-      Spielbrettern und Figuren.
-    </p>
-
-    <p>
-      Schach verbreitete sich
-      in Europa. Auch Mühle,
-      Kinderspiele und
-      Ritterturniere gehörten
-      zur Spiel- und Freizeitkultur.
-    </p>
-
-    <a class="button" href="spiele-mittelalter.html">
-      Mittelalter entdecken
-    </a>
+    <div class="inhalt">
+      <h2><span class="nummer">🏰 3.</span> Mittelalter</h2>
+      <span class="zeit">Ca. 500–1500</span>
+      <p>
+        Schach, Mühle, Würfelspiele
+        und Ritterturniere.
+      </p>
+      <a class="button" href="spiele-mittelalter.html">
+        Mittelalter entdecken →
+      </a>
+    </div>
   </article>
 
-  <!-- FRÜHE NEUZEIT -->
-
+  <!-- 4 NEUZEIT -->
   <article class="epoche">
-    <div class="symbol" aria-hidden="true">📜</div>
-    <p class="zeit">Ca. 1500–1800</p>
+    <img src="bilder/neuzeit.png"
+         alt="Historische Spielkarten und gedruckte Spiele">
 
-    <h2>4. Frühe Neuzeit</h2>
-
-    <p>
-      Gedruckte Spielkarten
-      und Spielbretter
-      wurden zunehmend verbreitet.
-    </p>
-
-    <p>
-      Neue Gesellschaftsspiele,
-      Lernmaterialien und
-      Spielideen entstanden.
-    </p>
-
-    <a class="button" href="spiele-neuzeit.html">
-      Frühe Neuzeit entdecken
-    </a>
+    <div class="inhalt">
+      <h2><span class="nummer">📜 4.</span> Frühe Neuzeit</h2>
+      <span class="zeit">Ca. 1500–1800</span>
+      <p>
+        Gedruckte Spielkarten,
+        Spielbretter und neue
+        Gesellschaftsspiele.
+      </p>
+      <a class="button" href="spiele-neuzeit.html">
+        Neuzeit entdecken →
+      </a>
+    </div>
   </article>
 
-  <!-- 19. JAHRHUNDERT -->
-
+  <!-- 5 19. JAHRHUNDERT -->
   <article class="epoche">
-    <div class="symbol" aria-hidden="true">🏭</div>
-    <p class="zeit">1800–1900</p>
+    <img src="bilder/19-jahrhundert.png"
+         alt="Historisches Spielzeug aus dem 19. Jahrhundert">
 
-    <h2>5. Das 19. Jahrhundert</h2>
-
-    <p>
-      Durch die Industrialisierung
-      konnte Spielzeug in größeren
-      Mengen hergestellt werden.
-    </p>
-
-    <p>
-      Baukästen, Puppen,
-      Brettspiele und pädagogische
-      Spielmaterialien entwickelten
-      sich weiter.
-    </p>
-
-    <a class="button" href="spiele-19-jahrhundert.html">
-      19. Jahrhundert entdecken
-    </a>
+    <div class="inhalt">
+      <h2><span class="nummer">🏭 5.</span> 19. Jahrhundert</h2>
+      <span class="zeit">1800–1900</span>
+      <p>
+        Spielzeugfabriken, Baukästen,
+        Puppen und neue Brettspiele.
+      </p>
+      <a class="button" href="spiele-19-jahrhundert.html">
+        Jahrhundert entdecken →
+      </a>
+    </div>
   </article>
 
-  <!-- 20. JAHRHUNDERT -->
-
+  <!-- 6 20. JAHRHUNDERT -->
   <article class="epoche">
-    <div class="symbol" aria-hidden="true">🕹️</div>
-    <p class="zeit">1900–2000</p>
+    <img src="bilder/20-jahrhundert.png"
+         alt="Retro-Computer mit Joystick und Videospiel">
 
-    <h2>6. Das 20. Jahrhundert</h2>
-
-    <p>
-      Moderne Gesellschaftsspiele,
-      elektrische Spielgeräte
-      und schließlich Computerspiele
-      veränderten die Spielwelt.
-    </p>
-
-    <p>
-      Arcade-Automaten,
-      Heimcomputer und Spielkonsolen
-      eröffneten neue Möglichkeiten.
-    </p>
-
-    <a class="button" href="spiele-20-jahrhundert.html">
-      20. Jahrhundert entdecken
-    </a>
+    <div class="inhalt">
+      <h2><span class="nummer">🕹️ 6.</span> 20. Jahrhundert</h2>
+      <span class="zeit">1900–2000</span>
+      <p>
+        Moderne Brettspiele,
+        Arcade-Automaten und
+        die ersten Videospielkonsolen.
+      </p>
+      <a class="button" href="spiele-20-jahrhundert.html">
+        Jahrhundert entdecken →
+      </a>
+    </div>
   </article>
 
-  <!-- 21. JAHRHUNDERT -->
-
+  <!-- 7 21. JAHRHUNDERT -->
   <article class="epoche">
-    <div class="symbol" aria-hidden="true">📱</div>
-    <p class="zeit">Ab 2000</p>
+    <img src="bilder/21-jahrhundert.png"
+         alt="Moderne Videospiele mit Controller und VR-Brille">
 
-    <h2>7. Das 21. Jahrhundert</h2>
-
-    <p>
-      Smartphones, Online-Spiele,
-      digitale Lernwelten
-      und Virtual Reality
-      erweitern die Spielmöglichkeiten.
-    </p>
-
-    <p>
-      Menschen können weltweit
-      miteinander spielen
-      und eigene Spiele entwickeln.
-    </p>
-
-    <a class="button" href="spiele-21-jahrhundert.html">
-      Gegenwart entdecken
-    </a>
+    <div class="inhalt">
+      <h2><span class="nummer">🎮 7.</span> 21. Jahrhundert</h2>
+      <span class="zeit">Ab 2000</span>
+      <p>
+        Online-Spiele, Smartphones,
+        Virtual Reality und
+        digitale Spielwelten.
+      </p>
+      <a class="button" href="spiele-21-jahrhundert.html">
+        Gegenwart entdecken →
+      </a>
+    </div>
   </article>
 
-  <!-- ZUKUNFT -->
-
+  <!-- 8 ZUKUNFT -->
   <article class="epoche">
-    <div class="symbol" aria-hidden="true">🚀</div>
-    <p class="zeit">Blick in die Zukunft</p>
+    <img src="bilder/zukunft.png"
+         alt="Futuristische Spielwelt mit virtueller Realität">
 
-    <h2>8. Die Zukunft der Spiele</h2>
-
-    <p>
-      Wie könnten Spiele
-      in 20, 50 oder 100 Jahren aussehen?
-    </p>
-
-    <p>
-      Entdecke Ideen rund um
-      künstliche Intelligenz,
-      neue Spieltechnologien,
-      inklusive Spiele
-      und die Verbindung
-      zwischen realen und
-      digitalen Spielwelten.
-    </p>
-
-    <a class="button" href="spiele-zukunft.html">
-      Zukunft entdecken
-    </a>
+    <div class="inhalt">
+      <h2><span class="nummer">🚀 8.</span> Zukunft</h2>
+      <span class="zeit">Blick in die Zukunft</span>
+      <p>
+        Künstliche Intelligenz,
+        inklusive Spielwelten und
+        neue Technologien.
+      </p>
+      <a class="button" href="spiele-zukunft.html">
+        Zukunft entdecken →
+      </a>
+    </div>
   </article>
 
 </div>
