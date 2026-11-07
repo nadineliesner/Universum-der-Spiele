@@ -1,0 +1,413 @@
+
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Entdecke die Geschichte der Spiele von der Steinzeit bis zur digitalen Gegenwart.">
+
+<title>Geschichte der Spiele | Universum der Spiele</title>
+
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(135deg, #10132b, #251547);
+  color: #f5f2ff;
+  line-height: 1.7;
+}
+
+header {
+  background: #171a3b;
+  text-align: center;
+  padding: 45px 20px;
+}
+
+h1 {
+  color: #d4baff;
+}
+
+h2 {
+  color: #b69aff;
+}
+
+nav {
+  background: #25204a;
+  padding: 15px;
+  text-align: center;
+}
+
+nav a {
+  color: white;
+  display: inline-block;
+  margin: 8px;
+  text-decoration: none;
+}
+
+nav a:hover,
+nav a:focus-visible {
+  color: #e1c8ff;
+  text-decoration: underline;
+}
+
+main {
+  max-width: 1000px;
+  margin: auto;
+  padding: 25px 18px;
+}
+
+section {
+  background: #222447;
+  border: 1px solid #504779;
+  border-radius: 18px;
+  padding: 25px;
+  margin-bottom: 25px;
+}
+
+.einleitung {
+  text-align: center;
+  font-size: 1.15rem;
+}
+
+.zeitstrahl {
+  border-left: 4px solid #b69aff;
+  margin-left: 12px;
+  padding-left: 25px;
+}
+
+.epoche {
+  margin-bottom: 22px;
+}
+
+.epoche button {
+  width: 100%;
+  text-align: left;
+  background: #35305f;
+  color: white;
+  border: 1px solid #70639e;
+  border-radius: 12px;
+  padding: 17px;
+  font-size: 1.05rem;
+  cursor: pointer;
+}
+
+.epoche button:hover,
+.epoche button:focus-visible {
+  background: #51447f;
+}
+
+.inhalt {
+  background: #29264e;
+  padding: 18px;
+  margin-top: 10px;
+  border-radius: 12px;
+}
+
+.inhalt[hidden] {
+  display: none;
+}
+
+.kacheln {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 18px;
+}
+
+.kachel {
+  background: #35305f;
+  padding: 20px;
+  border-radius: 14px;
+}
+
+.kachel h3 {
+  color: #decaff;
+}
+
+.spruch {
+  text-align: center;
+  font-size: 1.3rem;
+  font-style: italic;
+  color: #e4ceff;
+}
+
+.zurueck {
+  display: inline-block;
+  background: #6551a5;
+  padding: 12px 20px;
+  border-radius: 10px;
+  color: white;
+  text-decoration: none;
+}
+
+.zurueck:hover,
+.zurueck:focus-visible {
+  background: #8169c6;
+}
+
+footer {
+  background: #111329;
+  text-align: center;
+  padding: 25px;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <h1>🏰 Geschichte der Spiele</h1>
+  <p>Eine Zeitreise durch Jahrtausende voller Spielideen</p>
+</header>
+
+<nav aria-label="Hauptnavigation">
+  <a href="index.html">Start</a>
+  <a href="spielgeschichte.html">Spielgeschichte</a>
+  <a href="spielgenres.html">Spielgenres</a>
+  <a href="spiele-erleben.html">Spiele erleben</a>
+  <a href="spieleentwickeln.html">Spiele entwickeln</a>
+  <a href="ueber-mich.html">Über mich</a>
+  <a href="hilfe.html">Hilfe</a>
+</nav>
+
+<main>
+
+<section class="einleitung">
+  <h2>🌌 Eine Reise durch die Spielgeschichte</h2>
+  <p>
+    Von einfachen Spielen in der Steinzeit
+    bis zu virtuellen Welten:
+    Spiele begleiten die Menschheit
+    seit Jahrtausenden.
+  </p>
+  <p>
+    Klicke auf eine Epoche und entdecke
+    ihre Spielgeschichte!
+  </p>
+</section>
+
+<section>
+  <h2>⏳ Interaktiver Zeitstrahl</h2>
+
+  <div class="zeitstrahl">
+
+    <div class="epoche">
+      <button aria-expanded="false"
+        aria-controls="steinzeit"
+        onclick="anzeigen(this, 'steinzeit')">
+        🪨 Steinzeit – Die Anfänge
+      </button>
+
+      <div class="inhalt" id="steinzeit" hidden>
+        <h3>Spielen ohne Spielkonsole</h3>
+        <p>
+          Menschen haben vermutlich bereits
+          in der Steinzeit gespielt.
+        </p>
+        <p>
+          Denkbar sind Laufspiele,
+          Geschicklichkeitsübungen,
+          Nachahmung und Spiele mit
+          Naturmaterialien.
+        </p>
+        <p>
+          Wie diese Spiele genau aussahen,
+          wissen wir nicht.
+        </p>
+      </div>
+    </div>
+
+    <div class="epoche">
+      <button aria-expanded="false"
+        aria-controls="antike"
+        onclick="anzeigen(this, 'antike')">
+        🏺 Antike – Die ersten Brettspiele
+      </button>
+
+      <div class="inhalt" id="antike" hidden>
+        <h3>Spiele in frühen Hochkulturen</h3>
+        <p>
+          Im alten Ägypten spielten Menschen
+          beispielsweise Senet.
+        </p>
+        <p>
+          In Mesopotamien entstand das
+          Königliche Spiel von Ur.
+        </p>
+        <p>
+          Auch Würfelspiele und Ballspiele
+          waren in verschiedenen Kulturen bekannt.
+        </p>
+      </div>
+    </div>
+
+    <div class="epoche">
+      <button aria-expanded="false"
+        aria-controls="mittelalter"
+        onclick="anzeigen(this, 'mittelalter')">
+        🏰 Mittelalter – Spiele und Turniere
+      </button>
+
+      <div class="inhalt" id="mittelalter" hidden>
+        <h3>Spielen im Mittelalter</h3>
+        <p>
+          Menschen spielten Würfelspiele,
+          Brettspiele und Bewegungsspiele.
+        </p>
+        <p>
+          Schach verbreitete sich
+          in Europa.
+        </p>
+        <p>
+          Auf Festen gab es außerdem
+          Wettbewerbe und Geschicklichkeitsspiele.
+        </p>
+      </div>
+    </div>
+
+    <div class="epoche">
+      <button aria-expanded="false"
+        aria-controls="neuzeit"
+        onclick="anzeigen(this, 'neuzeit')">
+        🎲 Neuzeit – Spiele für zu Hause
+      </button>
+
+      <div class="inhalt" id="neuzeit" hidden>
+        <h3>Gedruckte Spiele werden verbreitet</h3>
+        <p>
+          Durch Druckverfahren und
+          industrielle Herstellung konnten
+          Spiele zunehmend verbreitet werden.
+        </p>
+        <p>
+          Brettspiele, Kartenspiele
+          und Lernspiele entwickelten sich weiter.
+        </p>
+      </div>
+    </div>
+
+    <div class="epoche">
+      <button aria-expanded="false"
+        aria-controls="digital"
+        onclick="anzeigen(this, 'digital')">
+        🕹️ 20. Jahrhundert – Digitale Spiele
+      </button>
+
+      <div class="inhalt" id="digital" hidden>
+        <h3>Die ersten Videospiele</h3>
+        <p>
+          In den 1950er- und 1960er-Jahren
+          entstanden frühe elektronische Spiele.
+        </p>
+        <p>
+          1972 machte Pong Videospiele
+          einem größeren Publikum bekannt.
+        </p>
+        <p>
+          Später folgten Heimkonsolen,
+          Spielhallen und Computerspiele.
+        </p>
+      </div>
+    </div>
+
+    <div class="epoche">
+      <button aria-expanded="false"
+        aria-controls="heute"
+        onclick="anzeigen(this, 'heute')">
+        🚀 21. Jahrhundert – Neue Spielwelten
+      </button>
+
+      <div class="inhalt" id="heute" hidden>
+        <h3>Spielen überall</h3>
+        <p>
+          Heute gibt es Spiele auf Smartphones,
+          Computern und Konsolen.
+        </p>
+        <p>
+          Online-Spiele verbinden Menschen
+          über große Entfernungen.
+        </p>
+        <p>
+          Virtual Reality und Augmented Reality
+          eröffnen neue Spielerlebnisse.
+        </p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section>
+  <h2>🎮 Was hat sich verändert?</h2>
+
+  <div class="kacheln">
+
+    <article class="kachel">
+      <h3>🎲 Spielmaterial</h3>
+      <p>
+        Von Steinen und Knochen
+        über Spielbretter
+        bis zu digitalen Geräten.
+      </p>
+    </article>
+
+    <article class="kachel">
+      <h3>🌍 Spielorte</h3>
+      <p>
+        Vom Dorfplatz und Wohnzimmer
+        bis zu virtuellen Welten.
+      </p>
+    </article>
+
+    <article class="kachel">
+      <h3>🤝 Gemeinschaft</h3>
+      <p>
+        Früher wie heute bringen
+        Spiele Menschen zusammen.
+      </p>
+    </article>
+
+    <article class="kachel">
+      <h3>✨ Fantasie</h3>
+      <p>
+        Neue Technik ermöglicht
+        immer andere Spielideen.
+      </p>
+    </article>
+
+  </div>
+</section>
+
+<section class="spruch">
+  <p>
+    „Jedes Spiel erzählt ein Stück
+    unserer Geschichte.“
+  </p>
+</section>
+
+<a class="zurueck" href="spielgeschichte.html">
+  ← Zurück zur Spielgeschichte
+</a>
+
+</main>
+
+<footer>
+  <p>🌌 Universum der Spiele</p>
+  <p>Entdecken · Spielen · Verstehen · Gestalten</p>
+</footer>
+
+<script>
+function anzeigen(button, id) {
+  const inhalt = document.getElementById(id);
+  const istOffen = button.getAttribute("aria-expanded") === "true";
+
+  inhalt.hidden = istOffen;
+  button.setAttribute("aria-expanded", String(!istOffen));
+}
+</script>
+
+</body>
+</html>
