@@ -1,0 +1,481 @@
+
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Entdecke die Geschichte der Spielkonsolen von der Magnavox Odyssey bis zu modernen Konsolen.">
+<title>Geschichte der Spielkonsolen | Universum der Spiele</title>
+
+<style>
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(135deg, #10132b, #251547);
+  color: #f5f2ff;
+  line-height: 1.7;
+}
+
+header {
+  background: #171a3b;
+  padding: 45px 20px;
+  text-align: center;
+}
+
+h1 { color: #d4baff; }
+h2 { color: #b69aff; }
+h3 { color: #decaff; }
+
+nav {
+  background: #25204a;
+  padding: 15px;
+  text-align: center;
+}
+
+nav a {
+  color: white;
+  display: inline-block;
+  margin: 8px;
+  text-decoration: none;
+}
+
+nav a:hover, nav a:focus-visible {
+  color: #e1c8ff;
+  text-decoration: underline;
+}
+
+main {
+  max-width: 1000px;
+  margin: auto;
+  padding: 25px 18px;
+}
+
+section {
+  background: #222447;
+  border: 1px solid #504779;
+  border-radius: 18px;
+  padding: 25px;
+  margin-bottom: 25px;
+}
+
+.einleitung { text-align: center; }
+
+.zeitstrahl {
+  border-left: 4px solid #b69aff;
+  padding-left: 22px;
+}
+
+.konsole {
+  margin-bottom: 15px;
+}
+
+.konsole button {
+  width: 100%;
+  text-align: left;
+  background: #35305f;
+  color: white;
+  border: 1px solid #70639e;
+  border-radius: 12px;
+  padding: 16px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.konsole button:hover,
+.konsole button:focus-visible {
+  background: #51447f;
+}
+
+.details {
+  background: #29264e;
+  padding: 18px;
+  border-radius: 12px;
+  margin-top: 8px;
+}
+
+.details[hidden] { display: none; }
+
+.kacheln {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: 18px;
+}
+
+.kachel {
+  background: #35305f;
+  padding: 20px;
+  border-radius: 14px;
+}
+
+.quiz {
+  background: #35305f;
+  padding: 20px;
+  border-radius: 14px;
+}
+
+.quiz button {
+  background: #6551a5;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  padding: 12px 18px;
+  margin: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.quiz button:hover,
+.quiz button:focus-visible {
+  background: #8169c6;
+}
+
+#antwort {
+  font-weight: bold;
+  margin-top: 15px;
+}
+
+.zurueck {
+  display: inline-block;
+  background: #6551a5;
+  color: white;
+  padding: 12px 20px;
+  border-radius: 10px;
+  text-decoration: none;
+}
+
+.zurueck:hover,
+.zurueck:focus-visible {
+  background: #8169c6;
+}
+
+footer {
+  background: #111329;
+  padding: 25px;
+  text-align: center;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <h1>🎮 Geschichte der Spielkonsolen</h1>
+  <p>Von einfachen Fernsehspielen zu riesigen Spielwelten</p>
+</header>
+
+<nav aria-label="Hauptnavigation">
+  <a href="index.html">Start</a>
+  <a href="spielgeschichte.html">Spielgeschichte</a>
+  <a href="spielgenres.html">Spielgenres</a>
+  <a href="spiele-erleben.html">Spiele erleben</a>
+  <a href="spieleentwickeln.html">Spiele entwickeln</a>
+  <a href="ueber-mich.html">Über mich</a>
+  <a href="hilfe.html">Hilfe</a>
+</nav>
+
+<main>
+
+<section class="einleitung">
+  <h2>🌌 Wie begann die Konsolengeschichte?</h2>
+  <p>
+    Heute spielen Millionen Menschen auf
+    Konsolen. Doch die ersten Geräte
+    konnten nur sehr einfache Spiele darstellen.
+  </p>
+  <p>
+    Klicke auf eine Konsole und entdecke
+    ihre Geschichte!
+  </p>
+</section>
+
+<section>
+  <h2>⏳ Interaktiver Konsolen-Zeitstrahl</h2>
+
+  <div class="zeitstrahl">
+
+    <article class="konsole">
+      <button aria-expanded="false" aria-controls="c1972"
+        onclick="anzeigen(this,'c1972')">
+        📺 1972 – Magnavox Odyssey
+      </button>
+      <div class="details" id="c1972" hidden>
+        <h3>Eine der ersten Heimspielkonsolen</h3>
+        <p>
+          Die Magnavox Odyssey gilt als
+          erste kommerzielle Heimvideospielkonsole.
+        </p>
+        <p>
+          Sie wurde an einen Fernseher
+          angeschlossen und bot einfache Spiele.
+        </p>
+      </div>
+    </article>
+
+    <article class="konsole">
+      <button aria-expanded="false" aria-controls="c1977"
+        onclick="anzeigen(this,'c1977')">
+        🕹️ 1977 – Atari 2600
+      </button>
+      <div class="details" id="c1977" hidden>
+        <h3>Spiele auf austauschbaren Modulen</h3>
+        <p>
+          Der Atari 2600 wurde zu einer
+          der bekanntesten frühen Heimkonsolen.
+        </p>
+        <p>
+          Spiele konnten über Steckmodule
+          gewechselt werden.
+        </p>
+      </div>
+    </article>
+
+    <article class="konsole">
+      <button aria-expanded="false" aria-controls="c1983"
+        onclick="anzeigen(this,'c1983')">
+        🍄 1983 – Nintendo Famicom
+      </button>
+      <div class="details" id="c1983" hidden>
+        <h3>Nintendo erobert Wohnzimmer</h3>
+        <p>
+          Das Famicom erschien 1983 in Japan.
+          International wurde die Konsole
+          als Nintendo Entertainment System
+          bekannt.
+        </p>
+        <p>
+          Super Mario Bros. erschien 1985
+          und wurde ein großer Erfolg.
+        </p>
+      </div>
+    </article>
+
+    <article class="konsole">
+      <button aria-expanded="false" aria-controls="c1988"
+        onclick="anzeigen(this,'c1988')">
+        💨 1988 – Sega Mega Drive
+      </button>
+      <div class="details" id="c1988" hidden>
+        <h3>16-Bit-Spielwelten</h3>
+        <p>
+          Sega veröffentlichte das Mega Drive
+          zunächst in Japan.
+        </p>
+        <p>
+          Die Konsole wurde später auch
+          durch Sonic the Hedgehog bekannt.
+        </p>
+      </div>
+    </article>
+
+    <article class="konsole">
+      <button aria-expanded="false" aria-controls="c1989"
+        onclick="anzeigen(this,'c1989')">
+        🎒 1989 – Nintendo Game Boy
+      </button>
+      <div class="details" id="c1989" hidden>
+        <h3>Spielen unterwegs</h3>
+        <p>
+          Der Game Boy machte tragbare
+          Videospiele besonders populär.
+        </p>
+        <p>
+          Zu seinen bekanntesten Spielen
+          gehörte Tetris.
+        </p>
+      </div>
+    </article>
+
+    <article class="konsole">
+      <button aria-expanded="false" aria-controls="c1994"
+        onclick="anzeigen(this,'c1994')">
+        💿 1994 – Sony PlayStation
+      </button>
+      <div class="details" id="c1994" hidden>
+        <h3>3D-Grafik und CD-ROM</h3>
+        <p>
+          Sony veröffentlichte die erste
+          PlayStation 1994 in Japan.
+        </p>
+        <p>
+          Sie trug zur Verbreitung
+          von 3D-Spielen bei.
+        </p>
+      </div>
+    </article>
+
+    <article class="konsole">
+      <button aria-expanded="false" aria-controls="c2001"
+        onclick="anzeigen(this,'c2001')">
+        🟢 2001 – Microsoft Xbox
+      </button>
+      <div class="details" id="c2001" hidden>
+        <h3>Microsoft steigt ein</h3>
+        <p>
+          Die erste Xbox erschien
+          2001 in Nordamerika.
+        </p>
+        <p>
+          Halo wurde zu einem
+          wichtigen Spiel der Konsole.
+        </p>
+      </div>
+    </article>
+
+    <article class="konsole">
+      <button aria-expanded="false" aria-controls="c2006"
+        onclick="anzeigen(this,'c2006')">
+        🎾 2006 – Nintendo Wii
+      </button>
+      <div class="details" id="c2006" hidden>
+        <h3>Bewegung als Steuerung</h3>
+        <p>
+          Die Wii machte bewegungsbasierte
+          Steuerung einem breiten
+          Publikum zugänglich.
+        </p>
+      </div>
+    </article>
+
+    <article class="konsole">
+      <button aria-expanded="false" aria-controls="c2017"
+        onclick="anzeigen(this,'c2017')">
+        🔄 2017 – Nintendo Switch
+      </button>
+      <div class="details" id="c2017" hidden>
+        <h3>Zu Hause und unterwegs</h3>
+        <p>
+          Die Nintendo Switch verbindet
+          tragbares Spielen mit der
+          Nutzung am Fernseher.
+        </p>
+      </div>
+    </article>
+
+    <article class="konsole">
+      <button aria-expanded="false" aria-controls="c2020"
+        onclick="anzeigen(this,'c2020')">
+        🚀 2020 – PlayStation 5 und Xbox Series X/S
+      </button>
+      <div class="details" id="c2020" hidden>
+        <h3>Moderne Konsolentechnik</h3>
+        <p>
+          Neue Hardware ermöglicht
+          schnelle Ladezeiten,
+          hohe Auflösungen und
+          aufwendige Spielwelten.
+        </p>
+      </div>
+    </article>
+
+    <article class="konsole">
+      <button aria-expanded="false" aria-controls="c2025"
+        onclick="anzeigen(this,'c2025')">
+        🌟 2025 – Nintendo Switch 2
+      </button>
+      <div class="details" id="c2025" hidden>
+        <h3>Die nächste Nintendo-Generation</h3>
+        <p>
+          Nintendo veröffentlichte
+          die Switch 2 im Juni 2025.
+        </p>
+        <p>
+          Sie führt das Konzept einer
+          tragbaren und stationären
+          Spielkonsole weiter.
+        </p>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+<section>
+  <h2>🔍 Was unterscheidet Konsolen?</h2>
+
+  <div class="kacheln">
+    <article class="kachel">
+      <h3>📺 Heimkonsole</h3>
+      <p>
+        Wird meist mit einem Fernseher
+        oder Bildschirm verbunden.
+      </p>
+    </article>
+
+    <article class="kachel">
+      <h3>🎒 Handheld</h3>
+      <p>
+        Eine tragbare Konsole
+        mit eigenem Bildschirm.
+      </p>
+    </article>
+
+    <article class="kachel">
+      <h3>🔄 Hybridkonsole</h3>
+      <p>
+        Kann unterwegs und
+        am Fernseher genutzt werden.
+      </p>
+    </article>
+
+    <article class="kachel">
+      <h3>☁️ Cloud-Gaming</h3>
+      <p>
+        Spiele werden auf entfernten
+        Servern berechnet und
+        über das Internet übertragen.
+      </p>
+    </article>
+  </div>
+</section>
+
+<section>
+  <h2>🚀 Teste dein Wissen!</h2>
+
+  <div class="quiz">
+    <h3>Welche Konsole erschien 1989?</h3>
+
+    <button onclick="pruefen(1)">PlayStation 5</button>
+    <button onclick="pruefen(2)">Nintendo Game Boy</button>
+    <button onclick="pruefen(3)">Xbox</button>
+
+    <p id="antwort" role="status" aria-live="polite"></p>
+  </div>
+</section>
+
+<a class="zurueck" href="geschichte-spiele.html">
+  ← Zurück zur Geschichte der Spiele
+</a>
+
+</main>
+
+<footer>
+  <p>🌌 Universum der Spiele</p>
+  <p>Entdecken · Spielen · Verstehen · Gestalten</p>
+</footer>
+
+<script>
+function anzeigen(button, id) {
+  const details = document.getElementById(id);
+  const offen = button.getAttribute("aria-expanded") === "true";
+
+  details.hidden = offen;
+  button.setAttribute("aria-expanded", String(!offen));
+}
+
+function pruefen(auswahl) {
+  const antwort = document.getElementById("antwort");
+
+  if (auswahl === 2) {
+    antwort.textContent =
+      "🌟 Richtig! Der Nintendo Game Boy erschien 1989.";
+  } else {
+    antwort.textContent =
+      "🌙 Noch nicht ganz. Versuche es erneut!";
+  }
+}
+</script>
+
+</body>
+</html>
