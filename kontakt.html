@@ -272,5 +272,41 @@ document.getElementById("kontaktformular")
   });
 </script>
 
+  
+<script>
+const formular = document.getElementById("kontaktformular");
+const status = document.getElementById("status");
+
+formular.addEventListener("submit", async function(event) {
+  event.preventDefault();
+
+  status.textContent = "Nachricht wird gesendet ...";
+
+  try {
+    const antwort = await fetch(formular.action, {
+      method: "POST",
+      body: new FormData(formular),
+      headers: {
+        "Accept": "application/json"
+      }
+    });
+
+    if (antwort.ok) {
+      formular.reset();
+      status.textContent =
+        "🚀 Deine Nachricht wurde gesendet! Danke!";
+    } else {
+      status.textContent =
+        "Die Nachricht konnte nicht gesendet werden.";
+    }
+
+  } catch (fehler) {
+    status.textContent =
+      "Es gab ein Problem beim Senden. Bitte versuche es erneut.";
+  }
+});
+</script>
+
+
 </body>
 </html>
