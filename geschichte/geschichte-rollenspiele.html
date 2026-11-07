@@ -1,0 +1,510 @@
+
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Entdecke die Geschichte der Rollenspiele von Fantasiespielen bis zu digitalen Rollenspielwelten.">
+
+<title>Geschichte der Rollenspiele | Universum der Spiele</title>
+
+<style>
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(135deg, #10132b, #251547);
+  color: #f5f2ff;
+  line-height: 1.7;
+}
+
+header {
+  background: #171a3b;
+  text-align: center;
+  padding: 45px 20px;
+}
+
+h1 { color: #d4baff; }
+h2 { color: #b69aff; }
+h3 { color: #decaff; }
+
+nav {
+  background: #25204a;
+  padding: 15px;
+  text-align: center;
+}
+
+nav a {
+  display: inline-block;
+  color: white;
+  margin: 8px;
+  text-decoration: none;
+}
+
+nav a:hover,
+nav a:focus-visible {
+  color: #e1c8ff;
+  text-decoration: underline;
+}
+
+main {
+  max-width: 1000px;
+  margin: auto;
+  padding: 25px 18px;
+}
+
+section {
+  background: #222447;
+  border: 1px solid #504779;
+  border-radius: 18px;
+  padding: 25px;
+  margin-bottom: 25px;
+}
+
+.einleitung { text-align: center; }
+
+.zeitstrahl {
+  border-left: 4px solid #b69aff;
+  padding-left: 22px;
+}
+
+.epoche { margin-bottom: 15px; }
+
+.epoche button {
+  width: 100%;
+  text-align: left;
+  background: #35305f;
+  color: white;
+  border: 1px solid #70639e;
+  border-radius: 12px;
+  padding: 16px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.epoche button:hover,
+.epoche button:focus-visible {
+  background: #51447f;
+}
+
+.details {
+  background: #29264e;
+  padding: 18px;
+  border-radius: 12px;
+  margin-top: 8px;
+}
+
+.details[hidden] { display: none; }
+
+.kacheln {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: 18px;
+}
+
+.kachel {
+  background: #35305f;
+  padding: 20px;
+  border-radius: 14px;
+}
+
+.infobox {
+  background: #40346e;
+  border-left: 5px solid #b69aff;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.quiz {
+  background: #35305f;
+  padding: 20px;
+  border-radius: 14px;
+}
+
+.quiz button {
+  background: #6551a5;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  padding: 12px 18px;
+  margin: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.quiz button:hover,
+.quiz button:focus-visible {
+  background: #8169c6;
+}
+
+#antwort {
+  font-weight: bold;
+  margin-top: 15px;
+}
+
+.zurueck {
+  display: inline-block;
+  background: #6551a5;
+  color: white;
+  padding: 12px 20px;
+  border-radius: 10px;
+  text-decoration: none;
+}
+
+.zurueck:hover,
+.zurueck:focus-visible {
+  background: #8169c6;
+}
+
+footer {
+  background: #111329;
+  text-align: center;
+  padding: 25px;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <h1>🐉 Geschichte der Rollenspiele</h1>
+  <p>Schlüpfe in andere Rollen und entdecke fantastische Welten</p>
+</header>
+
+<nav aria-label="Hauptnavigation">
+  <a href="index.html">Start</a>
+  <a href="spielgeschichte.html">Spielgeschichte</a>
+  <a href="spielgenres.html">Spielgenres</a>
+  <a href="spiele-erleben.html">Spiele erleben</a>
+  <a href="spieleentwickeln.html">Spiele entwickeln</a>
+  <a href="ueber-mich.html">Über mich</a>
+  <a href="hilfe.html">Hilfe</a>
+</nav>
+
+<main>
+
+<section class="einleitung">
+  <h2>🌌 Was sind Rollenspiele?</h2>
+  <p>
+    Beim Rollenspiel übernehmen Menschen
+    die Rolle einer anderen Figur.
+  </p>
+  <p>
+    Sie können beispielsweise
+    Abenteurer, Forschende,
+    Zauberer oder Detektive sein.
+  </p>
+  <p>
+    Rollenspiele können ohne Technik,
+    mit Papier und Würfeln
+    oder digital stattfinden.
+  </p>
+</section>
+
+<section>
+  <h2>⏳ Interaktiver Zeitstrahl</h2>
+  <p>Klicke auf eine Epoche, um mehr zu erfahren.</p>
+
+  <div class="zeitstrahl">
+
+    <article class="epoche">
+      <button type="button" aria-expanded="false"
+        aria-controls="frueher"
+        onclick="anzeigen(this,'frueher')">
+        🎭 Frühe Formen – Fantasie und Nachahmung
+      </button>
+      <div class="details" id="frueher" hidden>
+        <h3>Menschen spielen Rollen</h3>
+        <p>
+          Das Nachahmen anderer Personen
+          und das Erfinden von Geschichten
+          gehören seit langer Zeit
+          zum menschlichen Spiel.
+        </p>
+        <p>
+          Kinder spielen beispielsweise
+          Familie, Berufe oder Abenteuer.
+        </p>
+      </div>
+    </article>
+
+    <article class="epoche">
+      <button type="button" aria-expanded="false"
+        aria-controls="theater"
+        onclick="anzeigen(this,'theater')">
+        🎭 Antike bis Neuzeit – Theater und Rollendarstellung
+      </button>
+      <div class="details" id="theater" hidden>
+        <h3>Geschichten durch Rollen erzählen</h3>
+        <p>
+          Im Theater übernehmen
+          Darstellende bestimmte Rollen.
+        </p>
+        <p>
+          Theater ist nicht dasselbe
+          wie ein modernes Rollenspiel,
+          zeigt aber die lange Tradition
+          des Rollendarstellens.
+        </p>
+      </div>
+    </article>
+
+    <article class="epoche">
+      <button type="button" aria-expanded="false"
+        aria-controls="tabletop"
+        onclick="anzeigen(this,'tabletop')">
+        ⚔️ 19.–20. Jahrhundert – Konfliktsimulationen
+      </button>
+      <div class="details" id="tabletop" hidden>
+        <h3>Vom Planspiel zum Fantasy-Abenteuer</h3>
+        <p>
+          Historische Kriegsspiele
+          und spätere Tabletop-Spiele
+          beeinflussten die Entwicklung
+          moderner Pen-and-Paper-Rollenspiele.
+        </p>
+      </div>
+    </article>
+
+    <article class="epoche">
+      <button type="button" aria-expanded="false"
+        aria-controls="dd"
+        onclick="anzeigen(this,'dd')">
+        🐲 1974 – Dungeons & Dragons
+      </button>
+      <div class="details" id="dd" hidden>
+        <h3>Ein Meilenstein</h3>
+        <p>
+          Gary Gygax und Dave Arneson
+          veröffentlichten Dungeons & Dragons.
+        </p>
+        <p>
+          Es wurde zum wegweisenden
+          modernen Pen-and-Paper-Rollenspiel.
+        </p>
+        <p>
+          Eine Spielleitung beschreibt
+          die Welt, während die
+          Spielenden ihre Figuren steuern.
+        </p>
+      </div>
+    </article>
+
+    <article class="epoche">
+      <button type="button" aria-expanded="false"
+        aria-controls="computer"
+        onclick="anzeigen(this,'computer')">
+        💻 1970er–1980er – Computerrollenspiele
+      </button>
+      <div class="details" id="computer" hidden>
+        <h3>Abenteuer auf Bildschirmen</h3>
+        <p>
+          Frühe Computerrollenspiele
+          übernahmen Ideen wie
+          Charakterwerte, Erfahrungspunkte
+          und das Erkunden von Welten.
+        </p>
+        <p>
+          Bekannte Reihen sind
+          Ultima und Wizardry.
+        </p>
+      </div>
+    </article>
+
+    <article class="epoche">
+      <button type="button" aria-expanded="false"
+        aria-controls="larp"
+        onclick="anzeigen(this,'larp')">
+        🏰 1980er – Live-Rollenspiele
+      </button>
+      <div class="details" id="larp" hidden>
+        <h3>LARP</h3>
+        <p>
+          Bei Live Action Role Playing
+          stellen Menschen ihre Figuren
+          selbst dar.
+        </p>
+        <p>
+          Kostüme, Kulissen und
+          gemeinsames Improvisieren
+          machen die Geschichte erlebbar.
+        </p>
+      </div>
+    </article>
+
+    <article class="epoche">
+      <button type="button" aria-expanded="false"
+        aria-controls="online"
+        onclick="anzeigen(this,'online')">
+        🌍 1990er–2000er – Online-Rollenspiele
+      </button>
+      <div class="details" id="online" hidden>
+        <h3>Gemeinsam in virtuellen Welten</h3>
+        <p>
+          Online-Rollenspiele ermöglichten
+          es vielen Menschen,
+          dieselbe digitale Welt
+          gemeinsam zu erleben.
+        </p>
+        <p>
+          Ein bekanntes Beispiel
+          ist World of Warcraft
+          aus dem Jahr 2004.
+        </p>
+      </div>
+    </article>
+
+    <article class="epoche">
+      <button type="button" aria-expanded="false"
+        aria-controls="heute"
+        onclick="anzeigen(this,'heute')">
+        🚀 Heute – Rollenspiele in vielen Formen
+      </button>
+      <div class="details" id="heute" hidden>
+        <h3>Grenzenlose Möglichkeiten</h3>
+        <p>
+          Heute gibt es Rollenspiele
+          am Tisch, im Freien,
+          auf Konsolen und Computern.
+        </p>
+        <p>
+          Manche verbinden offene
+          Spielwelten, Entscheidungen
+          und gemeinsam erzählte Geschichten.
+        </p>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+<section>
+  <h2>🗺️ Welche Rollenspielarten gibt es?</h2>
+
+  <div class="kacheln">
+    <article class="kachel">
+      <h3>🎲 Pen & Paper</h3>
+      <p>
+        Geschichten werden gemeinsam
+        mit Papier, Stiften,
+        Regeln und oft Würfeln gespielt.
+      </p>
+    </article>
+
+    <article class="kachel">
+      <h3>🏰 LARP</h3>
+      <p>
+        Die Spielenden verkörpern
+        ihre Figuren selbst
+        in einer realen Umgebung.
+      </p>
+    </article>
+
+    <article class="kachel">
+      <h3>💻 Computer-RPG</h3>
+      <p>
+        Digitale Abenteuer
+        mit Charakterentwicklung,
+        Quests und Entscheidungen.
+      </p>
+    </article>
+
+    <article class="kachel">
+      <h3>🌐 MMORPG</h3>
+      <p>
+        Viele Menschen spielen
+        gleichzeitig in einer
+        gemeinsamen Online-Welt.
+      </p>
+    </article>
+
+    <article class="kachel">
+      <h3>🧸 Freies Rollenspiel</h3>
+      <p>
+        Kinder und Erwachsene
+        erfinden Rollen und Geschichten
+        ohne feste Regeln.
+      </p>
+    </article>
+
+    <article class="kachel">
+      <h3>🎓 Pädagogisches Rollenspiel</h3>
+      <p>
+        Rollen werden genutzt,
+        um Situationen und
+        unterschiedliche Perspektiven
+        zu erkunden.
+      </p>
+    </article>
+  </div>
+</section>
+
+<section>
+  <h2>🧙 Erfinde deine erste Rollenspielfigur!</h2>
+
+  <div class="infobox">
+    <p>Stell dir drei Fragen:</p>
+    <ol>
+      <li>Wie heißt deine Figur?</li>
+      <li>Welche besondere Fähigkeit besitzt sie?</li>
+      <li>Welches Abenteuer möchte sie erleben?</li>
+    </ol>
+    <p>
+      Schon mit diesen drei Antworten
+      kannst du eine kleine
+      Rollenspielgeschichte beginnen.
+    </p>
+  </div>
+</section>
+
+<section>
+  <h2>🚀 Teste dein Wissen!</h2>
+
+  <div class="quiz">
+    <h3>In welchem Jahr erschien Dungeons & Dragons?</h3>
+
+    <button type="button" onclick="pruefen(1)">1952</button>
+    <button type="button" onclick="pruefen(2)">1974</button>
+    <button type="button" onclick="pruefen(3)">2004</button>
+
+    <p id="antwort" role="status" aria-live="polite"></p>
+  </div>
+</section>
+
+<a class="zurueck" href="geschichte-spiele.html">
+  ← Zurück zur Geschichte der Spiele
+</a>
+
+</main>
+
+<footer>
+  <p>🌌 Universum der Spiele</p>
+  <p>Entdecken · Spielen · Verstehen · Gestalten</p>
+</footer>
+
+<script>
+function anzeigen(button, id) {
+  const details = document.getElementById(id);
+  const offen =
+    button.getAttribute("aria-expanded") === "true";
+
+  details.hidden = offen;
+  button.setAttribute("aria-expanded", String(!offen));
+}
+
+function pruefen(auswahl) {
+  const antwort = document.getElementById("antwort");
+
+  if (auswahl === 2) {
+    antwort.textContent =
+      "🌟 Richtig! Dungeons & Dragons erschien 1974.";
+  } else {
+    antwort.textContent =
+      "🌙 Noch nicht ganz. Versuche es erneut!";
+  }
+}
+</script>
+
+</body>
+</html>
